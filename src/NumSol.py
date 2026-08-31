@@ -3,7 +3,12 @@ from scipy.integrate import solve_ivp
 from sympy import symbols, Matrix, lambdify
 
 
-def NumSol(u_func_sym, T, x0, f, G, b_norm_squared_sym, TRQlim):
+def NumSol(
+    u_func_sym,
+    T, x0, f, G,
+    b_norm_squared_sym=None,
+    TRQlim=None,
+    ):
     """
     Numerically solves a system of differential equations with symbolic control input.
 

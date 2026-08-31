@@ -1,0 +1,7 @@
+Best Expression:
+add(add(mul(x1, add(mul(x1, exp(x3)), sin(sub(x4, x3)))), mul(add(x4, mul(a, mul(exp(sub(x3, x1)), x3))), add(mul(add(x4, mul(a, x3)), add(x3, a)), add(sin(x3), add(add(mul(x1, add(mul(x1, add(mul(add(x4, mul(a, x3)), a), mul(x1, mul(sub(x3, x1), x4)))), sin(add(mul(x4, x1), mul(sub(x4, x3), x4))))), mul(add(x4, mul(a, sin(x3))), add(mul(add(x4, mul(a, x3)), add(x3, a)), add(sin(x3), x4)))), mul(a, sin(x3))))))), add(mul(x3, x1), sin(add(add(mul(x2, x2), mul(sub(x4, x3), x4)), mul(x4, x4)))))
+Best Fitness:
+1006.2325
+Best Parameters:
+[ 4.49409388  2.04612777  5.25959013 -8.00933056 -8.11715604 -6.12354419
+  2.47835774  0.02685843  0.62535273]

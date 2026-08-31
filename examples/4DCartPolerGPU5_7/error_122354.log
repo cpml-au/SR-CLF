@@ -1,0 +1,35 @@
+2026-08-27 21:06:58,250	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.2.2:8734...
+2026-08-27 21:06:58,315	INFO worker.py:2003 -- Connected to Ray cluster. View the dashboard at [1m[32mhttp://10.10.2.2:8265 [39m[22m
+/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+[36m(GPUFitnessActor pid=2805556)[0m /home/qaragoez/symclf-main_rnv/srcGPU5_7/cpu_polish.py:228: RuntimeWarning: invalid value encountered in matmul
+[36m(GPUFitnessActor pid=2805556)[0m   ga = hess @ drift + jd.T @ grad
+[36m(GPUFitnessActor pid=2805556)[0m /home/qaragoez/symclf-main_rnv/srcGPU5_7/cpu_polish.py:229: RuntimeWarning: invalid value encountered in matmul
+[36m(GPUFitnessActor pid=2805556)[0m   gb = hess @ control + jc.T @ grad
+[36m(GPUFitnessActor pid=2805564)[0m E0828 00:28:34.159618 2805564 hlo_lexer.cc:443] Failed to parse int literal: 705318961664618411221
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-28 07:26:19.916780: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 8.70GiB (9338885832 bytes) by rematerialization; only reduced to 9.64GiB (10351214824 bytes), down from 9.77GiB (10487430680 bytes) originally
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-28 07:41:27.492200: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 8.52GiB (9144870600 bytes) by rematerialization; only reduced to 10.60GiB (11385962728 bytes), down from 10.74GiB (11535790328 bytes) originally
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-28 07:41:37.987049: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 9.49GiB (rounded to 10187441408)requested by op 
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-28 07:41:37.987272: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] **********************______________________________________________________________________________
+[36m(GPUFitnessActor pid=2805556)[0m E0828 07:41:37.987316 2805556 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 10187441240 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-28 07:49:22.710040: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 8.56GiB (9195650760 bytes) by rematerialization; only reduced to 10.35GiB (11115135208 bytes), down from 10.49GiB (11261403896 bytes) originally
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-28 07:49:33.314449: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 9.26GiB (rounded to 9945122048)requested by op 
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-28 07:49:33.314706: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ***************************_________________________________________________________________________
+[36m(GPUFitnessActor pid=2805556)[0m E0828 07:49:33.314746 2805556 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 9945121880 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=2805554)[0m E0828 15:46:37.666790 2805554 hlo_lexer.cc:443] Failed to parse int literal: 9469892648308206754978
+[36m(GPUFitnessActor pid=2805558)[0m E0828 18:16:25.160861 2805558 hlo_lexer.cc:443] Failed to parse int literal: 9469892648308206754978
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-29 00:57:11.472873: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 7.57GiB (8132419272 bytes) by rematerialization; only reduced to 15.63GiB (16785703144 bytes), down from 15.84GiB (17006590376 bytes) originally
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-29 00:57:22.094421: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 13.99GiB (rounded to 15018788096)requested by op 
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-29 00:57:22.094618: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ******************************************__________________________________________________________
+[36m(GPUFitnessActor pid=2805556)[0m E0829 00:57:22.094649 2805556 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 15018787928 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=2805562)[0m E0829 19:12:30.942329 2805562 hlo_lexer.cc:443] Failed to parse int literal: 9469892648308206754978
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-29 19:34:39.604809: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 6.90GiB (rounded to 7405315072)requested by op 
+[36m(GPUFitnessActor pid=2805556)[0m 2026-08-29 19:34:39.605025: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *********_______**************************__________________________________________________________
+[36m(GPUFitnessActor pid=2805556)[0m E0829 19:34:39.605062 2805556 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 7405315032 bytes. [tf-allocator-allocation-error='']
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-08-29T21:06:24.005] error: *** JOB 122354 ON s02n02 CANCELLED AT 2026-08-29T21:06:24 DUE TO TIME LIMIT ***
+[2026-08-29T21:06:24.014] error: *** STEP 122354.2 ON s02n02 CANCELLED AT 2026-08-29T21:06:24 DUE TO TIME LIMIT ***
+[2026-08-29T21:06:24.015] error: *** STEP 122354.1 ON s02n02 CANCELLED AT 2026-08-29T21:06:24 DUE TO TIME LIMIT ***
+[2026-08-29 21:06:24,028 E 2805498 2805553] core_worker.cc:475: :info_message: Attempting to recover 3 lost objects by resubmitting their tasks or setting a new primary location from existing copies. To disable object reconstruction, set @ray.remote(max_retries=0).
+srun: forcing job termination

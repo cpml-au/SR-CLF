@@ -1,0 +1,191 @@
+Project root: /home/qaragoez/symclf-main_rnv
+PYTHONPATH: /home/qaragoez/symclf-main_rnv/examples/4DCartPolerGPU5_7:/home/qaragoez/symclf-main_rnv:
+Conda environment: /home/qaragoez/miniforge3/envs/flex
+Python: /home/qaragoez/miniforge3/envs/flex/bin/python
+Python 3.12.0
+Ray Python package: 2.55.1 /home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/__init__.py
+JAX: 0.5.0 devices: [CudaDevice(id=0), CudaDevice(id=1), CudaDevice(id=2)]
+GPU 0: NVIDIA A100-PCIE-40GB (UUID: GPU-8806a028-3fad-4d77-cd1f-e35537f6ba08)
+GPU 1: NVIDIA A100-PCIE-40GB (UUID: GPU-5fed31ff-efb8-eddd-10a0-3e59d233cab1)
+GPU 2: NVIDIA A100-PCIE-40GB (UUID: GPU-27a4ce9b-4204-cd33-f46c-b27e50f5a18a)
+Ray CLI: /home/qaragoez/miniforge3/envs/flex/bin/ray
+ray, version 2.55.1
+Allocated nodes: s02n01
+Head node: s02n01
+Head IP: 10.10.2.1
+Head address: 10.10.2.1:8729
+Starting Ray head on s02n01...
+2026-08-27 14:54:54,759	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-08-27 14:54:54,759	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.2.1[22m
+2026-08-27 14:55:02,229	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-08-27 14:55:02,229	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-08-27 14:55:02,229	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-08-27 14:55:02,229	INFO scripts.py:983 -- [36mNext steps[39m
+2026-08-27 14:55:02,229	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-08-27 14:55:02,229	INFO scripts.py:989 -- [1m  ray start --address='10.10.2.1:8729'[22m
+2026-08-27 14:55:02,229	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-08-27 14:55:02,229	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-08-27 14:55:02,229	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.2.1'[39m[26m)
+2026-08-27 14:55:02,229	INFO scripts.py:1017 -- To submit a Ray job using the Ray Jobs CLI:
+2026-08-27 14:55:02,230	INFO scripts.py:1018 -- [1m  RAY_API_SERVER_ADDRESS='http://10.10.2.1:8265' ray job submit --working-dir . -- python my_script.py[22m
+2026-08-27 14:55:02,230	INFO scripts.py:1027 -- See https://docs.ray.io/en/latest/cluster/running-applications/job-submission/index.html 
+2026-08-27 14:55:02,230	INFO scripts.py:1031 -- for more information on submitting Ray jobs to the Ray cluster.
+2026-08-27 14:55:02,230	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-08-27 14:55:02,230	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-08-27 14:55:02,230	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-08-27 14:55:02,230	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-08-27 14:55:02,230	INFO scripts.py:1045 -- To monitor and debug Ray, view the dashboard at 
+2026-08-27 14:55:02,230	INFO scripts.py:1046 --   [1m10.10.2.1:8265[22m[26m
+2026-08-27 14:55:02,230	INFO scripts.py:1053 -- [4mIf connection to the dashboard fails, check your firewall settings and network configuration.[24m
+2026-08-27 14:55:02,230	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-08-27 14:55:02,230	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-08-27 14:55:02,230	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-08-27 14:55:02,230	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-08-27_14-54-54_760508_1750368/logs/ray_process_exit.log[22m[26m
+Ray cluster status:
+======== Autoscaler status: 2026-08-27 14:55:31.387941 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_db13defc08b177797da7167d8033263329231d57fedde5b4f03b5eec
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/32.0 CPU
+ 0.0/3.0 GPU
+ 0B/176.01GiB memory
+ 0B/75.43GiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting run.py (GPU5_7 certified-region objective)...
+GPU5 Ray resources: {'node:__internal_head__': 1.0, 'object_store_memory': 80995705651.0, 'node:10.10.2.1': 1.0, 'GPU': 3.0, 'memory': 188989979853.0, 'accelerator_type:A100': 1.0, 'CPU': 32.0}
+GPU5 GP hyperparameters: population=2500 (num_individuals=500 x num_islands=5), generations=20000, crossover=0.7, mutation=0.3, reg_param=0.005, mig_freq=10, mig_frac=0.05
+[36m(GPUFitnessActor pid=1751427)[0m GPU5_7 strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1751426)[0m GPU5_7 strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1751428)[0m GPU5_7 strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1751429)[0m GPU5_7 strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1751430)[0m GPU5_7 strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1751431)[0m GPU5_7 strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1751432)[0m GPU5_7 strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1751434)[0m GPU5_7 strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1751425)[0m GPU5_7 strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1751425)[0m GPU5_7 reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=1751425)[0m GPU5_7 properness reference: lqr
+[36m(GPUFitnessActor pid=1751427)[0m GPU5_7 reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=1751427)[0m GPU5_7 properness reference: lqr
+[36m(GPUFitnessActor pid=1751426)[0m GPU5_7 reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=1751426)[0m GPU5_7 properness reference: lqr
+[36m(GPUFitnessActor pid=1751428)[0m GPU5_7 reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=1751428)[0m GPU5_7 properness reference: lqr
+[36m(GPUFitnessActor pid=1751429)[0m GPU5_7 reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=1751429)[0m GPU5_7 properness reference: lqr
+[36m(GPUFitnessActor pid=1751430)[0m GPU5_7 reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=1751430)[0m GPU5_7 properness reference: lqr
+[36m(GPUFitnessActor pid=1751431)[0m GPU5_7 reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=1751431)[0m GPU5_7 properness reference: lqr
+[36m(GPUFitnessActor pid=1751432)[0m GPU5_7 reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=1751432)[0m GPU5_7 properness reference: lqr
+[36m(GPUFitnessActor pid=1751434)[0m GPU5_7 reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=1751434)[0m GPU5_7 properness reference: lqr
+[36m(GPUFitnessActor pid=1751425)[0m GPU5_7 JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1751427)[0m GPU5_7 JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1751426)[0m GPU5_7 JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1751428)[0m GPU5_7 JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1751429)[0m GPU5_7 JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1751430)[0m GPU5_7 JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1751431)[0m GPU5_7 JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1751432)[0m GPU5_7 JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1751434)[0m GPU5_7 JAX devices: cuda:0
+GPU5 Artstein warm-up: gpu0=ok:10.65s, gpu1=ok:10.70s, gpu2=ok:10.59s, gpu3=ok:10.52s, gpu4=ok:10.18s, gpu5=ok:10.46s, gpu6=ok:10.37s, gpu7=ok:10.40s, gpu8=ok:10.67s
+GPU5 full exact warm-up: gpu0=ok:24.09s, gpu1=ok:24.49s, gpu2=ok:24.83s, gpu3=ok:25.54s, gpu4=ok:24.64s, gpu5=ok:24.47s, gpu6=ok:24.65s, gpu7=ok:25.38s, gpu8=ok:24.55s
+GPU5 scheduling: 9 persistent actors (3 GPUs x 3 actors/GPU, gpu_fraction=0.333, cpus/actor=3), pre_batch_size=16, exact_batch_size=24, cheap_batch_size=32, exact_wave_cheap_limits=(500,1500), full_exact_enabled=1, tuner_fusion=2, population=2500
+GPU5 actor devices: ['cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0']
+Generating initial population(s)...
+ Seeding population with individuals...
+DONE.
+Evaluating initial population(s)...
+GPU5 stages: candidates=500 pre_s=17.059 cheap_candidates=2 cheap_unique=2 cheap_s=3.197/40.000 cheap_rejected=2 cheap_a_min=0.73174789106 cheap_a_p50=0.73174789106 cheap_a_p95=0.868410809948 cheap_a_max=0.868410809948 exact_a_gate=0.15 exact_provisional_penalty=16583.1563034 exact_candidates=0 exact_unique=0 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=0 exact_deferred=0 exact_wave=0/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=0.000 exact_ok=0 exact_margin_max=nan exact_scan_mean_s=nan exact_bisect_mean_s=nan exact_polish_mean_s=nan exact_final_mean_s=nan exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+GPU5 stages: candidates=500 pre_s=1.734 cheap_candidates=0 cheap_unique=0 cheap_s=0.000/15.000 cheap_rejected=0 cheap_a_min=nan cheap_a_p50=nan cheap_a_p95=nan cheap_a_max=nan exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=0 exact_unique=0 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=0 exact_deferred=0 exact_wave=0/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=0.000 exact_ok=0 exact_margin_max=nan exact_scan_mean_s=nan exact_bisect_mean_s=nan exact_polish_mean_s=nan exact_final_mean_s=nan exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+GPU5 stages: candidates=500 pre_s=1.686 cheap_candidates=0 cheap_unique=0 cheap_s=0.000/15.000 cheap_rejected=0 cheap_a_min=nan cheap_a_p50=nan cheap_a_p95=nan cheap_a_max=nan exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=0 exact_unique=0 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=0 exact_deferred=0 exact_wave=0/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=0.000 exact_ok=0 exact_margin_max=nan exact_scan_mean_s=nan exact_bisect_mean_s=nan exact_polish_mean_s=nan exact_final_mean_s=nan exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+GPU5 stages: candidates=500 pre_s=1.746 cheap_candidates=0 cheap_unique=0 cheap_s=0.000/15.000 cheap_rejected=0 cheap_a_min=nan cheap_a_p50=nan cheap_a_p95=nan cheap_a_max=nan exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=0 exact_unique=0 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=0 exact_deferred=0 exact_wave=0/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=0.000 exact_ok=0 exact_margin_max=nan exact_scan_mean_s=nan exact_bisect_mean_s=nan exact_polish_mean_s=nan exact_final_mean_s=nan exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+GPU5 stages: candidates=500 pre_s=1.729 cheap_candidates=0 cheap_unique=0 cheap_s=0.000/15.000 cheap_rejected=0 cheap_a_min=nan cheap_a_p50=nan cheap_a_p95=nan cheap_a_max=nan exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=0 exact_unique=0 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=0 exact_deferred=0 exact_wave=0/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=0.000 exact_ok=0 exact_margin_max=nan exact_scan_mean_s=nan exact_bisect_mean_s=nan exact_polish_mean_s=nan exact_final_mean_s=nan exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+DONE.
+ -= START OF EVOLUTION =- 
+GPU5 stages: candidates=2500 pre_s=8.325 cheap_candidates=4 cheap_unique=4 cheap_s=0.648/40.000 cheap_rejected=4 cheap_a_min=0.584142426767 cheap_a_p50=5.12718926707 cheap_a_p95=7.90279105445 cheap_a_max=7.90279105445 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=0 exact_unique=0 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=0 exact_deferred=0 exact_wave=0/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=0.000 exact_ok=0 exact_margin_max=nan exact_scan_mean_s=nan exact_bisect_mean_s=nan exact_polish_mean_s=nan exact_final_mean_s=nan exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+   	     	                   fitness                    	             size             
+   	     	----------------------------------------------	------------------------------
+gen	evals	min  	avg        	max        	std   	min	avg  	max	std   
+1  	2500 	10177	1.63901e+06	2.13508e+06	620193	3  	7.688	61 	4.4954
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GPU5 stages: candidates=2500 pre_s=9.166 cheap_candidates=6 cheap_unique=6 cheap_s=0.691/40.000 cheap_rejected=5 cheap_a_min=0.46646733296 cheap_a_p50=0.783610820618 cheap_a_p95=36.7767655454 cheap_a_max=36.7767655454 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=1 exact_unique=1 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=1 exact_deferred=0 exact_wave=1/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=2.925 exact_ok=1 exact_margin_max=nan exact_scan_mean_s=1.484 exact_bisect_mean_s=0.000 exact_polish_mean_s=0.000 exact_final_mean_s=0.000 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+2  	2500 	7212.65	985619     	2.11015e+06	511636	4  	11.1296	66 	5.5852
+Best individuals of this generation:
+add(add(add(sin(mul(sin(x4), aq(a, x1))), x3), exp(x2)), sin(aq(exp(a), sin(x3))))
+GPU5 stages: candidates=2500 pre_s=10.326 cheap_candidates=12 cheap_unique=12 cheap_s=0.715/40.000 cheap_rejected=9 cheap_a_min=0.112147107328 cheap_a_p50=1.73222219681 cheap_a_p95=10.0226756182 cheap_a_max=10.0226756182 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=3 exact_unique=3 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=3 exact_deferred=0 exact_wave=3/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=8.966 exact_ok=3 exact_margin_max=0.218393666521 exact_scan_mean_s=0.517 exact_bisect_mean_s=0.250 exact_polish_mean_s=0.026 exact_final_mean_s=0.451 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+3  	2500 	7212.65	622009     	1.11628e+06	493130	5  	14.2724	66 	7.7744
+Best individuals of this generation:
+add(add(add(sin(mul(sin(x4), aq(a, x1))), x3), exp(x2)), sin(aq(exp(a), sin(x3))))
+GPU5 stages: candidates=2500 pre_s=12.392 cheap_candidates=26 cheap_unique=26 cheap_s=0.748/40.000 cheap_rejected=20 cheap_a_min=1.39023445898e-12 cheap_a_p50=2.65999289791 cheap_a_p95=7.03337646871 cheap_a_max=7.56164684806 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=6 exact_unique=6 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=6 exact_deferred=0 exact_wave=6/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=10.714 exact_ok=6 exact_margin_max=0.00904091611352 exact_scan_mean_s=0.280 exact_bisect_mean_s=0.139 exact_polish_mean_s=0.043 exact_final_mean_s=0.312 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+4  	2500 	6204.79	209484     	1.1054e+06 	296159	7  	17.3812	71 	10.6038
+Best individuals of this generation:
+sub(add(mul(x1, x4), mul(x2, sub(sub(x3, x2), exp(x3)))), aq(exp(a), add(x1, x1)))
+GPU5 stages: candidates=2500 pre_s=12.917 cheap_candidates=72 cheap_unique=72 cheap_s=2.926/40.000 cheap_rejected=54 cheap_a_min=3.00734286227e-12 cheap_a_p50=1.85906509596 cheap_a_p95=7.02923367214 cheap_a_max=761.356771183 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=18 exact_unique=18 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=18 exact_deferred=0 exact_wave=18/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=23.111 exact_ok=18 exact_margin_max=0.201552545785 exact_scan_mean_s=0.125 exact_bisect_mean_s=0.041 exact_polish_mean_s=0.037 exact_final_mean_s=0.106 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+5  	2500 	4304.37	92737.7    	119849     	30226.2	7  	21.9136	96 	15.2115
+Best individuals of this generation:
+mul(sub(add(a, x2), x1), add(exp(add(add(x3, x2), aq(a, x4))), mul(x3, x3)))
+GPU5 stages: candidates=2500 pre_s=14.580 cheap_candidates=130 cheap_unique=129 cheap_s=3.150/40.000 cheap_rejected=108 cheap_a_min=-4.44397491361e-07 cheap_a_p50=3.17093816157 cheap_a_p95=27.5988385679 cheap_a_max=1082.78437314 exact_a_gate=0.15 exact_provisional_penalty=16608.7557845 exact_candidates=22 exact_unique=22 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=21 exact_deferred=0 exact_wave=21/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=20.508 exact_ok=21 exact_margin_max=0.206390331951 exact_scan_mean_s=0.079 exact_bisect_mean_s=0.027 exact_polish_mean_s=0.018 exact_final_mean_s=0.100 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+6  	2500 	2782.77	80075.5    	115439     	34044.4	8  	24.4496	126	16.2885
+Best individuals of this generation:
+aq(add(mul(x4, add(x4, x3)), mul(x3, x3)), add(x2, x1))
+GPU5 stages: candidates=2500 pre_s=16.049 cheap_candidates=203 cheap_unique=203 cheap_s=3.870/40.000 cheap_rejected=164 cheap_a_min=1.7833117726e-11 cheap_a_p50=2.54488911224 cheap_a_p95=285.835785846 cheap_a_max=1205.49332756 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=39 exact_unique=39 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=38 exact_deferred=0 exact_wave=38/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=21.699 exact_ok=38 exact_margin_max=0.224124887002 exact_scan_mean_s=0.101 exact_bisect_mean_s=0.030 exact_polish_mean_s=0.027 exact_final_mean_s=0.080 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+7  	2500 	2316.94	66064.4    	111555     	33371.7	8  	26.0808	126	16.8846
+Best individuals of this generation:
+aq(add(mul(x4, sub(mul(mul(a, x4), sub(a, x4)), sin(sub(x1, x1)))), mul(x3, x3)), add(x2, x1))
+GPU5 stages: candidates=2500 pre_s=17.167 cheap_candidates=351 cheap_unique=349 cheap_s=3.979/40.000 cheap_rejected=280 cheap_a_min=-6.85681038611 cheap_a_p50=2.37051990731 cheap_a_p95=97.2406932 cheap_a_max=2192.7703776 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=71 exact_unique=71 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=71 exact_deferred=0 exact_wave=71/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=32.334 exact_ok=71 exact_margin_max=4.31451476787 exact_scan_mean_s=0.072 exact_bisect_mean_s=0.017 exact_polish_mean_s=0.038 exact_final_mean_s=0.059 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+8  	2500 	2283.12	50339.4    	103376     	29124.1	9  	27.6676	126	17.7459
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x3, mul(a, x1)))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2)))), mul(a, mul(x1, x4))), mul(a, mul(aq(x4, x2), x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GPU5 stages: candidates=2500 pre_s=18.330 cheap_candidates=501 cheap_unique=501 cheap_s=4.601/40.000 cheap_rejected=369 cheap_a_min=-19.2279435152 cheap_a_p50=1.91263497196 cheap_a_p95=269.465540537 cheap_a_max=3684.17793431 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=132 exact_unique=132 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=132 exact_deferred=0 exact_wave=132/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=28.130 exact_ok=132 exact_margin_max=65.7132850292 exact_scan_mean_s=0.086 exact_bisect_mean_s=0.018 exact_polish_mean_s=0.015 exact_final_mean_s=0.052 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+9  	2500 	2261.6 	37206.3    	80984.8    	23520.3	9  	29.5552	129	18.6778
+Best individuals of this generation:
+add(mul(mul(a, x2), aq(mul(x2, sub(x3, x1)), x4)), add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(x2, mul(x1, x4))), mul(a, mul(x2, x2))))
+GPU5 stages: candidates=2500 pre_s=18.966 cheap_candidates=661 cheap_unique=661 cheap_s=5.913/40.000 cheap_rejected=471 cheap_a_min=-67.9777171099 cheap_a_p50=2.22058859459 cheap_a_p95=461.767648866 cheap_a_max=19152.1397653 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=190 exact_unique=190 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=190 exact_deferred=0 exact_wave=190/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=36.677 exact_ok=190 exact_margin_max=106.31156312 exact_scan_mean_s=0.072 exact_bisect_mean_s=0.012 exact_polish_mean_s=0.022 exact_final_mean_s=0.040 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+10 	2500 	1824.56	28157.7    	64218.2    	17814  	9  	31.7148	135	20.2036
+Best individuals of this generation:
+sub(add(mul(x1, x4), mul(x2, add(mul(x1, x4), mul(x2, sub(sub(a, x1), exp(x3)))))), aq(exp(a), x1))
+GPU5 stages: candidates=2500 pre_s=19.275 cheap_candidates=769 cheap_unique=769 cheap_s=7.307/40.000 cheap_rejected=522 cheap_a_min=-113.819962697 cheap_a_p50=1.7189161916 cheap_a_p95=555.713806656 cheap_a_max=10336.5919589 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=247 exact_unique=247 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=247 exact_deferred=0 exact_wave=247/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=42.326 exact_ok=247 exact_margin_max=70.0388190697 exact_scan_mean_s=0.062 exact_bisect_mean_s=0.013 exact_polish_mean_s=0.021 exact_final_mean_s=0.041 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+11 	2500 	1154.9 	22127.1    	50961.2    	14113.6	9  	32.3916	135	20.1171
+Best individuals of this generation:
+add(add(add(mul(x1, aq(mul(a, x1), x2)), mul(x2, x2)), add(mul(x3, x3), mul(add(x4, mul(a, x4)), add(x3, x2)))), mul(x1, x2))
+GPU5 stages: candidates=2500 pre_s=19.175 cheap_candidates=892 cheap_unique=892 cheap_s=7.158/40.000 cheap_rejected=537 cheap_a_min=-112.585272472 cheap_a_p50=1.1690746519 cheap_a_p95=33.2022359669 cheap_a_max=1038.29073412 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=355 exact_unique=355 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=355 exact_deferred=0 exact_wave=355/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=48.492 exact_ok=355 exact_margin_max=234.667786056 exact_scan_mean_s=0.045 exact_bisect_mean_s=0.016 exact_polish_mean_s=0.030 exact_final_mean_s=0.047 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+12 	2500 	1154.9 	17336.6    	44586.1    	11640.7	10 	32.1488	130	18.8781
+Best individuals of this generation:
+add(add(add(mul(x1, aq(mul(a, x1), x2)), mul(x2, x2)), add(mul(x3, x3), mul(add(x4, mul(a, x4)), add(x3, x2)))), mul(x1, x2))
+GPU5 stages: candidates=2500 pre_s=19.497 cheap_candidates=1062 cheap_unique=1062 cheap_s=8.531/40.000 cheap_rejected=611 cheap_a_min=-209.031807803 cheap_a_p50=0.985599542456 cheap_a_p95=32.8247373968 cheap_a_max=805.428460953 exact_a_gate=0.15 exact_provisional_penalty=6314.88021724 exact_candidates=451 exact_unique=451 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=451 exact_deferred=0 exact_wave=451/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=62.302 exact_ok=451 exact_margin_max=87.94062053 exact_scan_mean_s=0.047 exact_bisect_mean_s=0.010 exact_polish_mean_s=0.029 exact_final_mean_s=0.040 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+13 	2500 	1154.9 	13272.6    	37228.8    	8869.6 	11 	31.9936	131	18.511 
+Best individuals of this generation:
+add(add(add(mul(x1, aq(mul(a, x1), x2)), mul(x2, x2)), add(mul(x3, x3), mul(add(x4, mul(a, x4)), add(x3, x2)))), mul(x1, x2))
+GPU5 stages: candidates=2500 pre_s=19.537 cheap_candidates=1187 cheap_unique=1187 cheap_s=9.665/40.000 cheap_rejected=672 cheap_a_min=-270.547575284 cheap_a_p50=0.69259814874 cheap_a_p95=57.0341282384 cheap_a_max=2285.3344669 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=515 exact_unique=515 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=513 exact_deferred=0 exact_wave=513/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=67.632 exact_ok=513 exact_margin_max=289.180273352 exact_scan_mean_s=0.043 exact_bisect_mean_s=0.006 exact_polish_mean_s=0.031 exact_final_mean_s=0.044 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+14 	2500 	1154.9 	10468.1    	30818.5    	6572.64	11 	32.9052	132	18.4417
+Best individuals of this generation:
+add(add(add(mul(x1, aq(mul(a, x1), x2)), mul(x2, x2)), add(mul(x3, x3), mul(add(x4, mul(a, x4)), add(x3, x2)))), mul(x1, x2))
+GPU5 stages: candidates=2500 pre_s=19.758 cheap_candidates=1303 cheap_unique=1303 cheap_s=11.352/40.000 cheap_rejected=671 cheap_a_min=-197.15299182 cheap_a_p50=0.348371692889 cheap_a_p95=50.8947705076 cheap_a_max=3389.83505748 exact_a_gate=0.15 exact_provisional_penalty=9974.97311954 exact_candidates=632 exact_unique=632 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=631 exact_deferred=0 exact_wave=631/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=87.156 exact_ok=631 exact_margin_max=1552.12387993 exact_scan_mean_s=0.045 exact_bisect_mean_s=0.013 exact_polish_mean_s=0.042 exact_final_mean_s=0.059 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+15 	2500 	1047.61	8404.27    	25043.9    	4410.04	11 	33.7416	132	16.5502
+Best individuals of this generation:
+sub(add(mul(x1, x4), mul(x2, sub(sub(add(add(mul(x1, x4), mul(x2, sub(mul(exp(a), exp(mul(x4, x1))), exp(x3)))), mul(mul(add(x4, mul(mul(x1, x3), x3)), x3), x3)), x1), exp(x3)))), aq(exp(a), add(sin(x2), x1)))
+GPU5 stages: candidates=2500 pre_s=19.804 cheap_candidates=1403 cheap_unique=1403 cheap_s=12.488/40.000 cheap_rejected=696 cheap_a_min=-320.809435202 cheap_a_p50=0.253153367492 cheap_a_p95=27.8875308134 cheap_a_max=9816.2715368 exact_a_gate=0.15 exact_provisional_penalty=6332.17411927 exact_candidates=707 exact_unique=707 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=706 exact_deferred=0 exact_wave=706/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=92.632 exact_ok=706 exact_margin_max=6.54241795297 exact_scan_mean_s=0.042 exact_bisect_mean_s=0.008 exact_polish_mean_s=0.047 exact_final_mean_s=0.053 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+16 	2500 	1047.61	6910.07    	14532.7    	3075   	11 	34.7436	131	15.0463
+Best individuals of this generation:
+sub(add(mul(x1, x4), mul(x2, sub(sub(add(add(mul(x1, x4), mul(x2, sub(mul(exp(a), exp(mul(x4, x1))), exp(x3)))), mul(mul(add(x4, mul(mul(x1, x3), x3)), x3), x3)), x1), exp(x3)))), aq(exp(a), add(sin(x2), x1)))
+GPU5 stages: candidates=2500 pre_s=19.713 cheap_candidates=1416 cheap_unique=1416 cheap_s=12.466/40.000 cheap_rejected=610 cheap_a_min=-9.52573920955 cheap_a_p50=0.139675300052 cheap_a_p95=20.5083951457 cheap_a_max=3759.30271282 exact_a_gate=0.15 exact_provisional_penalty=3928.17976309 exact_candidates=806 exact_unique=806 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=804 exact_deferred=0 exact_wave=804/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=99.849 exact_ok=804 exact_margin_max=171.368333461 exact_scan_mean_s=0.043 exact_bisect_mean_s=0.004 exact_polish_mean_s=0.044 exact_final_mean_s=0.036 exact_margin_abs_b_max=nan cache_hits=0 cache_misses=0 cache_waits=0
+17 	2500 	809.255	6031.56    	11811      	2723.76	11 	35.3472	123	13.736 
+Best individuals of this generation:
+add(add(add(mul(x1, aq(mul(a, x1), x2)), mul(x2, x2)), add(mul(x3, x3), mul(add(sin(x2), mul(a, x4)), add(x3, x2)))), mul(x1, x2))

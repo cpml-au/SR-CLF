@@ -1,0 +1,134 @@
+2026-08-27 15:25:57,706	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.2.1:8730...
+2026-08-27 15:25:57,772	INFO worker.py:2003 -- Connected to Ray cluster. View the dashboard at [1m[32mhttp://10.10.2.1:8265 [39m[22m
+/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+[36m(GPUFitnessActor pid=1765754)[0m 2026-08-27 15:59:00.237082: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 7.37GiB (7912488648 bytes) by rematerialization; only reduced to 16.72GiB (17958666472 bytes), down from 16.95GiB (18194987768 bytes) originally
+[36m(GPUFitnessActor pid=1765754)[0m 2026-08-27 15:59:10.710676: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 14.96GiB (rounded to 16068281600)requested by op 
+[36m(GPUFitnessActor pid=1765754)[0m 2026-08-27 15:59:10.710924: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *********************************___________________________________________________________________
+[36m(GPUFitnessActor pid=1765754)[0m E0827 15:59:10.710975 1765754 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 16068281432 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 16:05:33.576531: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 6.96GiB (7476829896 bytes) by rematerialization; only reduced to 18.89GiB (20282199536 bytes), down from 19.14GiB (20549070320 bytes) originally
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 16:05:44.060270: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 16.90GiB (rounded to 18147214336)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 16:05:44.060499: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *************************************_______________________________________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0827 16:05:44.060531 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 18147214296 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765762)[0m 2026-08-27 16:07:34.697759: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 7.78GiB (8357953224 bytes) by rematerialization; only reduced to 14.51GiB (15582855400 bytes), down from 14.70GiB (15787915232 bytes) originally
+[36m(GPUFitnessActor pid=1765762)[0m 2026-08-27 16:07:45.147900: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 12.98GiB (rounded to 13942555904)requested by op 
+[36m(GPUFitnessActor pid=1765762)[0m 2026-08-27 16:07:45.148128: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *****************************_______________________________________________________________________
+[36m(GPUFitnessActor pid=1765762)[0m E0827 16:07:45.148159 1765762 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13942555736 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 16:12:03.793571: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 7.50GiB (rounded to 8053063936)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 16:12:03.793975: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ********___________________**********_______________________________________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0827 16:12:03.794007 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 8053063808 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765754)[0m 2026-08-27 16:18:35.994883: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 7.50GiB (rounded to 8053063936)requested by op 
+[36m(GPUFitnessActor pid=1765754)[0m 2026-08-27 16:18:35.995121: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ********________________*********___________________________________________________________________
+[36m(GPUFitnessActor pid=1765754)[0m E0827 16:18:35.995155 1765754 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 8053063808 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765754)[0m 2026-08-27 16:35:41.861579: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 7.50GiB (rounded to 8053063936)requested by op 
+[36m(GPUFitnessActor pid=1765754)[0m 2026-08-27 16:35:41.861838: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ********________________*********___________________________________________________________________
+[36m(GPUFitnessActor pid=1765754)[0m E0827 16:35:41.861875 1765754 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 8053063808 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765757)[0m 2026-08-27 16:39:20.508844: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 8.17GiB (8769447624 bytes) by rematerialization; only reduced to 12.47GiB (13388218600 bytes), down from 12.63GiB (13564391672 bytes) originally
+[36m(GPUFitnessActor pid=1765757)[0m 2026-08-27 16:39:31.037147: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 11.16GiB (rounded to 11978933504)requested by op 
+[36m(GPUFitnessActor pid=1765757)[0m 2026-08-27 16:39:31.037386: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *************************___________________________________________________________________________
+[36m(GPUFitnessActor pid=1765757)[0m E0827 16:39:31.037428 1765757 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 11978933336 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765757)[0m E0827 18:31:54.476284 1765757 hlo_lexer.cc:443] Failed to parse int literal: 705318961664618411221
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 18:50:32.676714: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 7.75GiB (8324683464 bytes) by rematerialization; only reduced to 14.68GiB (15760313168 bytes), down from 14.87GiB (15967685456 bytes) originally
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 18:50:43.317787: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 13.13GiB (rounded to 14101316608)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 18:50:43.318015: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ***********************____*****************________________________________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0827 18:50:43.318044 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 14101316568 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 19:10:12.154753: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 7.59GiB (8150630088 bytes) by rematerialization; only reduced to 15.54GiB (16688578792 bytes), down from 15.75GiB (16908180728 bytes) originally
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 19:10:22.730191: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 13.91GiB (rounded to 14931887360)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 19:10:22.730406: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ************************___************************_________________________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0827 19:10:22.730434 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 14931887192 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 19:20:08.940767: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 7.50GiB (rounded to 8053063936)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-27 19:20:08.941047: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *********__________________************************_________________________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0827 19:20:08.941079 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 8053063808 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m E0827 19:50:37.080267 1765753 hlo_lexer.cc:443] Failed to parse int literal: 705318961664618411221
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 00:59:08.383587: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 8.51GiB (9138216648 bytes) by rematerialization; only reduced to 10.64GiB (11421450472 bytes), down from 10.78GiB (11571762080 bytes) originally
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 00:59:19.080146: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 9.52GiB (rounded to 10219193600)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 00:59:19.080394: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *************************__************************_________________________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 00:59:19.080428 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 10219193432 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 01:24:42.087248: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 7.50GiB (rounded to 8053063936)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 01:24:42.087477: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ********___________********************************_________________________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 01:24:42.087503 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 8053063808 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 01:59:11.297640: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 7.50GiB (rounded to 8053063936)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 01:59:11.297906: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *********__________********************************_________________________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 01:59:11.297937 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 8053063808 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 02:22:01.655057: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 7.61GiB (rounded to 8175182848)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 02:22:01.655309: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *****************__*******_****************************_____________________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 02:22:01.655340 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 8175182808 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765756)[0m 2026-08-28 02:30:54.916904: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 8.34GiB (8957159112 bytes) by rematerialization; only reduced to 11.54GiB (12387090664 bytes), down from 11.69GiB (12550091000 bytes) originally
+[36m(GPUFitnessActor pid=1765756)[0m 2026-08-28 02:31:05.360016: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 10.32GiB (rounded to 11083187456)requested by op 
+[36m(GPUFitnessActor pid=1765756)[0m 2026-08-28 02:31:05.360197: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ************************____________________________________________________________________________
+[36m(GPUFitnessActor pid=1765756)[0m E0828 02:31:05.360221 1765756 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 11083187288 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 02:58:02.981432: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 7.50GiB (rounded to 8053063936)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 02:58:02.981705: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] **********_________************************************_____________________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 02:58:02.981738 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 8053063808 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:08:21.006317: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 8.34GiB (8957859528 bytes) by rematerialization; only reduced to 11.53GiB (12383355112 bytes), down from 11.68GiB (12546315224 bytes) originally
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:08:31.713851: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 10.32GiB (rounded to 11079845120)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:08:31.714124: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *****************__***********************************************__________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 03:08:31.714153 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 11079844952 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:10:46.257400: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 5.62GiB (rounded to 6039798016)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:10:46.257647: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] **********_________************************************_____******__________________________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 03:10:46.257691 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 6039797888 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:12:12.340147: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3021] Can't reduce memory use below 8.34GiB (8951205576 bytes) by rematerialization; only reduced to 11.57GiB (12418842856 bytes), down from 11.72GiB (12582269624 bytes) originally
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:12:22.958357: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 10.35GiB (rounded to 11111597312)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:12:22.958619: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *****************__************************************_____*****************_______________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 03:12:22.958651 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 11111597144 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:13:07.152171: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.00GiB (rounded to 3221225728)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:13:07.152421: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] ***_******_________******__****************************_____******_____******_______________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 03:13:07.152451 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 3221225600 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:13:58.833574: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.00GiB (rounded to 3221225728)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:13:58.833850: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] **********_________******__****************************_____******_____******_______________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 03:13:58.833877 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 3221225600 bytes. [tf-allocator-allocation-error='']
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:15:14.144085: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.44GiB (rounded to 3698895104)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:15:14.144383: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] **********_________******__****************************_____******_____******_______________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 03:15:14.144416 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 3698895040 bytes. [tf-allocator-allocation-error='']
+Traceback (most recent call last):
+  File "/home/qaragoez/symclf-main_rnv/examples/4DCartPolerGPU5_7/run.py", line 356, in <module>
+    main()
+  File "/home/qaragoez/symclf-main_rnv/examples/4DCartPolerGPU5_7/run.py", line 312, in main
+    gpsr.fit(train_data)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 473, in fit
+    self.__run(toolbox)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 721, in __run
+    self._step(toolbox, self.__cgen)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 643, in _step
+    num_evals = self.__evolve_islands(cgen, toolbox)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 571, in __evolve_islands
+    fitnesses = toolbox.map(
+                ^^^^^^^^^^^^
+  File "/home/qaragoez/symclf-main_rnv/srcGPU5_7/ray_fitness.py", line 334, in persistent_actor_mapper
+    cheap_checked = _actor_map(
+                    ^^^^^^^^^^^
+  File "/home/qaragoez/symclf-main_rnv/srcGPU5_7/ray_fitness.py", line 275, in _actor_map
+    batch_result = ray.get(reference)
+                   ^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(RuntimeError): [36mray::GPUFitnessActor.evaluate_cheap()[39m (pid=1765753, ip=10.10.2.1, actor_id=b24468c897cb42f25014782801000000, repr=<srcGPU5_7.ray_fitness.GPUFitnessActor object at 0x7fa4f1147530>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf-main_rnv/srcGPU5_7/ray_fitness.py", line 201, in evaluate_cheap
+    return fitness_finish_cheap(entries, base=self.base)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf-main_rnv/srcGPU5_7/fitness.py", line 1288, in fitness_finish_cheap
+    )
+RuntimeError: GPU2 cheap Artstein checker failed: error: ValueError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 3716153472 bytes.
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:15:35.527020: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.46GiB (rounded to 3716153600)requested by op 
+[36m(GPUFitnessActor pid=1765753)[0m 2026-08-28 03:15:35.527317: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] **********_________******__****************************_____******_____******_______________________
+[36m(GPUFitnessActor pid=1765753)[0m E0828 03:15:35.527340 1765753 pjrt_stream_executor_client.cc:3045] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 3716153472 bytes. [tf-allocator-allocation-error='']
+srun: forcing job termination
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-08-28T03:15:37.398] error: *** STEP 122350.1 ON s02n01 CANCELLED AT 2026-08-28T03:15:37 DUE to SIGNAL Killed ***
+srun: forcing job termination
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-08-28T03:15:42.401] error: *** STEP 122350.2 ON s02n01 CANCELLED AT 2026-08-28T03:15:42 DUE to SIGNAL Killed ***
+srun: error: s02n01: task 0: Killed
+srun: Terminating StepId=122350.2

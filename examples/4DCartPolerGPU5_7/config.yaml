@@ -1,0 +1,50 @@
+gp:
+  num_individuals: 500
+  generations: 20000
+  multi_island:
+    num_islands: 5
+    migration: { "freq": 10, "frac": 0.05 }
+  # GPU4_1: mutation raised 0.1 -> 0.3 (crossover 0.9 -> 0.7) to aid escape
+  # from the premature convergence / 4792-generation stagnation seen in 99824.
+  crossover_prob: 0.7
+  mut_prob: 0.3
+  frac_elitist: 0
+  min_: 2
+  max_: 6
+  overlapping_generation: True
+  validate: False
+  penalty: { "method": "length", "reg_param": 0.005 }
+  select:
+    fun: tools.selection.tournament_with_elitism
+    kargs: "{'num_elitist': self.n_elitist, 'tournsize': 2, 'stochastic_tourn': { 'enabled': False, 'prob': [0.8, 0.2] }}"
+  mutate:
+    fun: gp.mixedMutate
+    kargs: "{'expr': toolbox.expr_mut, 'pset': pset, 'prob': [0.7, 0.2, 0.1]}"
+    expr_mut: gp.genHalfAndHalf
+    expr_mut_kargs: "{'min_': 1, 'max_': 3}"
+  crossover:
+    fun: gp.cxOnePoint
+    kargs: "{}"
+  primitives:
+    imports: { "flex.gp.numpy_primitives": ["numpy_primitives"] }
+    used:
+      [
+        { "name": "add", "dimension": None, "rank": None },
+        { "name": "sub", "dimension": None, "rank": None },
+        { "name": "mul", "dimension": None, "rank": None },
+        #{ "name": "div", "dimension": None, "rank": None },
+        # GPU5_3: `aq` stays enabled. The reason it was a liability under
+        # GPU5_2 was the nested-call rule, not the primitive: aq() inside aq()
+        # cost a flat 100000, and ~100% of subtrees at the sizes this
+        # population operates at (126-252 nodes) carry one. That charge is now
+        # 50 (SYMCLF_GPU5_7_NESTED_PENALTY). If the run still shows aq-driven
+        # blow-ups, commenting this line out is the other lever -- exp already
+        # supplies the nonlinearity.
+        { "name": "aq", "dimension": None, "rank": None },
+        { "name": "neg", "dimension": None, "rank": None },
+        { "name": "sin", "dimension": None, "rank": None },
+        #{ "name": "cos", "dimension": None, "rank": None },
+        { "name": "exp", "dimension": None, "rank": None },
+        #{ "name": "log", "dimension": None, "rank": None },
+
+      ]

@@ -1,0 +1,6 @@
+Best Expression:
+exp(sub(sub(x4, a), sub(sub(add(x1, x4), aq(add(a, x1), add(mul(sub(add(x3, x3), sub(sub(add(x3, x2), add(add(add(sub(add(x3, x3), sub(x1, x4)), x3), add(sub(add(x3, x3), sub(x2, x4)), x3)), x2)), x4)), add(x1, sub(sub(sub(add(x3, x2), add(add(x3, add(sub(add(x3, x3), sub(x2, x4)), x3)), x2)), x4), add(a, x3)))), sub(x4, x2)))), sub(x2, x2))))
+Best Fitness:
+43.2682
+Best Parameters:
+[-3.87268252 -7.87763601 -7.4039538 ]

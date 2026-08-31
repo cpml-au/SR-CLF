@@ -7,35 +7,7 @@ def V_x(V, x_syms):
     return Matrix([V.diff(xi) for xi in x_syms])
 
 
-# Compute V and V_dot
-def compute_v_and_v_dotSR(V_value, f, G, Q, R, x_syms, u_func):
-    """
-    Computes the symbolic Lyapunov derivative and control terms.
-
-    Parameters:
-        V_value : sympy.Expr
-            The candidate Control Lyapunov function V(x).
-        u_func : sympy.Expr or None
-            User-specified control function u(x) if any.
-        f, G, Q, R : callables
-            Functions returning sympy Matrix dynamics/cost matrices.
-        x_syms : list of sympy.Symbol
-            List of state variables (x1, x2, ..., xn).
-
-    Returns:
-        tuple:
-            - V_value: Value function
-            - V_dot: Time derivative
-            - lambda_x: Lambda function
-            - u_value[1]: Control input (example: second input)
-            - u_value2[1]: Alternative control input (without scaling)
-            - u_mag: Control magnitude
-            - b_norm_squared[0]: Norm squared
-            - b_T[1]: Control effectiveness along second input
-    """
-    # n_states = len(x_syms)
-
-    # Evaluate system dynamics
+def _compute_v_and_v_dotSR_terms(V_value, f, G, Q, R, x_syms, u_func):
     f_vector = f(*x_syms)  # shape (n_states, 1)
     G_matrix = G(*x_syms)  # shape (n_states, n_inputs)
     Q_matrix = Q(*x_syms)
@@ -58,12 +30,15 @@ def compute_v_and_v_dotSR(V_value, f, G, Q, R, x_syms, u_func):
     # lambda_x
     """
     lambda_x = safe_divideSR(
-        sqrt(a**2 + x_norm_squared * b_norm_squared) + a,
+        sqrt(a**2 + x_norm_squared * b_norm_squared**2) + a,
         b_norm_squared,
         default=0
     )
     """
-    lambda_x = (sqrt(a**2 + x_norm_squared * b_norm_squared) + a) / b_norm_squared
+    lambda_x = (sqrt(a**2 + x_norm_squared * b_norm_squared) + a) / (b_norm_squared+1e-6)
+    # lambda_x = (sqrt(a**2 + x_norm_squared * b_norm_squared**2) + a) / (b_norm_squared+1e-6)
+
+    # lambda_x = (sqrt(a**2 + x_norm_squared * b_norm_squared**2) + a) / sqrt(1 + b_norm_squared**2)
 
     # Control law
     if u_func is None:
@@ -84,6 +59,21 @@ def compute_v_and_v_dotSR(V_value, f, G, Q, R, x_syms, u_func):
     # Control effort
     u_mag = (u_value.T * R_matrix * u_value)[0]
 
+    return V_dot, lambda_x, u_value, u_value2, u_mag, [b_norm_squared, b_T[0], b_T[1]], b_T[0, 1], a
+
+
+# Compute V and V_dot
+def compute_v_and_v_dotSR(V_value, f, G, Q, R, x_syms, u_func):
+    """
+    Computes the symbolic Lyapunov derivative and control terms.
+
+    The return signature is preserved for existing examples: only the second
+    control component is returned as ``u_func``.
+    """
+    V_dot, lambda_x, u_value, u_value2, u_mag, control_terms, b1, a = (
+        _compute_v_and_v_dotSR_terms(V_value, f, G, Q, R, x_syms, u_func)
+    )
+
     # Return important terms
     return (
         V_value,
@@ -92,7 +82,29 @@ def compute_v_and_v_dotSR(V_value, f, G, Q, R, x_syms, u_func):
         u_value[1],
         u_value2[1],
         u_mag,
-        [b_norm_squared, b_T[0], b_T[1]],
-        b_T[0, 1],
+        control_terms,
+        b1,
+        a,
+    )
+
+
+def compute_v_and_v_dotSR_full_control(V_value, f, G, Q, R, x_syms, u_func):
+    """
+    Same symbolic CLF terms as ``compute_v_and_v_dotSR``, but returns the full
+    input vector. Use this for multi-input systems such as the Caltech fan.
+    """
+    V_dot, lambda_x, u_value, u_value2, u_mag, control_terms, b1, a = (
+        _compute_v_and_v_dotSR_terms(V_value, f, G, Q, R, x_syms, u_func)
+    )
+
+    return (
+        V_value,
+        V_dot,
+        lambda_x,
+        u_value,
+        u_value2,
+        u_mag,
+        control_terms,
+        b1,
         a,
     )

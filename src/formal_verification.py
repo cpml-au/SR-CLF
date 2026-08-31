@@ -1,6 +1,7 @@
 import os
 import uuid
 import subprocess
+import numpy as np
 from sympy import symbols, sin, cos, tanh, sqrt, exp
 from src.SymVVdot_Calculations import compute_v_and_v_dotSR
 from SystemDynamicsSR import fSR, xSR, GSR, QSR, RSR
@@ -21,16 +22,55 @@ def get_sif():
 SIF_PATH = get_sif()
 
 
-def a_violation_check(expression, domain=2.0, tol=1e-5, delta=1e-3):
-    # symbols
-    x1_s, x2_s = symbols("x1 x2")
-    x_syms = [x1_s, x2_s]
+def _symbols_from_inputs(x_vals=None, x_syms=None):
+    if x_syms is not None:
+        return list(x_syms)
+    if x_vals is not None:
+        return list(symbols(f"x1:{len(x_vals) + 1}"))
+    return list(symbols("x1 x2"))
+
+
+def _domain_from_inputs(domain, x_vals, n_states):
+    if domain is not None:
+        return domain
+    if x_vals is None:
+        return 2.0
+
+    bounds = []
+    for values in x_vals:
+        arr = np.asarray(values, dtype=float)
+        low = float(np.nanmin(arr))
+        high = float(np.nanmax(arr))
+        extent = max(abs(low), abs(high))
+        bounds.append(extent)
+    if len(bounds) != n_states:
+        raise ValueError("x_vals length must match the number of state symbols")
+    return bounds
+
+
+def a_violation_check(
+    expression,
+    domain=None,
+    tol=1e-5,
+    delta=1e-3,
+    x_vals=None,
+    x_syms=None,
+    fSR_func=fSR,
+    GSR_func=GSR,
+    QSR_func=QSR,
+    RSR_func=RSR,
+    b_index=2,
+    origin_radius=None,
+    boxes="both",
+):
+    x_syms = _symbols_from_inputs(x_vals=x_vals, x_syms=x_syms)
+    domain = _domain_from_inputs(domain, x_vals, len(x_syms))
 
     # compute SymPy expressions
     _V, V_dot, *_rest, b_norm_squared, b1, a = compute_v_and_v_dotSR(
-        expression, fSR, GSR, QSR, RSR, x_syms, None
+        expression, fSR_func, GSR_func, QSR_func, RSR_func, x_syms, None
     )
-    b_sym = b_norm_squared[2]  # keep your indexing
+    b_sym = b_norm_squared[b_index]  # default keeps the previous 2D indexing
     a_sym = a
     vdot_sym = V_dot
 
@@ -42,8 +82,25 @@ def a_violation_check(expression, domain=2.0, tol=1e-5, delta=1e-3):
     vdot_path = os.path.join(out_dir, f"vdot_case_{uniq}.smt2")
 
     # write SMT2
-    write_smt2(ab_path, a=a_sym, b=b_sym, domain=domain, tol=tol, boxes="both")
-    write_smt2(vdot_path, vdot=vdot_sym, domain=domain, tol=tol, boxes="both")
+    write_smt2(
+        ab_path,
+        a=a_sym,
+        b=b_sym,
+        domain=domain,
+        tol=tol,
+        boxes=boxes,
+        x_syms=x_syms,
+        origin_radius=origin_radius,
+    )
+    write_smt2(
+        vdot_path,
+        vdot=vdot_sym,
+        domain=domain,
+        tol=tol,
+        boxes=boxes,
+        x_syms=x_syms,
+        origin_radius=origin_radius,
+    )
 
     # run dReal
     def run_dreal(path, delta=1e-3):

@@ -1,0 +1,777 @@
+Project root: /home/qaragoez/symclf-main_rnv
+PYTHONPATH: /home/qaragoez/symclf-main_rnv:
+Conda environment: /home/qaragoez/miniforge3/envs/flex
+Python: /home/qaragoez/miniforge3/envs/flex/bin/python
+Python 3.12.0
+Ray Python package: 2.55.1 /home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/__init__.py
+Ray CLI: /home/qaragoez/miniforge3/envs/flex/bin/ray
+ray, version 2.55.1
+Allocated nodes: s08n12 s08n13 s08n14 s08n22 s08n23 s08n24 s09n01 s09n02 s09n03 s09n04 s09n05 s09n06
+Head node: s08n12
+Head IP: 10.10.8.12
+Head address: 10.10.8.12:6379
+Starting Ray head on s08n12...
+Starting Ray worker on s08n13...
+Starting Ray worker on s08n14...
+2026-07-14 00:30:10,998	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-07-14 00:30:11,041	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.8.12[22m
+2026-07-14 00:30:37,249	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-07-14 00:30:37,249	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-07-14 00:30:37,249	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-07-14 00:30:37,250	INFO scripts.py:983 -- [36mNext steps[39m
+2026-07-14 00:30:37,250	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-07-14 00:30:37,250	INFO scripts.py:989 -- [1m  ray start --address='10.10.8.12:6379'[22m
+2026-07-14 00:30:37,250	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-07-14 00:30:37,250	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-07-14 00:30:37,250	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.8.12'[39m[26m)
+2026-07-14 00:30:37,250	INFO scripts.py:1017 -- To submit a Ray job using the Ray Jobs CLI:
+2026-07-14 00:30:37,250	INFO scripts.py:1018 -- [1m  RAY_API_SERVER_ADDRESS='http://10.10.8.12:8265' ray job submit --working-dir . -- python my_script.py[22m
+2026-07-14 00:30:37,250	INFO scripts.py:1027 -- See https://docs.ray.io/en/latest/cluster/running-applications/job-submission/index.html 
+2026-07-14 00:30:37,250	INFO scripts.py:1031 -- for more information on submitting Ray jobs to the Ray cluster.
+2026-07-14 00:30:37,250	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-07-14 00:30:37,250	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-07-14 00:30:37,250	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-07-14 00:30:37,250	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-07-14 00:30:37,250	INFO scripts.py:1045 -- To monitor and debug Ray, view the dashboard at 
+2026-07-14 00:30:37,250	INFO scripts.py:1046 --   [1m10.10.8.12:8265[22m[26m
+2026-07-14 00:30:37,250	INFO scripts.py:1053 -- [4mIf connection to the dashboard fails, check your firewall settings and network configuration.[24m
+2026-07-14 00:30:37,251	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:30:37,251	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:30:37,251	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:30:37,251	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+Starting Ray worker on s08n22...
+2026-07-14 00:30:28,585	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.8.13[22m
+2026-07-14 00:30:37,845	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:30:37,845	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:30:37,845	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:30:37,845	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:30:37,845	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:30:37,845	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:30:37,845	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:30:37,845	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:30:37,845	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+2026-07-14 00:30:33,530	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.8.14[22m
+2026-07-14 00:30:38,784	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:30:38,784	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:30:38,784	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:30:38,784	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:30:38,784	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:30:38,784	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:30:38,784	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:30:38,784	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:30:38,784	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+2026-07-14 00:30:38,641	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.8.22[22m
+2026-07-14 00:30:39,893	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:30:39,893	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:30:39,893	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:30:39,893	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:30:39,894	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:30:39,894	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:30:39,894	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:30:39,894	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:30:39,894	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+Starting Ray worker on s08n23...
+2026-07-14 00:30:43,597	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.8.23[22m
+2026-07-14 00:30:44,848	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:30:44,848	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:30:44,848	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:30:44,848	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:30:44,848	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:30:44,849	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:30:44,849	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:30:44,849	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:30:44,849	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+Starting Ray worker on s08n24...
+2026-07-14 00:30:48,605	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.8.24[22m
+2026-07-14 00:30:49,848	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:30:49,848	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:30:49,848	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:30:49,848	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:30:49,848	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:30:49,848	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:30:49,848	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:30:49,848	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:30:49,848	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+Starting Ray worker on s09n01...
+2026-07-14 00:30:53,597	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.9.1[22m
+2026-07-14 00:30:54,850	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:30:54,851	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:30:54,851	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:30:54,851	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:30:54,851	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:30:54,851	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:30:54,851	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:30:54,851	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:30:54,851	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+Starting Ray worker on s09n02...
+2026-07-14 00:30:58,601	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.9.2[22m
+2026-07-14 00:30:59,862	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:30:59,862	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:30:59,862	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:30:59,862	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:30:59,862	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:30:59,862	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:30:59,862	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:30:59,862	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:30:59,862	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+Starting Ray worker on s09n03...
+2026-07-14 00:31:03,527	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.9.3[22m
+2026-07-14 00:31:04,769	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:31:04,769	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:31:04,769	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:31:04,769	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:31:04,769	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:31:04,769	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:31:04,769	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:31:04,769	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:31:04,769	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+Starting Ray worker on s09n04...
+2026-07-14 00:31:08,561	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.9.4[22m
+2026-07-14 00:31:09,817	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:31:09,817	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:31:09,817	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:31:09,817	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:31:09,817	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:31:09,818	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:31:09,818	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:31:09,818	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:31:09,818	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+Starting Ray worker on s09n05...
+2026-07-14 00:31:13,650	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.9.5[22m
+2026-07-14 00:31:14,902	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:31:14,903	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:31:14,903	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:31:14,903	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:31:14,903	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:31:14,903	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:31:14,903	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:31:14,903	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:31:14,903	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+Starting Ray worker on s09n06...
+2026-07-14 00:31:18,542	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.9.6[22m
+2026-07-14 00:31:19,784	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-07-14 00:31:19,784	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-07-14 00:31:19,784	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-07-14 00:31:19,784	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-07-14 00:31:19,784	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-07-14 00:31:19,784	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-07-14 00:31:19,784	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-07-14 00:31:19,784	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-07-14 00:31:19,784	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-07-14_00-30-11_042592_3293216/logs/ray_process_exit.log[22m[26m
+Ray cluster status:
+======== Autoscaler status: 2026-07-14 00:31:39.469024 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_3b24af8d94dffb38666e4d275971deb00c973eee5d89dafce788326b
+ 1 node_e5eccf99c2c511335c659a608360ef6a50f6c832df42eca9fbd7e254
+ 1 node_2fc8fb1f44d017a2531f0ce3ae5bc72873d436a75255a9f63a9f4f39
+ 1 node_1a4a267782b791c3dc5ea0653e93927ac1542d703c065b283b33f81f
+ 1 node_ed5dbce54501156749157ed48af99f077524baf081cb4dae537738b0
+ 1 node_abf540aa882a070c177c6ef0c1fdbf9146e4ce6e409a0d51872be025
+ 1 node_781008c98ebcd244c94f33617b41a5705023b647d69d7f44de54d05a
+ 1 node_7ae0974021c62cfa9d4cfc45d910e68b326a960f5110017003443180
+ 1 node_4c5a91e18b4758a72656341dc2acd1e39391a68fa9a1f4b8750fefac
+ 1 node_44f24adea82c8af8382f399fe98614a5bdd5ee4edc7b474c55ececbd
+ 1 node_cee365a0e8747716f12a04f79d420eb43ef8ae0ee69fc9c2cfda1610
+ 1 node_9fb2bab33b32e93c442fc4d0bf476e7211c0bbba47965cdbda0538f9
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/768.0 CPU
+ 0B/4.13TiB memory
+ 0B/1.77TiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting run.py...
+Generating initial population(s)...
+ Seeding population with individuals...
+DONE.
+Evaluating initial population(s)...
+DONE.
+ -= START OF EVOLUTION =- 
+   	     	                      fitness                      	             size             
+   	     	---------------------------------------------------	------------------------------
+gen	evals	min   	avg        	max        	std        	min	avg   	max	std   
+1  	2500 	528680	2.65059e+07	5.21161e+07	2.26958e+07	2  	6.3976	23 	3.5732
+Best individuals of this generation:
+mul(mul(aq(x2, x3), exp(x4)), add(aq(x1, a), sin(x2)))
+2  	2500 	52188.4	5.43838e+06	4.07305e+07	5.00217e+06	2  	6.1452	30 	3.6577
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x1, sub(a, x3)), mul(x1, x2)))
+3  	2500 	36222.6	3.21987e+06	4.90407e+06	828125     	2  	7.8984	35 	4.0815
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x4, sub(a, x3)), mul(x1, x2)))
+4  	2500 	36222.6	2.58427e+06	3.68272e+06	709175     	3  	10.046	35 	4.4212
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x4, sub(a, x3)), mul(x1, x2)))
+5  	2500 	36222.6	2.03432e+06	2.84195e+06	601578     	5  	12.1312	31 	4.3854
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x4, sub(a, x3)), mul(x1, x2)))
+6  	2500 	36222.6	1.61006e+06	2.64458e+06	546007     	5  	13.9168	32 	4.5992
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x4, sub(a, x3)), mul(x1, x2)))
+7  	2500 	36222.6	1.2394e+06 	1.83076e+06	446396     	7  	15.816 	40 	4.7551
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x4, sub(a, x3)), mul(x1, x2)))
+8  	2500 	35881.9	945653     	1.66097e+06	379604     	7  	17.7192	40 	5.1703
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x4, sub(a, x3)), mul(x1, x2)))
+9  	2500 	35881.9	709532     	1.52443e+06	151091     	9  	19.5332	57 	5.6184
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x4, sub(a, x3)), mul(x1, x2)))
+10 	2500 	32026.5	641577     	810718     	103310     	9  	21.0344	68 	6.4369
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x4, sub(a, x3)), mul(sub(x1, x1), x4)))
+11 	2500 	27506.4	600269     	754777     	110757     	9  	23.1696	68 	7.3976
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x3, x2), mul(x4, x2)))
+12 	2500 	27506.4	554804     	696141     	116649     	9  	25.01  	68 	8.1235
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(x3, x2), mul(x4, x2)))
+13 	2500 	18060.7	518431     	654420     	127536     	9  	26.5364	84 	9.0586
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(mul(x4, x2), aq(x2, add(sub(x1, x1), a)))))
+14 	2500 	14706.2	483803     	625412     	144552     	9  	28.4064	97 	10.574
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(x1, x1), a)))))
+15 	2500 	14706.2	444727     	553883     	169569     	9  	30.1988	97 	11.6944
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(x1, x1), a)))))
+16 	2500 	14706.2	425338     	534428     	186138     	9  	33.0168	101	12.794 
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(x1, x1), a)))))
+17 	2500 	13486.8	422655     	534428     	187967     	11 	35.6884	105	14.519 
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(mul(x4, x4), x3), a)))))
+18 	2500 	13486.8	421095     	527326     	188639     	12 	39.1028	109	16.5266
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(mul(x4, x4), x3), a)))))
+19 	2500 	13486.8	419624     	525678     	189686     	12 	42.108 	121	18.2503
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(mul(x4, x4), x3), a)))))
+20 	2500 	13486.8	418033     	522161     	190552     	16 	43.4048	126	18.5498
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(mul(x4, x4), x3), a)))))
+21 	2500 	13486.8	416983     	513318     	191625     	17 	45.1684	135	19.115 
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(mul(x4, x4), x3), a)))))
+22 	2500 	13240.6	416045     	512915     	193335     	17 	46.914 	135	20.0507
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(x1, x1), x2)))))
+23 	2500 	13240.6	415064     	512890     	195054     	20 	47.5056	144	20.2484
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(x1, x1), x2)))))
+24 	2500 	13240.6	414215     	512864     	196432     	21 	47.0908	135	19.5387
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(x1, x1), x2)))))
+25 	2500 	12703.8	413694     	512857     	197152     	21 	46.2976	121	18.0644
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(add(mul(x1, x1), mul(x2, x2)), x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(add(add(mul(mul(x3, a), x4), mul(a, aq(x2, add(mul(x4, x1), a)))), mul(x1, mul(a, aq(x3, add(x2, a))))), aq(x2, add(sub(x1, x1), a)))))
+26 	2500 	12703.8	413363     	512837     	197405     	21 	45.618 	129	16.9354
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(add(mul(x1, x1), mul(x2, x2)), x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(add(add(mul(mul(x3, a), x4), mul(a, aq(x2, add(mul(x4, x1), a)))), mul(x1, mul(a, aq(x3, add(x2, a))))), aq(x2, add(sub(x1, x1), a)))))
+27 	2500 	12703.8	413067     	512656     	197575     	19 	44.788 	143	14.0946
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(add(mul(x1, x1), mul(x2, x2)), x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(add(add(mul(mul(x3, a), x4), mul(a, aq(x2, add(mul(x4, x1), a)))), mul(x1, mul(a, aq(x3, add(x2, a))))), aq(x2, add(sub(x1, x1), a)))))
+28 	2500 	12703.8	412862     	512583     	197681     	21 	46.2564	143	14.2265
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(add(mul(x1, x1), mul(x2, x2)), x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(add(add(mul(mul(x3, a), x4), mul(a, aq(x2, add(mul(x4, x1), a)))), mul(x1, mul(a, aq(x3, add(x2, a))))), aq(x2, add(sub(x1, x1), a)))))
+29 	2500 	12703.8	412716     	512526     	197834     	21 	47.3284	107	14.5434
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(add(mul(x1, x1), mul(x2, x2)), x2)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(add(add(mul(mul(x3, a), x4), mul(a, aq(x2, add(mul(x4, x1), a)))), mul(x1, mul(a, aq(x3, add(x2, a))))), aq(x2, add(sub(x1, x1), a)))))
+30 	2500 	12598.9	412581     	512466     	198030     	21 	47.9908	122	15.1327
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(aq(x3, x1), x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(mul(x1, sub(a, add(sub(x1, x3), a))), x1), x2)))))
+31 	2500 	12598.9	412476     	512416     	198168     	21 	48.8704	122	15.7226
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(aq(x3, x1), x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(mul(x1, sub(a, add(sub(x1, x3), a))), x1), x2)))))
+32 	2500 	12598.9	412353     	512356     	198353     	21 	50.0808	132	16.3594
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(aq(x3, x1), x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(mul(x1, sub(a, add(sub(x1, x3), a))), x1), x2)))))
+33 	2500 	12598.9	412198     	512306     	198602     	21 	51.112 	132	16.9273
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(aq(x3, x1), x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(mul(x1, sub(a, add(sub(x1, x3), a))), x1), x2)))))
+34 	2500 	12034.1	412055     	512251     	198833     	21 	52.0032	132	17.5902
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+35 	2500 	12034.1	411945     	512200     	198993     	21 	53.3488	132	18.235 
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+36 	2500 	12034.1	411868     	512163     	199068     	21 	54.0556	132	18.3676
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+37 	2500 	12034.1	411797     	512126     	199118     	21 	54.8236	132	18.4818
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+38 	2500 	12034.1	411732     	512089     	199140     	21 	55.9612	132	19.0639
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+39 	2500 	12034.1	411660     	512054     	199140     	21 	56.5712	132	19.2082
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+40 	2500 	12034.1	411549     	512031     	199121     	21 	56.9496	132	19.5119
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+41 	2500 	12034.1	411428     	511994     	199097     	20 	57.0564	146	19.8228
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+42 	2500 	12034.1	411261     	511962     	199040     	20 	56.5988	146	20.3604
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+43 	2500 	12034.1	411030     	511928     	198949     	20 	56.0376	146	20.4736
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+44 	2500 	12034.1	410785     	511902     	198843     	20 	54.9276	160	19.6346
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+45 	2500 	12034.1	410578     	511875     	198760     	20 	55.482 	160	19.4163
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+46 	2500 	12034.1	410440     	511846     	198711     	20 	56.0224	160	19.302 
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+47 	2500 	12034.1	410323     	511815     	198670     	20 	56.7444	160	19.2552
+Best individuals of this generation:
+add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(x2, x1)), add(mul(x3, x3), mul(x4, x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, x4))))
+48 	2500 	11977  	410189     	511793     	198616     	20 	57.47  	160	19.0432
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), x4), mul(x1, aq(x2, mul(mul(x2, x2), x1)))), mul(x3, aq(add(x4, x3), x2))))
+49 	2500 	11977  	410041     	511766     	198553     	21 	58.5764	160	19.0842
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), x4), mul(x1, aq(x2, mul(mul(x2, x2), x1)))), mul(x3, aq(add(x4, x3), x2))))
+50 	2500 	11977  	409882     	511743     	198486     	21 	60.234 	131	18.5127
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), x4), mul(x1, aq(x2, mul(mul(x2, x2), x1)))), mul(x3, aq(add(x4, x3), x2))))
+51 	2500 	11977  	409708     	511717     	198412     	21 	62.2008	131	18.1339
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), x4), mul(x1, aq(x2, mul(mul(x2, x2), x1)))), mul(x3, aq(add(x4, x3), x2))))
+52 	2500 	11977  	409327     	511700     	198366     	21 	63.1944	164	18.4215
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), x4), mul(x1, aq(x2, mul(mul(x2, x2), x1)))), mul(x3, aq(add(x4, x3), x2))))
+53 	2500 	11977  	408558     	511674     	198516     	21 	63.8888	139	18.7287
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), x4), mul(x1, aq(x2, mul(mul(x2, x2), x1)))), mul(x3, aq(add(x4, x3), x2))))
+54 	2500 	11977  	407965     	511653     	198570     	21 	64.6132	139	19.2035
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), x4), mul(x1, aq(x2, mul(mul(x2, x2), x1)))), mul(x3, aq(add(x4, x3), x2))))
+55 	2500 	11977  	406042     	511627     	198991     	21 	65.4332	133	19.2499
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), x4), mul(x1, aq(x2, mul(mul(x2, x2), x1)))), mul(x3, aq(add(x4, x3), x2))))
+56 	2500 	11977  	401875     	511600     	200246     	21 	65.8916	133	19.4561
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), x4), mul(x1, aq(x2, mul(mul(x2, x2), x1)))), mul(x3, aq(add(x4, x3), x2))))
+57 	2500 	11559.5	395484     	511569     	201869     	21 	65.9712	136	19.3285
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(aq(x4, a), x4))), add(mul(mul(x3, a), x4), mul(x3, aq(x3, add(sub(x1, add(x3, add(mul(x3, mul(x4, x4)), mul(x4, mul(x4, x4))))), x1)))))
+58 	2500 	8824.2 	383759     	511534     	204291     	21 	65.8452	136	18.6675
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), sub(x4, x3)), mul(x1, aq(x2, mul(x1, x1)))), mul(x3, aq(add(x4, x3), x2))))
+59 	2500 	8824.2 	366347     	511495     	206913     	21 	65.1228	130	16.5351
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), sub(x4, x3)), mul(x1, aq(x2, mul(x1, x1)))), mul(x3, aq(add(x4, x3), x2))))
+60 	2500 	8824.2 	351199     	511453     	210309     	21 	65.5412	130	16.4422
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), sub(x4, x3)), mul(x1, aq(x2, mul(x1, x1)))), mul(x3, aq(add(x4, x3), x2))))
+61 	2500 	8488.67	340569     	511406     	215564     	21 	66.0152	130	16.5588
+Best individuals of this generation:
+add(add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4))), add(add(mul(mul(x3, a), sub(x4, x3)), mul(x1, aq(x2, mul(x1, x1)))), mul(x3, aq(add(x4, x3), x2))))
+62 	2500 	7990.7 	335590     	511356     	219024     	21 	66.1476	135	16.6718
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), a), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(sub(mul(x2, x3), x2), x1), x2), a), x1), x2), add(x3, x1))), add(sub(mul(x2, x3), mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+63 	2500 	3311.14	332131     	511320     	221827     	21 	66.1552	143	16.7953
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(a, a), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x2), add(x3, x1))), add(sub(mul(x2, x3), mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+64 	2500 	3311.14	330041     	511273     	223809     	21 	66.514 	143	17.0376
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(a, a), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x2), add(x3, x1))), add(sub(mul(x2, x3), mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+65 	2500 	3311.14	328865     	511238     	224999     	21 	66.6676	143	17.2639
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(a, a), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x2), add(x3, x1))), add(sub(mul(x2, x3), mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+66 	2500 	1711.75	327213     	511198     	226766     	21 	66.9968	143	17.5502
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), a), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x3), add(x3, a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+67 	2500 	1711.75	326383     	511161     	227662     	21 	67.1768	143	17.8253
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), a), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x3), add(x3, a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+68 	2500 	1687.9 	325138     	511136     	229048     	21 	67.3296	143	18.1157
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x2), x2), a), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(mul(sub(add(mul(x2, x3), a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a), add(sub(mul(mul(add(mul(add(mul(x3, x2), x1), x1), x1), x1), x2), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+69 	2500 	1572.07	323839     	511117     	230483     	21 	67.7484	141	18.4863
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), a), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(mul(sub(add(mul(x2, x3), a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(a, mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x2), x2)), x4)), a))))))
+70 	2500 	1198.12	322142     	511093     	232371     	21 	68.02  	149	18.8565
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(add(x4, sub(mul(sub(a, x2), a), x2)), a), x2), a), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(x4, add(x3, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(x1, x1), x1), x2)), x4)), a))))))
+71 	2500 	741.53 	320549     	511070     	234158     	21 	68.104 	149	18.5572
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(mul(x1, x1), x2), a)), add(sub(mul(x2, x3), x2), mul(sub(a, x1), a)))), x2), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x2, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+72 	2500 	741.53 	318955     	511053     	235924     	21 	68.4904	149	18.7759
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(mul(x1, x1), x2), a)), add(sub(mul(x2, x3), x2), mul(sub(a, x1), a)))), x2), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x2, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+73 	2500 	741.53 	317356     	511038     	237664     	21 	68.936 	149	18.8184
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(mul(x1, x1), x2), a)), add(sub(mul(x2, x3), x2), mul(sub(a, x1), a)))), x2), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x2, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+74 	2500 	503.895	316110     	511023     	239014     	21 	69.2772	149	18.8008
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+75 	2500 	503.895	314376     	511003     	240872     	21 	69.4372	149	18.5072
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+76 	2500 	503.895	312927     	510984     	242433     	21 	70.1276	149	18.6321
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+77 	2500 	503.895	311686     	510962     	243809     	21 	70.744 	149	18.6213
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+78 	2500 	503.895	310963     	510943     	244633     	21 	71.14  	149	18.3462
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+79 	2500 	503.895	310331     	510920     	245364     	21 	71.8868	149	17.9735
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+80 	2500 	503.895	309891     	510898     	245878     	21 	72.85  	152	17.6964
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+81 	2500 	503.895	309526     	510874     	246308     	21 	73.79  	152	17.495 
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+82 	2500 	503.895	309303     	510861     	246572     	21 	74.3692	152	17.1642
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+83 	2500 	503.895	309130     	510843     	246777     	21 	75.076 	152	16.9869
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+84 	2500 	503.895	308968     	510827     	246968     	21 	75.7084	152	16.5996
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+85 	2500 	503.895	308848     	510813     	247108     	21 	76.2172	152	16.4816
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+86 	2500 	503.895	308761     	510797     	247209     	21 	76.666 	152	16.5079
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+87 	2500 	503.895	308656     	510781     	247334     	21 	77.0576	152	16.2775
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+88 	2500 	503.895	308565     	510771     	247440     	21 	77.646 	152	16.3387
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+89 	2500 	503.895	308474     	510758     	247548     	21 	77.8844	152	16.2594
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+90 	2500 	503.895	308421     	510749     	247609     	21 	78.3192	152	16.5795
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+91 	2500 	503.895	308369     	510733     	247669     	21 	78.6328	149	16.5777
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+92 	2500 	503.895	308315     	510727     	247732     	21 	78.8932	149	16.7156
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+93 	2500 	503.895	308293     	510720     	247757     	21 	79.2156	149	16.8704
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+94 	2500 	503.895	308233     	510713     	247828     	21 	79.4384	149	16.9288
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+95 	2500 	503.895	308193     	510707     	247876     	21 	79.5052	182	16.8297
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+96 	2500 	503.895	308146     	510700     	247931     	21 	79.4872	149	16.6859
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+97 	2500 	503.895	308108     	510692     	247975     	21 	79.6232	147	16.5592
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+98 	2500 	503.895	308074     	510685     	248014     	21 	79.79  	147	16.6031
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+99 	2500 	503.895	308021     	510681     	248077     	21 	79.994 	147	16.7697
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+100	2500 	503.895	307984     	510677     	248122     	21 	80.128 	147	16.9873
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+101	2500 	503.895	307950     	510674     	248161     	21 	80.368 	147	16.9938
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+102	2500 	503.895	307911     	510669     	248207     	21 	80.56  	152	17.1334
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+103	2500 	503.895	307879     	510664     	248244     	21 	80.5488	145	16.8047
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+104	2500 	503.895	307833     	510662     	248300     	21 	80.7156	145	16.9726
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+105	2500 	503.895	307799     	510658     	248339     	21 	80.7508	145	17.0416
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+106	2500 	503.895	307775     	510655     	248368     	21 	80.9932	145	17.1262
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+107	2500 	503.895	307740     	510653     	248410     	21 	81.26  	157	17.3859
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+108	2500 	503.895	307710     	510650     	248446     	21 	81.4972	157	17.6929
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+109	2500 	503.895	307676     	510646     	248486     	21 	81.6136	157	17.7665
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+110	2500 	503.895	307641     	510643     	248528     	21 	82.102 	157	17.9419
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+111	2500 	503.895	307606     	510640     	248570     	21 	82.4668	157	18.1589
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+112	2500 	503.895	307570     	510639     	248613     	21 	82.6832	157	18.3741
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+113	2500 	503.895	307533     	510636     	248657     	21 	83.0148	157	18.6869
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+114	2500 	503.895	307502     	510633     	248693     	21 	83.126 	175	19.1346
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+115	2500 	503.895	307467     	510630     	248736     	21 	83.3576	175	19.2116
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+116	2500 	503.895	307429     	510628     	248782     	21 	83.7436	175	19.4776
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+117	2500 	503.895	307402     	510626     	248814     	21 	83.884 	175	19.6187
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+118	2500 	503.895	307364     	510624     	248860     	21 	84.032 	179	20.1435
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+119	2500 	503.895	307337     	510621     	248892     	21 	84.3996	179	20.5009
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+120	2500 	503.895	307310     	510620     	248924     	21 	84.7972	179	20.8706
+Best individuals of this generation:
+exp(add(aq(add(x2, a), mul(add(mul(mul(x1, x1), x2), add(x4, sub(mul(sub(a, x2), a), add(x4, a)))), x1)), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x3), sub(sub(a, add(mul(mul(add(mul(mul(x1, x1), x4), a), x1), x2), add(sub(add(x3, x1), add(x4, sin(x2))), a))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(sub(x3, mul(x4, a)), a), x1), x1), x2)), x4)), a))))))
+121	2500 	497.187	307280     	510618     	248959     	21 	84.9164	179	20.9578
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+122	2500 	497.187	307245     	510615     	249002     	21 	84.7256	175	21.0462
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+123	2500 	497.187	307213     	510614     	249040     	21 	84.8296	175	21.0953
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+124	2500 	497.187	307194     	510612     	249063     	21 	85.1212	177	21.5927
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+125	2500 	497.187	307172     	510610     	249089     	21 	85.0708	177	21.584 
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+126	2500 	497.187	307150     	510608     	249115     	21 	85.0812	177	21.7495
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+127	2500 	497.187	307130     	510607     	249140     	21 	84.9836	184	21.9044
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+128	2500 	497.187	307108     	510605     	249165     	21 	85.0044	184	22.1481
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+129	2500 	497.187	307083     	510604     	249196     	21 	84.9132	184	22.1795
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+130	2500 	497.187	307066     	510603     	249216     	21 	85.052 	184	22.225 
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+131	2500 	497.187	307048     	510602     	249238     	21 	85.0748	184	22.2457
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+132	2500 	497.187	307031     	510600     	249257     	21 	85.0344	184	22.3878
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+133	2500 	497.187	307016     	510599     	249276     	21 	85.0484	184	22.268 
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+134	2500 	497.187	307002     	510597     	249293     	21 	85.0864	184	22.2782
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+135	2500 	497.187	306991     	510596     	249305     	21 	85.0884	184	22.1505
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+136	2500 	497.187	306980     	510595     	249318     	21 	85.016 	184	22.1348
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+137	2500 	497.187	306970     	510594     	249329     	21 	84.9848	175	21.8065
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+138	2500 	497.187	306962     	510593     	249339     	21 	85.0032	175	21.8306
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+139	2500 	497.187	306953     	510592     	249349     	21 	85.2764	175	21.8298
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+140	2500 	497.187	306946     	510591     	249358     	21 	85.3084	175	21.8286
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+141	2500 	497.187	306939     	510590     	249366     	21 	85.2812	175	21.7635
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+142	2500 	497.187	306932     	510589     	249374     	21 	85.432 	175	21.8672
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+143	2500 	497.187	306926     	510588     	249381     	21 	85.4324	175	21.8974
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+144	2500 	497.187	306919     	510588     	249388     	21 	85.3124	175	21.833 
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+145	2500 	497.187	306913     	510587     	249395     	21 	85.3512	175	21.731 
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+146	2500 	497.187	306905     	510587     	249404     	21 	85.2448	175	21.6994
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+147	2500 	497.187	306899     	510586     	249411     	21 	85.2332	175	21.5757
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x2, x1))), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(sub(add(mul(x2, x3), a), sub(mul(x2, x3), x2)), a))))))
+148	2500 	496.007	306894     	510585     	249416     	21 	85.4084	175	21.6448
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+149	2500 	496.007	306890     	510584     	249421     	21 	85.5412	175	21.5338
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+150	2500 	496.007	306886     	510584     	249426     	21 	85.6184	175	21.6148
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+151	2500 	496.007	306881     	510583     	249431     	21 	85.6816	175	21.6205
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+152	2500 	496.007	306876     	510583     	249437     	21 	85.7552	177	21.5977
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+153	2500 	496.007	306873     	510582     	249441     	21 	85.8528	177	21.6943
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+154	2500 	496.007	306868     	510581     	249446     	21 	86.13  	177	21.8495
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+155	2500 	496.007	306866     	510581     	249449     	21 	86.1892	177	21.8412
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+156	2500 	496.007	306863     	510580     	249452     	21 	86.4396	177	22.0369
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+157	2500 	496.007	306861     	510580     	249454     	21 	86.5944	177	22.0656
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+158	2500 	496.007	306858     	510579     	249457     	21 	86.6628	177	21.9452
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+159	2500 	496.007	306855     	510579     	249460     	21 	86.7296	177	22.002 
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+160	2500 	496.007	306853     	510579     	249462     	21 	86.8628	177	21.9404
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+161	2500 	496.007	306851     	510579     	249464     	21 	87.0108	177	22.1231
+Best individuals of this generation:
+exp(add(mul(mul(add(mul(mul(x1, x1), x2), a), x1), x1), aq(a, mul(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), a)), add(sub(mul(x2, x3), x2), x2))), x2), sub(x3, mul(x4, a))), sub(add(a, x3), mul(add(x4, a), a))))))
+162	2500 	491.211	306849     	510578     	249467     	21 	87.2528	177	22.3322
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(add(x2, a), a))), mul(mul(sub(mul(a, a), x2), a), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(x1, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(x1, sub(mul(a, a), x3)), x1), x2)), x4)), a))))))
+163	2500 	491.211	306847     	510577     	249469     	21 	87.3184	177	22.3234
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(add(x2, a), a))), mul(mul(sub(mul(a, a), x2), a), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(x1, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(x1, sub(mul(a, a), x3)), x1), x2)), x4)), a))))))
+164	2500 	491.211	306846     	510577     	249471     	21 	87.496 	177	22.3342
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(add(x2, a), a))), mul(mul(sub(mul(a, a), x2), a), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(x1, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(x1, sub(mul(a, a), x3)), x1), x2)), x4)), a))))))
+165	2500 	486.392	306844     	510577     	249473     	21 	87.622 	177	22.4444
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+166	2500 	486.392	306842     	510576     	249474     	21 	87.9484	177	22.6937
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+167	2500 	486.392	306840     	510576     	249476     	21 	88.1084	177	22.7704
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+168	2500 	486.392	306839     	510575     	249477     	21 	88.248 	177	22.7341
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+169	2500 	486.392	306837     	510574     	249479     	21 	88.3372	180	22.825 
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+170	2500 	486.392	306836     	510574     	249480     	21 	88.4068	180	22.817 
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+171	2500 	486.392	306835     	510574     	249481     	21 	88.6772	180	22.8433
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+172	2500 	486.392	306834     	510573     	249482     	21 	88.8816	180	23.0297
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+173	2500 	486.392	306833     	510573     	249484     	21 	89.1904	180	23.2169
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+174	2500 	486.392	306831     	510573     	249485     	21 	89.2728	180	23.3419
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+175	2500 	486.392	306830     	510572     	249486     	21 	89.5   	180	23.5047
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+176	2500 	486.392	306829     	510572     	249488     	21 	89.614 	180	23.6057
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+177	2500 	486.392	306828     	510572     	249489     	21 	89.6188	180	23.5753
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+178	2500 	486.392	306826     	510571     	249490     	21 	89.7212	180	23.6437
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+179	2500 	486.392	306825     	510571     	249491     	21 	90.15  	184	23.9487
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+180	2500 	486.392	306824     	510571     	249492     	21 	90.4016	184	24.0516
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+181	2500 	486.392	306824     	510570     	249492     	21 	90.5292	184	24.1207
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+182	2500 	486.392	306823     	510570     	249493     	21 	90.586 	184	24.1666
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+183	2500 	486.392	306822     	510570     	249494     	21 	90.7876	184	24.2032
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x3), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(add(mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(x1, x1), add(x3, x1))), x3)), x2), sub(x3, mul(x4, a))), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), a), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, x1), a), mul(sub(add(x4, a), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), x1), x2)), x4)), a))))))
+184	2500 	480.786	306821     	510570     	249495     	21 	90.9296	184	24.2561
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(mul(x2, x3), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, a), a), mul(sub(add(x4, x1), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), add(mul(mul(x4, x1), x2), sub(mul(a, a), x3))), x2)), x4)), a))))))
+185	2500 	480.786	306820     	510570     	249496     	21 	91.2728	186	24.3565
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(mul(x2, x3), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, a), a), mul(sub(add(x4, x1), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), add(mul(mul(x4, x1), x2), sub(mul(a, a), x3))), x2)), x4)), a))))))
+186	2500 	480.786	306820     	510569     	249496     	21 	91.3584	186	24.3742
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(mul(x2, x3), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, a), a), mul(sub(add(x4, x1), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), add(mul(mul(x4, x1), x2), sub(mul(a, a), x3))), x2)), x4)), a))))))
+187	2500 	480.786	306819     	510569     	249497     	21 	91.6072	186	24.6122
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(mul(x2, x3), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, a), a), mul(sub(add(x4, x1), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), add(mul(mul(x4, x1), x2), sub(mul(a, a), x3))), x2)), x4)), a))))))
+188	2500 	480.786	306818     	510569     	249498     	21 	91.6748	186	24.6704
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(mul(x2, x3), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, a), a), mul(sub(add(x4, x1), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), add(mul(mul(x4, x1), x2), sub(mul(a, a), x3))), x2)), x4)), a))))))
+189	2500 	480.786	306817     	510569     	249498     	21 	91.8312	186	24.729 
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(mul(x2, x3), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, a), a), mul(sub(add(x4, x1), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), add(mul(mul(x4, x1), x2), sub(mul(a, a), x3))), x2)), x4)), a))))))
+190	2500 	480.786	306817     	510569     	249499     	21 	92.0196	186	24.8348
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(mul(x2, x3), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, a), a), mul(sub(add(x4, x1), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), add(mul(mul(x4, x1), x2), sub(mul(a, a), x3))), x2)), x4)), a))))))
+191	2500 	480.786	306816     	510569     	249500     	21 	92.3496	186	24.9335
+Best individuals of this generation:
+exp(add(aq(sin(sub(x2, add(x4, a))), mul(mul(sub(mul(sub(a, x1), a), x2), sub(sub(a, add(mul(a, x2), add(x3, x1))), add(sub(mul(x2, x3), x2), mul(a, a)))), x1)), aq(a, mul(add(mul(sub(mul(sub(a, sub(a, x1)), a), x3), x2), sub(x3, mul(x4, a))), sub(mul(sub(a, a), a), mul(sub(add(x4, x1), sub(sin(mul(mul(add(mul(mul(x4, x1), x2), x1), add(mul(mul(x4, x1), x2), sub(mul(a, a), x3))), x2)), x4)), a))))))
+Stopping Ray Slurm steps...

@@ -1,0 +1,6 @@
+{"generation": 1, "expression": "add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4)))", "constants": [], "fitness": 545921.047043621}
+{"generation": 2, "expression": "add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4)))", "constants": [], "fitness": 545921.047043621}
+{"generation": 3, "expression": "add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4)))", "constants": [], "fitness": 545921.047043621}
+{"generation": 4, "expression": "add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4)))", "constants": [], "fitness": 545921.047043621}
+{"generation": 5, "expression": "add(add(mul(x1, x1), mul(x2, x2)), add(mul(x3, x3), mul(x4, x4)))", "constants": [], "fitness": 545921.047043621}
+{"generation": 6, "expression": "add(add(mul(x1, x1), mul(mul(a, x2), x2)), add(mul(x3, x3), mul(x4, x4)))", "constants": [9.768111533978566], "fitness": 275753.5725717609}

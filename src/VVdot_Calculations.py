@@ -4,7 +4,7 @@ from sympy import symbols, lambdify
 from src.Functions import safe_divide  # Import a safe division utility function
 
 
-def compute_v_and_v_dot(V_function, state_grids, true_data, scales, f, G, Q, R, TRQlim, u_func):
+def compute_v_and_v_dot(V_function, state_grids, true_data, scales, f, G, Q, R, TRQlim, u_func, TrnOFFb=True):
     """
     Dimension-agnostic computation of V, V_dot, and control terms.
 
@@ -79,9 +79,14 @@ def compute_v_and_v_dot(V_function, state_grids, true_data, scales, f, G, Q, R, 
     b_norm_squared = np.einsum("...i,ij,...j->...", b_T, np.linalg.inv(R_matrix), b_T)
 
     # Compute lambda_x values
-    lambda_x_vals = safe_divide(
-        np.sqrt(a**2 + x_norm_squared * b_norm_squared) + a, b_norm_squared, default=0
-    )
+    if not TrnOFFb:
+        lambda_x_vals = safe_divide(
+            np.sqrt(a**2 + x_norm_squared * b_norm_squared**2) + a, b_norm_squared, default=0
+        )
+    else:
+        lambda_x_vals = (np.sqrt(a**2 + x_norm_squared * b_norm_squared) + a) / (b_norm_squared+1e-6)
+        # lambda_x_vals = (np.sqrt(a**2 + x_norm_squared * b_norm_squared**2) + a) / (b_norm_squared+1e-6)
+        #lambda_x_vals = (np.sqrt(a**2 + x_norm_squared * b_norm_squared**2) + a) / np.sqrt(b_norm_squared**2+1)
 
     # Compute optimal control input u
     if u_func is not None:
@@ -102,7 +107,8 @@ def compute_v_and_v_dot(V_function, state_grids, true_data, scales, f, G, Q, R, 
     if TRQlim is not None:
         u_vals = np.clip(u_vals, -TRQlim, TRQlim)
 
-    u_vals[b_norm_squared < 1e-6] = 0
+    if not TrnOFFb:
+        u_vals[b_norm_squared < 1e-6] = 0
 
     # Compute V̇ = ∇V·f + ∇V·(G·u) - the time derivative of the CLF function (V_dot)
     V_dot_f = np.einsum("...i,i...->...", V_grad, f_vector)

@@ -52,7 +52,7 @@ def fitness(individuals_str, toolbox, **kwargs):
     # Compute fitness for each individual
     for i, (ind, num_consts) in enumerate(zip(callables, const_counts)):
         # If the individual's length exceeds _, assign a very high fitness (penalty)
-        if individ_length[i] >= 80:
+        if individ_length[i] >= 400:
             consts = None
             fitnesses[i] = (1e8,)
         else:

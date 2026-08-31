@@ -3,7 +3,13 @@ from sympy import symbols, Matrix, lambdify
 
 
 def calculate_cost(
-    t_vals, x_vals, u_func_sym, G, Q, R, b_norm_squared_sym, TRQlim, skip_steps
+    t_vals,
+    x_vals, 
+    u_func_sym, 
+    G, Q, R, 
+    b_norm_squared_sym, 
+    TRQlim, 
+    skip_steps,
 ):
     """
     Calculate the cost function J = ∫ (x^T Q x + u^T R u) dt.

@@ -1,0 +1,67 @@
+2026-07-14 00:33:15,418	INFO worker.py:1672 -- Using address 10.10.8.12:6379 set in the environment variable RAY_ADDRESS
+2026-07-14 00:33:15,425	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.8.12:6379...
+2026-07-14 00:33:15,512	INFO worker.py:2003 -- Connected to Ray cluster. View the dashboard at [1m[32mhttp://10.10.8.12:8265 [39m[22m
+/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-07-14T10:57:52.775] error: *** JOB 73425 ON s08n12 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.776] error: *** STEP 73425.1 ON s08n12 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.776] error: *** STEP 73425.2 ON s08n13 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.778] error: *** STEP 73425.4 ON s08n22 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.778] error: *** STEP 73425.6 ON s08n24 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.778] error: *** STEP 73425.5 ON s08n23 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.778] error: *** STEP 73425.7 ON s09n01 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.779] error: *** STEP 73425.3 ON s08n14 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.779] error: *** STEP 73425.11 ON s09n05 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.779] error: *** STEP 73425.12 ON s09n06 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.779] error: *** STEP 73425.9 ON s09n03 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.780] error: *** STEP 73425.10 ON s09n04 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14T10:57:52.781] error: *** STEP 73425.8 ON s09n02 CANCELLED AT 2026-07-14T10:57:52 DUE to SIGNAL Terminated ***
+[2026-07-14 10:57:52,851 E 3294398 3294472] core_worker.cc:475: :info_message: Attempting to recover 4 lost objects by resubmitting their tasks or setting a new primary location from existing copies. To disable object reconstruction, set @ray.remote(max_retries=0).
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: error: s08n22: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.4
+srun: error: s09n05: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.11
+srun: error: s08n14: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.3
+srun: error: s09n04: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.10
+srun: error: s09n06: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.12
+srun: error: s08n24: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.6
+srun: error: s08n13: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.2
+srun: error: s09n01: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.7
+srun: error: s09n02: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.8
+srun: error: s08n23: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.5
+srun: error: s09n03: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.9
+srun: error: s08n12: task 0: Exited with exit code 1
+srun: Terminating StepId=73425.1

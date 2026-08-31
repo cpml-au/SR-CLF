@@ -32,9 +32,33 @@ def sympy_to_smt(e):
     if e.is_Pow:
         base, expn = e.as_base_exp()
 
+        def half_integer_power_to_smt(base_expr, numerator):
+            if numerator == 0:
+                return "1.0"
+
+            abs_num = abs(numerator)
+            factors = []
+            if abs_num // 2:
+                factors.extend(sympy_to_smt(base_expr) for _ in range(abs_num // 2))
+            if abs_num % 2:
+                factors.append(f"(sqrt {sympy_to_smt(base_expr)})")
+
+            if len(factors) == 1:
+                value = factors[0]
+            else:
+                value = f"(* {' '.join(factors)})"
+
+            if numerator < 0:
+                return f"(/ 1.0 {value})"
+            return value
+
         # sqrt: exponent = 1/2
         if isinstance(expn, Rational) and expn.p == 1 and expn.q == 2:
             return f"(sqrt {sympy_to_smt(base)})"
+
+        # Half-integer powers, e.g. x**(-3/2) from aq/sqrt expressions.
+        if isinstance(expn, Rational) and expn.q == 2:
+            return half_integer_power_to_smt(base, int(expn.p))
 
         # Integer exponents
         if expn.is_Integer:
@@ -55,6 +79,12 @@ def sympy_to_smt(e):
             n = int(float(expn))
             return sympy_to_smt(base) if n == 1 else f"(* {' '.join(sympy_to_smt(base) for _ in range(n))})"
 
+        # Float-looking half integer, e.g. -1.5.
+        if expn.is_Float:
+            doubled = 2.0 * float(expn)
+            if doubled.is_integer():
+                return half_integer_power_to_smt(base, int(doubled))
+
         raise NotImplementedError(f"Non-integer power: {e}")
 
     # Elementary functions
@@ -71,44 +101,105 @@ def sympy_to_smt(e):
 # -----------------------
 # SMT2 file writer
 # -----------------------
-def write_smt2(filename, a=None, b=None, vdot=None, domain=2.0, tol=1e-5, boxes="both"):
+def _as_bounds(domain, x_syms):
+    if np_is_sequence(domain) and len(domain) == len(x_syms):
+        bounds = []
+        for item in domain:
+            if np_is_sequence(item) and len(item) == 2:
+                bounds.append((float(item[0]), float(item[1])))
+            else:
+                value = float(item)
+                bounds.append((-value, value))
+        return bounds
+
+    value = float(domain)
+    return [(-value, value) for _ in x_syms]
+
+
+def np_is_sequence(value):
+    return isinstance(value, (list, tuple))
+
+
+def _outside_origin_ball_assertion(x_syms, origin_radius):
+    radius_squared = float(origin_radius) ** 2
+    norm_squared = "(+ " + " ".join(f"(* {x.name} {x.name})" for x in x_syms) + ")"
+    return f"(assert (>= {norm_squared} {_real_lit(radius_squared)}))"
+
+
+def write_smt2(
+    filename,
+    a=None,
+    b=None,
+    vdot=None,
+    domain=2.0,
+    tol=1e-5,
+    boxes="both",
+    x_syms=None,
+    origin_radius=None,
+):
     """
     Writes an SMT-LIB2 file.
       - Pass either (a and b) or (vdot).
-      - a, b, vdot are SymPy expressions in x1, x2.
+      - a, b, vdot are SymPy expressions in x1, x2, ...
       - boxes: "both" | "neg" | "pos"
     """
     if (vdot is None) == (a is None or b is None):
         raise ValueError("Provide either vdot, or both a and b (but not both).")
 
+    if x_syms is None:
+        x_syms = symbols("x1 x2")
+    x_syms = list(x_syms)
+    bounds = _as_bounds(domain, x_syms)
+
     lines = []
     lines.append("(set-logic QF_NRA)")
-    lines.append("(declare-fun x1 () Real)")
-    lines.append("(declare-fun x2 () Real)")
+    for x in x_syms:
+        lines.append(f"(declare-fun {x.name} () Real)")
+
+    args = " ".join(f"({x.name} Real)" for x in x_syms)
+    call_args = " ".join(x.name for x in x_syms)
 
     if vdot is not None:
-        lines.append(f"(define-fun vdot ((x1 Real) (x2 Real)) Real {sympy_to_smt(vdot)})")
+        lines.append(f"(define-fun vdot ({args}) Real {sympy_to_smt(vdot)})")
     else:
-        lines.append(f"(define-fun a ((x1 Real) (x2 Real)) Real {sympy_to_smt(a)})")
-        lines.append(f"(define-fun b ((x1 Real) (x2 Real)) Real {sympy_to_smt(b)})")
+        lines.append(f"(define-fun a ({args}) Real {sympy_to_smt(a)})")
+        lines.append(f"(define-fun b ({args}) Real {sympy_to_smt(b)})")
 
-    if boxes == "both":
-        lines.append(
-            f"(assert (or (and (<= 0.001 x1) (<= x1 {domain}) (<= 0.001 x2) (<= x2 {domain}))"
-            f"            (and (<= -{domain} x1) (<= x1 -0.001) (<= -{domain} x2) (<= x2 -0.001))))"
-        )
+    if origin_radius is not None:
+        box_terms = [
+            f"(<= {_real_lit(low)} {x.name}) (<= {x.name} {_real_lit(high)})"
+            for x, (low, high) in zip(x_syms, bounds)
+        ]
+        lines.append(f"(assert (and {' '.join(box_terms)}))")
+        lines.append(_outside_origin_ball_assertion(x_syms, origin_radius))
+    elif boxes == "both":
+        pos_terms = []
+        neg_terms = []
+        for x, (low, high) in zip(x_syms, bounds):
+            extent = max(abs(low), abs(high))
+            pos_terms.append(f"(<= 0.001 {x.name}) (<= {x.name} {_real_lit(extent)})")
+            neg_terms.append(f"(<= -{_real_lit(extent)} {x.name}) (<= {x.name} -0.001)")
+        lines.append(f"(assert (or (and {' '.join(pos_terms)}) (and {' '.join(neg_terms)})))")
     elif boxes == "neg":
-        lines.append(f"(assert (and (<= -{domain} x1) (<= x1 -0.001) (<= -{domain} x2) (<= x2 -0.001)))")
+        neg_terms = []
+        for x, (low, high) in zip(x_syms, bounds):
+            extent = max(abs(low), abs(high))
+            neg_terms.append(f"(<= -{_real_lit(extent)} {x.name}) (<= {x.name} -0.001)")
+        lines.append(f"(assert (and {' '.join(neg_terms)}))")
     elif boxes == "pos":
-        lines.append(f"(assert (and (<= 0.001 x1) (<= x1 {domain}) (<= 0.001 x2) (<= x2 {domain})))")
+        pos_terms = []
+        for x, (low, high) in zip(x_syms, bounds):
+            extent = max(abs(low), abs(high))
+            pos_terms.append(f"(<= 0.001 {x.name}) (<= {x.name} {_real_lit(extent)})")
+        lines.append(f"(assert (and {' '.join(pos_terms)}))")
     else:
         raise ValueError('boxes must be "both", "neg", or "pos".')
 
     if vdot is not None:
-        lines.append(f"(assert (> (vdot x1 x2) {tol}))")
+        lines.append(f"(assert (> (vdot {call_args}) {tol}))")
     else:
-        lines.append("(assert (= (b x1 x2) 0.0))")
-        lines.append(f"(assert (> (a x1 x2) {tol}))")
+        lines.append(f"(assert (= (b {call_args}) 0.0))")
+        lines.append(f"(assert (> (a {call_args}) {tol}))")
 
     lines.append("(check-sat)")
     lines.append("(exit)")
