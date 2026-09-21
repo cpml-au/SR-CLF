@@ -1,0 +1,8 @@
+Extracting /home/qaragoez/flex.tar.gz (3.9G) to /tmp/flex_147929 on s02n01.prime.net...
+local env ready in 87 s: python=/tmp/flex_147929/bin/python CONDA_PREFIX=/tmp/flex_147929
+V9 gpu_lattice=0 topk_seeds=1 precomputed_fields=1 numba_threads=6 max_len=90
+V8 max_tree_length=90 skip_dead=1 det4_batch=32
+V9 cma_elite evals=4000 popsize=0 seed=1 max_fitness=3000 count=6
+V10 inherit_consts=1 cma_select=kappa cma_pool_jit=1 skip_dead_adam=1 cma_pool=0
+V10 cma resumable=1 cap=2500 first_cap=5000 deep=6 x 2500 slices=20 x 500
+RUN cma pool=1 fraction=0.10 evals=2500 popsize=18 count=3 seed=2 pool_per_node=28

@@ -1,0 +1,225 @@
+local env ready on all nodes in 108 s: python=/tmp/flex_147905/bin/python
+V10 port: cma resumable=1 select=kappa cap=2500 first_cap=5000 deep=6 x 2500 slices=20 x 500
+FLEX_MIGRATION_FIX=1 SYMCLF6D_B_NORM=l1 SYMCLF6D_GRID_POINTS=7 SYMCLF6D_LATTICE_LINES=3 SYMCLF6D_LATTICE_MESH=7 SYMCLF6D_LATTICE_SAMPLES=801 SYMCLF6D_SKIP_DEAD_ADAM=1 SYMCLF6D_SYSTEM=quad6d SYMCLF6D_TEMPLATE=full SYMCLF6D_TEMPLATE_X0=1.0 SYMCLF_CMA_DEEP_COUNT=6 SYMCLF_CMA_DEEP_EVALS=2500 SYMCLF_CMA_ELITE_COUNT=3 SYMCLF_CMA_ELITE_EVALS=2000 SYMCLF_CMA_ELITE_MAX_FITNESS=3000 SYMCLF_CMA_ELITE_POPSIZE=18 SYMCLF_CMA_ELITE_SEED=2 SYMCLF_CMA_FIRST_MAX_EVALS=5000 SYMCLF_CMA_MAX_EVALS_PER_STRUCTURE=2500 SYMCLF_CMA_MAX_RESTARTS=9 SYMCLF_CMA_RESUMABLE=1 SYMCLF_CMA_SELECT=kappa SYMCLF_CMA_SLICE_COUNT=20 SYMCLF_CMA_SLICE_EVALS=500 SYMCLF_CP3D_NESTED_PENALTY=50 SYMCLF_CP3D_ROA_C_TARGET=0.004 SYMCLF_CP3D_ROA_WEIGHT=500 SYMCLF_DET4_B_REL_TOL=1e-6 SYMCLF_DET4_GATE_KAPPA_CAP=1e6 SYMCLF_DET4_KAPPA_MIN=0 SYMCLF_DET4_ORIGIN_SEEDS=1 SYMCLF_DET4_PD_EPS=1e-4 SYMCLF_DET4_PEN_CV=10 SYMCLF_DET4_PEN_CV_TARGET=0.05 SYMCLF_DET4_PEN_KAPPA=100 SYMCLF_DET4_PEN_KAPPA_TARGET=1.0 SYMCLF_DET4_PEN_VOL=20 SYMCLF_DET4_PEN_VOL_TARGET=0.02 SYMCLF_DET4_PROJECT_ASCENT=1 SYMCLF_DET4_RHO=1000 SYMCLF_GPU2_TUNER_GENERATIONS=5 SYMCLF_GPU2_TUNER_RANDOM_POPULATION=35 SYMCLF_LENGTH_REG=0.005 SYMCLF_MAX_TREE_LENGTH=190 SYMCLF_TUNER_ADAM_EXIT_ZERO_GRAD=1 SYMCLF_TUNER_ADAM_PATIENCE=0 SYMCLF_TUNER_CONST_PERTURB_FRAC=0.5 SYMCLF_TUNER_CONST_RANGE=30 SYMCLF_TUNER_REFINE_LR=0.30 SYMCLF_TUNER_REFINE_STEPS=40 SYMCLF_TUNER_SKIP_ADAM_AT_ZERO=1 SYMCLF_V2_BOX=3,3,3,3,3,3 
+
+numba warm-up done
+Starting Ray head on s06n02 (attempt 1)...
+2026-09-20 05:56:09,293	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-09-20 05:56:09,293	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.6.2[22m
+2026-09-20 05:56:11,683	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-09-20 05:56:11,683	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-09-20 05:56:11,683	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-09-20 05:56:11,684	INFO scripts.py:983 -- [36mNext steps[39m
+2026-09-20 05:56:11,684	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-09-20 05:56:11,684	INFO scripts.py:989 -- [1m  ray start --address='10.10.6.2:47905'[22m
+2026-09-20 05:56:11,684	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-09-20 05:56:11,684	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-09-20 05:56:11,684	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.6.2'[39m[26m)
+2026-09-20 05:56:11,684	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-09-20 05:56:11,684	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-09-20 05:56:11,684	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-09-20 05:56:11,684	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-09-20 05:56:11,684	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 05:56:11,684	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 05:56:11,684	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 05:56:11,684	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_05-56-09_294170_1516177/logs/ray_process_exit.log[22m[26m
+2026-09-20 05:56:30,090	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.7.4[22m
+2026-09-20 05:56:31,296	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 05:56:31,297	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 05:56:31,297	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 05:56:31,297	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 05:56:31,297	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 05:56:31,298	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 05:56:31,298	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 05:56:31,299	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 05:56:31,299	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_05-56-09_294170_1516177/logs/ray_process_exit.log[22m[26m
+2026-09-20 05:56:30,095	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.7.2[22m
+2026-09-20 05:56:31,305	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 05:56:31,306	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 05:56:31,306	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 05:56:31,306	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 05:56:31,306	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 05:56:30,091	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.7.3[22m
+2026-09-20 05:56:31,306	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 05:56:31,306	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 05:56:31,306	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 05:56:31,307	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 05:56:31,307	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 05:56:31,307	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 05:56:31,307	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 05:56:31,307	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 05:56:31,307	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_05-56-09_294170_1516177/logs/ray_process_exit.log[22m[26m
+2026-09-20 05:56:31,307	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 05:56:31,308	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 05:56:31,308	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 05:56:31,308	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_05-56-09_294170_1516177/logs/ray_process_exit.log[22m[26m
+all 4 Ray nodes registered
+======== Autoscaler status: 2026-09-20 05:56:40.162258 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_5daa5340c23e17b0fe7cab7c7b267ca0522bdce481c189a589477413
+ 1 node_d7de01f6ce4dd2e03174fa4de94f04631f970a4ad58859f7c6998f42
+ 1 node_e69694fb239750b2e2cdf77906f4e8a4473ff99bd2420c86de72270b
+ 1 node_6ce8b7e9013eb799c6372972378ab99c0801a141dd02a336c618dddf
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/144.0 CPU
+ 0B/1.03TiB memory
+ 0B/451.84GiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting run.py (6-D GP) 05:56:41
+6D Ray resources: {'CPU': 144.0, 'node:10.10.7.4': 1.0, 'object_store_memory': 485159903230.0, 'memory': 1132039774210.0, 'node:10.10.7.2': 1.0, 'node:10.10.7.3': 1.0, 'node:__internal_head__': 1.0, 'node:10.10.6.2': 1.0}
+6D system quad6d: box (3.0, 3.0, 3.0, 3.0, 3.0, 3.0) rho 1000.0 b-norm l1 grid 7^6 | hinges cv 10.0@0.05 kappa 100.0@1.0 vol 20.0@0.02
+6D GP hyperparameters: population=2500 (num_individuals=500 x num_islands=5), generations=20000, crossover=0.7, mutation=0.3, reg_param=0.005, mig_freq=10, mig_frac=0.05
+6D scheduling: 142 single-thread CPU actors on {'s06n02.prime.net': 36, 's07n04.prime.net': 36, 's07n02.prime.net': 35, 's07n03.prime.net': 35} | tuner SEA 36 x 5 + Adam 40 | max_len 190 | CMA 3 x 2000 evals, popsize 18, seed 2, gate 3000
+Generating initial population(s)...
+ Seeding population with individuals...
+DONE.
+Evaluating initial population(s)...
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 2502 evals, 1 certified, 0 resumed, restarts [0], states held 1
+6D stages: candidates=500 s1_s=19.6 tune_mean_s=1.93 det4_candidates=5 det4_unique=5 det4_checked=5 det4_cached=0 s2_s=11.5 dead=495 certified=1 fitness_min=0.625 cma_runs=1 cma_certified=1 cma_best=0.625 cma_s=679.2 cache_entries=5
+6D champion CMA: 0.625 -> 0.625 in 2502 evals (total 5000/5000), certified_at 1, restarts 2
+6D stages: candidates=500 s1_s=9.9 tune_mean_s=1.69 det4_candidates=1 det4_unique=1 det4_checked=1 det4_cached=0 s2_s=2.5 dead=499 certified=0 fitness_min=2.30737e+06 cma_runs=1 cma_certified=1 cma_best=0.625 cma_s=667.4 cache_entries=6
+6D stages: candidates=500 s1_s=10.1 tune_mean_s=1.69 det4_candidates=2 det4_unique=2 det4_checked=2 det4_cached=0 s2_s=1.6 dead=498 certified=0 fitness_min=2.63479e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=8
+6D stages: candidates=500 s1_s=12.7 tune_mean_s=1.81 det4_candidates=1 det4_unique=1 det4_checked=1 det4_cached=0 s2_s=1.6 dead=499 certified=0 fitness_min=2.81729e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=9
+6D stages: candidates=500 s1_s=10.1 tune_mean_s=1.58 det4_candidates=0 det4_unique=0 det4_checked=0 det4_cached=0 s2_s=0.0 dead=500 certified=0 fitness_min=2.17632e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=9
+DONE.
+ -= START OF EVOLUTION =- 
+6D stages: candidates=2500 s1_s=54.2 tune_mean_s=1.92 det4_candidates=15 det4_unique=12 det4_checked=9 det4_cached=6 s2_s=2.7 dead=2485 certified=0 fitness_min=600.625 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=18
+   	     	                      fitness                      	             size             
+   	     	---------------------------------------------------	------------------------------
+gen	evals	min  	avg        	max        	std        	min	avg   	max	std   
+1  	2500 	0.625	8.19373e+06	1.24233e+07	2.56746e+06	2  	6.1344	125	6.4283
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 1 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 678 s) | boundary_min=50.4 volume=0.0203
+6D stages: candidates=2500 s1_s=213.4 tune_mean_s=2.73 det4_candidates=22 det4_unique=18 det4_checked=16 det4_cached=6 s2_s=3.0 dead=2478 certified=0 fitness_min=600.625 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=34
+2  	2500 	0.625	6.07385e+06	9.00854e+06	1.51301e+06	2  	6.6236	125	8.3579
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 2 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 678 s) | boundary_min=50.4 volume=0.0203
+6D stages: candidates=2500 s1_s=76.4 tune_mean_s=3.29 det4_candidates=24 det4_unique=16 det4_checked=15 det4_cached=9 s2_s=2.7 dead=2476 certified=0 fitness_min=600.625 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=49
+3  	2500 	0.625	4.90304e+06	6.73671e+06	1.03825e+06	3  	7.9052	125	11.0019
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 3 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 678 s) | boundary_min=50.4 volume=0.0203
+6D stages: candidates=2500 s1_s=173.8 tune_mean_s=3.92 det4_candidates=59 det4_unique=30 det4_checked=28 det4_cached=31 s2_s=10.7 dead=2441 certified=0 fitness_min=600.625 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=77
+4  	2500 	0.625	4.15553e+06	5.28867e+06	1.12208e+06	3  	10.9992	125	16.9813
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 4 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 678 s) | boundary_min=50.4 volume=0.0203
+6D stages: candidates=2500 s1_s=146.2 tune_mean_s=4.69 det4_candidates=107 det4_unique=56 det4_checked=55 det4_cached=52 s2_s=11.6 dead=2393 certified=0 fitness_min=600.625 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=132
+5  	2500 	0.625	3.38551e+06	5.00854e+06	1.19118e+06	3  	16.4924	125	23.2552
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 5 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 678 s) | boundary_min=50.4 volume=0.0203
+6D stages: candidates=2500 s1_s=262.5 tune_mean_s=6.52 det4_candidates=269 det4_unique=128 det4_checked=120 det4_cached=149 s2_s=13.0 dead=2231 certified=0 fitness_min=600.625 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=252
+6  	2500 	0.625	2.52071e+06	4.17664e+06	1.20703e+06	5  	25.7308	125	33.3078
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 6 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 678 s) | boundary_min=50.4 volume=0.0203
+6D stages: candidates=2500 s1_s=247.2 tune_mean_s=7.99 det4_candidates=497 det4_unique=197 det4_checked=181 det4_cached=315 s2_s=11.7 dead=2003 certified=0 fitness_min=600.625 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=433
+7  	2500 	0.625	1.87328e+06	3.57222e+06	1.15812e+06	7  	38.3504	125	43.6091
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 7 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 678 s) | boundary_min=50.4 volume=0.0203
+6D stages: candidates=2500 s1_s=221.8 tune_mean_s=9.82 det4_candidates=758 det4_unique=318 det4_checked=303 det4_cached=454 s2_s=7.5 dead=1742 certified=0 fitness_min=600.625 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=736
+8  	2500 	0.625	1.41185e+06	3.01031e+06	958762     	9  	40.8432	125	42.4583
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 8 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 678 s) | boundary_min=50.4 volume=0.0203
+6D stages: candidates=2500 s1_s=286.6 tune_mean_s=12.52 det4_candidates=998 det4_unique=544 det4_checked=520 det4_cached=477 s2_s=11.6 dead=1502 certified=0 fitness_min=600.625 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=1256
+9  	2500 	0.625	1.02493e+06	2.21145e+06	814535     	10 	42.8964	125	41.5417
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 9 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 678 s) | boundary_min=50.4 volume=0.0203
+6D stages: candidates=2500 s1_s=360.1 tune_mean_s=16.17 det4_candidates=1332 det4_unique=881 det4_checked=822 det4_cached=507 s2_s=17.9 dead=1168 certified=0 fitness_min=600.625 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=2078
+FLEX migration at generation 10: migRing, 25 individuals per island
+10 	2500 	600.625	592575     	2.00854e+06	580767     	11 	45.7648	125	40.2425
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 10 best fitness=600.625 len=125 :: grid=600 [roa=600] lattice c_v=0.5 kappa=-0 | extra=0.625 | det4 price=0 c_v*=0.5 kappa*=-1.895e-17 certified=False worst_r=4.24 pen=0/100/0 | boundary_min=6 volume=0.0215
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 2502 evals, 0 certified, 0 resumed, restarts [0], states held 2
+6D stages: candidates=2500 s1_s=458.4 tune_mean_s=21.60 det4_candidates=1667 det4_unique=1188 det4_checked=1085 det4_cached=578 s2_s=23.9 dead=833 certified=0 fitness_min=600.475 cma_runs=1 cma_certified=0 cma_best=600.475 cma_s=583.9 cache_entries=3163
+11 	2500 	600.475	287450     	1.12092e+06	423117     	12 	49.9136	125	41.1242
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 11 best fitness=600.475 len=95 :: grid=600 [roa=600] lattice c_v=1.323 kappa=-0 | extra=0.475 | det4 price=4.463e-07 c_v*=1.307 kappa*=-8.926e-10 certified=False worst_r=3 pen=0/100/0 | cma 686.5->600.5 (2502 evals, certified_at None, 584 s) | boundary_min=19.93 volume=0.0238
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 5004 evals, 0 certified, 1 resumed, restarts [0, 0], states held 3
+6D stages: candidates=2500 s1_s=572.2 tune_mean_s=27.01 det4_candidates=1806 det4_unique=1260 det4_checked=1148 det4_cached=656 s2_s=27.0 dead=694 certified=0 fitness_min=600.455 cma_runs=2 cma_certified=0 cma_best=600.455 cma_s=582.8 cache_entries=4311
+12 	2500 	600.455	88059.7    	1e+06      	221597     	13 	54.5036	125	42.1304
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), a), mul(a, mul(x6, x6)))
+GEN 12 best fitness=600.455 len=91 :: grid=600 [roa=600] lattice c_v=2.887 kappa=-0 | extra=0.455 | det4 price=1.273e-05 c_v*=2.857 kappa*=-2.546e-08 certified=False worst_r=3 pen=0/100/0 | cma 1052->600.5 (2502 evals, certified_at None, 581 s) | boundary_min=35.27 volume=0.0253
+6D cma (resumable): 1 structures (0 deep, 1 slices), 7 loops in flight, 2502 evals, 0 certified, 1 resumed, restarts [0], states held 3
+6D stages: candidates=2500 s1_s=641.3 tune_mean_s=30.11 det4_candidates=1870 det4_unique=1228 det4_checked=1102 det4_cached=764 s2_s=26.7 dead=630 certified=0 fitness_min=600.455 cma_runs=1 cma_certified=0 cma_best=600.455 cma_s=575.5 cache_entries=5413
+13 	2500 	600.455	13197.4    	143956     	20299.7    	13 	62.0532	125	44.8614
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), a), mul(a, mul(x6, x6)))
+GEN 13 best fitness=600.455 len=91 :: grid=600 [roa=600] lattice c_v=2.999 kappa=-0 | extra=0.455 | det4 price=8.033e-10 c_v*=2.988 kappa*=-1.606e-12 certified=False worst_r=3 pen=0/100/0 | cma 1052->600.5 (2502 evals, certified_at None, 575 s) | boundary_min=33.96 volume=0.0204
+6D cma (resumable): 2 structures (2 deep, 0 slices), 7 loops in flight, 5004 evals, 0 certified, 0 resumed, restarts [0, 0], states held 5
+6D stages: candidates=2500 s1_s=690.3 tune_mean_s=30.52 det4_candidates=1937 det4_unique=1137 det4_checked=1042 det4_cached=893 s2_s=25.8 dead=563 certified=0 fitness_min=600.475 cma_runs=2 cma_certified=0 cma_best=600.475 cma_s=801.1 cache_entries=6455
+14 	2500 	600.455	6886.52    	23478.8    	5694.15    	13 	69.0756	125	46.1864
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), a), mul(a, mul(x6, x6)))
+GEN 14 best fitness=600.455 len=91 :: grid=600 [roa=600] lattice c_v=2.999 kappa=-0 | extra=0.455 | det4 price=8.033e-10 c_v*=2.988 kappa*=-1.606e-12 certified=False worst_r=3 pen=0/100/0 | cma 1052->600.5 (2502 evals, certified_at None, 575 s) | boundary_min=33.96 volume=0.0204
+6D cma (resumable): 4 structures (3 deep, 1 slices), 7 loops in flight, 10008 evals, 0 certified, 1 resumed, restarts [0, 0, 0, 0], states held 8
+6D stages: candidates=2500 s1_s=680.3 tune_mean_s=31.04 det4_candidates=1973 det4_unique=1071 det4_checked=974 det4_cached=998 s2_s=23.8 dead=527 certified=0 fitness_min=600.455 cma_runs=4 cma_certified=0 cma_best=600.455 cma_s=820.4 cache_entries=7429
+15 	2500 	600.455	5933.38    	12873.8    	4432.18    	13 	69.5336	125	45.7517
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), a), mul(a, mul(x6, x6)))
+GEN 15 best fitness=600.455 len=91 :: grid=600 [roa=600] lattice c_v=2.999 kappa=-0 | extra=0.455 | det4 price=8.033e-10 c_v*=2.988 kappa*=-1.606e-12 certified=False worst_r=3 pen=0/100/0 | cma 1052->600.5 (2502 evals, certified_at None, 575 s) | boundary_min=33.96 volume=0.0204
+6D cma (resumable): 5 structures (4 deep, 1 slices), 7 loops in flight, 12510 evals, 0 certified, 1 resumed, restarts [0, 0, 0, 0, 0], states held 12
+6D stages: candidates=2500 s1_s=685.8 tune_mean_s=30.90 det4_candidates=1940 det4_unique=1060 det4_checked=979 det4_cached=959 s2_s=23.6 dead=560 certified=0 fitness_min=600.46 cma_runs=5 cma_certified=0 cma_best=600.46 cma_s=847.3 cache_entries=8408
+16 	2500 	600.455	5638.17    	10838.7    	4131.5     	14 	70.044 	125	45.28  
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), a), mul(a, mul(x6, x6)))
+GEN 16 best fitness=600.455 len=91 :: grid=600 [roa=600] lattice c_v=2.999 kappa=-0 | extra=0.455 | det4 price=8.033e-10 c_v*=2.988 kappa*=-1.606e-12 certified=False worst_r=3 pen=0/100/0 | cma 1052->600.5 (2502 evals, certified_at None, 575 s) | boundary_min=33.96 volume=0.0204
+6D cma (resumable): 10 structures (1 deep, 9 slices), 7 loops in flight, 9036 evals, 0 certified, 1 resumed, restarts [0, 0, 0, 0, 0, 0], states held 21
+6D stages: candidates=2500 s1_s=722.9 tune_mean_s=32.65 det4_candidates=1996 det4_unique=1107 det4_checked=995 det4_cached=996 s2_s=23.8 dead=504 certified=0 fitness_min=600.455 cma_runs=10 cma_certified=0 cma_best=600.455 cma_s=894.9 cache_entries=9403
+17 	2500 	600.455	5505.47    	9690.21    	4009.84    	15 	70.0768	125	45.195 
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), a), mul(a, mul(x6, x6)))
+GEN 17 best fitness=600.455 len=91 :: grid=600 [roa=600] lattice c_v=2.999 kappa=-0 | extra=0.455 | det4 price=8.033e-10 c_v*=2.988 kappa*=-1.606e-12 certified=False worst_r=3 pen=0/100/0 | cma 1052->600.5 (2502 evals, certified_at None, 575 s) | boundary_min=33.96 volume=0.0204
+6D cma (resumable): 12 structures (3 deep, 9 slices), 7 loops in flight, 14040 evals, 0 certified, 1 resumed, restarts [0, 0, 0, 0, 0, 0], states held 32
+6D stages: candidates=2500 s1_s=729.6 tune_mean_s=33.10 det4_candidates=1975 det4_unique=1132 det4_checked=1038 det4_cached=932 s2_s=24.8 dead=525 certified=0 fitness_min=600.465 cma_runs=12 cma_certified=0 cma_best=600.465 cma_s=952.4 cache_entries=10441
+18 	2500 	600.455	5441.57    	9211.58    	3954.46    	15 	70.4808	125	44.8296
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), a), mul(a, mul(x6, x6)))
+GEN 18 best fitness=600.455 len=91 :: grid=600 [roa=600] lattice c_v=2.999 kappa=-0 | extra=0.455 | det4 price=8.033e-10 c_v*=2.988 kappa*=-1.606e-12 certified=False worst_r=3 pen=0/100/0 | cma 1052->600.5 (2502 evals, certified_at None, 575 s) | boundary_min=33.96 volume=0.0204
+6D cma (resumable): 15 structures (0 deep, 15 slices), 7 loops in flight, 11052 evals, 1 certified, 2 resumed, restarts [0, 0, 0, 0, 0, 0], states held 45
+6D stages: candidates=2500 s1_s=793.9 tune_mean_s=31.59 det4_candidates=1982 det4_unique=1115 det4_checked=1005 det4_cached=974 s2_s=24.0 dead=518 certified=1 fitness_min=50.9797 cma_runs=15 cma_certified=1 cma_best=50.9797 cma_s=918.4 cache_entries=11446
+19 	2500 	50.9797	5403.11    	8961.8     	3922.35    	15 	71.2968	125	44.2036
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(x2, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 19 best fitness=50.9797 len=103 :: grid=17.11 [roa=17.1] lattice c_v=0.7988 kappa=5.017 | extra=0.515 | det4 price=33.35 c_v*=0.7698 kappa*=0.6665 certified=True worst_r=5.08 pen=0/33.4/17.1 | cma 617.8->50.98 (1998 evals, certified_at 20, 822 s) | boundary_min=17.31 volume=0.00289
+6D cma (resumable): 28 structures (1 deep, 27 slices), 7 loops in flight, 19098 evals, 0 certified, 5 resumed, restarts [0, 0, 0, 0, 0, 0], states held 68
+6D stages: candidates=2500 s1_s=716.6 tune_mean_s=30.46 det4_candidates=2006 det4_unique=1174 det4_checked=1080 det4_cached=921 s2_s=24.9 dead=494 certified=0 fitness_min=600.455 cma_runs=28 cma_certified=0 cma_best=600.455 cma_s=1200.6 cache_entries=12526
+FLEX migration at generation 20: migRing, 25 individuals per island
+20 	2500 	50.9797	5383.9     	8781.98    	3906.28    	16 	72.2524	125	43.4329
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(x2, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 20 best fitness=50.9797 len=103 :: grid=17.11 [roa=17.1] lattice c_v=0.7988 kappa=5.017 | extra=0.515 | det4 price=33.35 c_v*=0.7698 kappa*=0.6665 certified=True worst_r=5.08 pen=0/33.4/17.1 | cma 617.8->50.98 (1998 evals, certified_at 20, 822 s) | boundary_min=17.31 volume=0.00289
+6D cma (resumable): 27 structures (0 deep, 27 slices), 7 loops in flight, 16596 evals, 1 certified, 3 resumed, restarts [0, 0, 0, 0, 0, 0], states held 92
+6D stages: candidates=2500 s1_s=647.4 tune_mean_s=26.81 det4_candidates=2027 det4_unique=1139 det4_checked=1025 det4_cached=999 s2_s=23.1 dead=473 certified=1 fitness_min=108.896 cma_runs=27 cma_certified=1 cma_best=108.896 cma_s=1148.0 cache_entries=13551
+21 	2500 	50.9797	5197.4     	8684.3     	3931.97    	16 	72.0776	125	44.632 
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(x2, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 21 best fitness=50.9797 len=103 :: grid=17.11 [roa=17.1] lattice c_v=0.7988 kappa=5.017 | extra=0.515 | det4 price=33.35 c_v*=0.7698 kappa*=0.6665 certified=True worst_r=5.08 pen=0/33.4/17.1 | cma 617.8->50.98 (1998 evals, certified_at 20, 822 s) | boundary_min=17.31 volume=0.00289
+6D cma (resumable): 35 structures (1 deep, 34 slices), 7 loops in flight, 22122 evals, 1 certified, 9 resumed, restarts [0, 0, 0, 0, 0, 0], states held 118
+6D stages: candidates=2500 s1_s=666.6 tune_mean_s=28.37 det4_candidates=1991 det4_unique=1115 det4_checked=991 det4_cached=996 s2_s=22.5 dead=509 certified=1 fitness_min=105.53 cma_runs=35 cma_certified=1 cma_best=105.53 cma_s=1400.7 cache_entries=14542
+22 	2500 	50.9797	5004.86    	8624.77    	3953.02    	16 	72.7396	125	45.8742
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(x2, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 22 best fitness=50.9797 len=103 :: grid=17.11 [roa=17.1] lattice c_v=0.7988 kappa=5.017 | extra=0.515 | det4 price=33.35 c_v*=0.7698 kappa*=0.6665 certified=True worst_r=5.08 pen=0/33.4/17.1 | cma 617.8->50.98 (1998 evals, certified_at 20, 822 s) | boundary_min=17.31 volume=0.00289

@@ -1,0 +1,188 @@
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+  @njit(cache=True, parallel=True)
+2026-09-11 15:25:49,973	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.2.1:44452...
+2026-09-11 15:25:50,036	INFO worker.py:2012 -- Connected to Ray cluster.
+/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+[36m(GPUFitnessActor pid=1618329)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618329)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618329)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618329)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618329)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618329)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618329)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618329)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618329)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+[36m(GPUFitnessActor pid=1618329)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618329)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+[36m(GPUFitnessActor pid=1618329)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618333)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618333)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618333)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618333)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618333)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618333)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618333)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618333)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618333)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+[36m(GPUFitnessActor pid=1618333)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618333)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+[36m(GPUFitnessActor pid=1618333)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618338)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618338)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618338)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618338)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618338)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618338)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618338)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618338)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618338)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+[36m(GPUFitnessActor pid=1618338)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618338)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+[36m(GPUFitnessActor pid=1618338)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618330)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618330)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618330)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618330)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618330)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618330)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618330)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618330)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618330)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+[36m(GPUFitnessActor pid=1618330)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618330)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+[36m(GPUFitnessActor pid=1618330)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618335)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618335)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618335)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618335)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618335)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618335)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618335)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618335)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618335)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+[36m(GPUFitnessActor pid=1618335)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618335)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+[36m(GPUFitnessActor pid=1618335)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618334)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618334)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618334)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618334)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618334)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618334)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618334)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618334)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618334)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+[36m(GPUFitnessActor pid=1618334)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618334)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+[36m(GPUFitnessActor pid=1618334)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618337)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618337)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618337)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618337)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618337)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618337)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618337)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618337)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618337)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+[36m(GPUFitnessActor pid=1618337)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618337)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+[36m(GPUFitnessActor pid=1618337)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618339)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618339)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618339)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618339)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618339)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618339)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618339)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618339)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618339)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+[36m(GPUFitnessActor pid=1618339)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618339)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+[36m(GPUFitnessActor pid=1618339)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618336)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618336)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618336)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618336)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618336)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618336)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618336)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+[36m(GPUFitnessActor pid=1618336)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618336)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+[36m(GPUFitnessActor pid=1618336)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618336)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+[36m(GPUFitnessActor pid=1618336)[0m   x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+[36m(GPUFitnessActor pid=1618333)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+[36m(GPUFitnessActor pid=1618333)[0m   @njit(cache=True, parallel=True)
+[36m(GPUFitnessActor pid=1618330)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+[36m(GPUFitnessActor pid=1618330)[0m   @njit(cache=True, parallel=True)
+[36m(GPUFitnessActor pid=1618329)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+[36m(GPUFitnessActor pid=1618329)[0m   @njit(cache=True, parallel=True)
+[36m(GPUFitnessActor pid=1618335)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+[36m(GPUFitnessActor pid=1618335)[0m   @njit(cache=True, parallel=True)
+[36m(GPUFitnessActor pid=1618334)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+[36m(GPUFitnessActor pid=1618334)[0m   @njit(cache=True, parallel=True)
+[36m(GPUFitnessActor pid=1618338)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+[36m(GPUFitnessActor pid=1618338)[0m   @njit(cache=True, parallel=True)
+[36m(GPUFitnessActor pid=1618339)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+[36m(GPUFitnessActor pid=1618339)[0m   @njit(cache=True, parallel=True)
+[36m(GPUFitnessActor pid=1618337)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+[36m(GPUFitnessActor pid=1618337)[0m   @njit(cache=True, parallel=True)
+[36m(GPUFitnessActor pid=1618336)[0m /home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+[36m(GPUFitnessActor pid=1618336)[0m   @njit(cache=True, parallel=True)
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-09-11T15:33:57.288] error: *** STEP 144452.2 ON s02n01 CANCELLED AT 2026-09-11T15:33:57 DUE to SIGNAL Terminated ***
+[2026-09-11T15:33:57.293] error: *** JOB 144452 ON s02n01 CANCELLED AT 2026-09-11T15:33:57 DUE to SIGNAL Terminated ***
+[2026-09-11T15:33:57.294] error: *** STEP 144452.3 ON s02n01 CANCELLED AT 2026-09-11T15:33:57 DUE to SIGNAL Terminated ***
+[2026-09-11 15:33:57,298 E 1618271 1618328] core_worker.cc:475: :info_message: Attempting to recover 3 lost objects by resubmitting their tasks or setting a new primary location from existing copies. To disable object reconstruction, set @ray.remote(max_retries=0).
+Traceback (most recent call last):
+  File "/home/qaragoez/symclf_clean/symclf/examples/3DCartPolerV6/run.py", line 448, in <module>
+    main()
+  File "/home/qaragoez/symclf_clean/symclf/examples/3DCartPolerV6/run.py", line 404, in main
+    gpsr.fit(train_data)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 473, in fit
+    self.__run(toolbox)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 710, in __run
+    self._evaluate_init_pop(toolbox)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 695, in _evaluate_init_pop
+    fitnesses = toolbox.map(toolbox.evaluate_train, self.__pop[i])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/src3DCartPoleV3/ray_fitness.py", line 549, in persistent_actor_mapper
+    if not full_exact_enabled:
+                            ^^
+  File "/home/qaragoez/symclf_clean/symclf/src3DCartPoleV3/ray_fitness.py", line 330, in _actor_map
+    next_batch = 0
+                   
+  File "/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/_private/worker.py", line 1025, in get_objects
+    raise value
+ray.exceptions.ActorDiedError: The actor died unexpectedly before finishing this task.
+	class_name: GPUFitnessActor
+	actor_id: 36d2994bd06eb9900bf03beb01000000
+	pid: 1618334
+	namespace: 9413aae1-6007-4b97-ac4c-79b2625eb5f6
+	ip: 10.10.2.1
+The actor is dead because its owner has died. Owner Id: 01000000ffffffffffffffffffffffffffffffffffffffffffffffff Owner Ip address: 10.10.2.1 Owner worker exit type: SYSTEM_ERROR Worker exit detail: Owner's node has crashed.
+srun: error: s02n01: task 0: Exited with exit code 1
+srun: Terminating StepId=144452.2

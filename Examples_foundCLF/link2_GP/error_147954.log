@@ -1,0 +1,12 @@
+2026-09-20 21:14:51,258	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.8.12:47954...
+2026-09-20 21:14:51,308	INFO worker.py:2012 -- Connected to Ray cluster.
+/tmp/flex_147954/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-09-20T21:17:53.402] error: *** STEP 147954.3 ON s08n22 CANCELLED AT 2026-09-20T21:17:53 DUE to SIGNAL Terminated ***
+[2026-09-20T21:17:53.403] error: *** JOB 147954 ON s08n12 CANCELLED AT 2026-09-20T21:17:53 DUE to SIGNAL Terminated ***
+[2026-09-20T21:17:53.403] error: *** STEP 147954.2 ON s08n12 CANCELLED AT 2026-09-20T21:17:53 DUE to SIGNAL Terminated ***
+[2026-09-20 21:17:53,423 E 1261839 1261874] core_worker.cc:475: :info_message: Attempting to recover 3 lost objects by resubmitting their tasks or setting a new primary location from existing copies. To disable object reconstruction, set @ray.remote(max_retries=0).
+srun: forcing job termination
+srun: forcing job termination

@@ -1,0 +1,83 @@
+2026-09-20 04:27:41,181	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.6.2:47887...
+2026-09-20 04:27:41,221	INFO worker.py:2012 -- Connected to Ray cluster.
+/tmp/flex_147887/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-09-20T05:15:29.526] error: *** JOB 147887 ON s06n02 CANCELLED AT 2026-09-20T05:15:29 DUE to SIGNAL Terminated ***
+[2026-09-20T05:15:29.527] error: *** STEP 147887.2 ON s06n02 CANCELLED AT 2026-09-20T05:15:29 DUE to SIGNAL Terminated ***
+[2026-09-20T05:15:29.532] error: *** STEP 147887.4 ON s07n02 CANCELLED AT 2026-09-20T05:15:29 DUE to SIGNAL Terminated ***
+[2026-09-20T05:15:29.533] error: *** STEP 147887.3 ON s07n04 CANCELLED AT 2026-09-20T05:15:29 DUE to SIGNAL Terminated ***
+[2026-09-20T05:15:29.533] error: *** STEP 147887.5 ON s07n03 CANCELLED AT 2026-09-20T05:15:29 DUE to SIGNAL Terminated ***
+Traceback (most recent call last):
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/run.py", line 217, in <module>
+    main()
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/run.py", line 199, in main
+    gpsr.fit(train_data)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 473, in fit
+    self.__run(toolbox)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 728, in __run
+    self._step(toolbox, self.__cgen)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 650, in _step
+    num_evals = self.__evolve_islands(cgen, toolbox)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 571, in __evolve_islands
+    fitnesses = toolbox.map(
+                ^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/gp6d_engine.py", line 527, in persistent_actor_mapper
+    entries = _actor_map(items, actors=actors, batch_size=int(batch_size), method_name="s1")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/gp6d_engine.py", line 274, in _actor_map
+    out = ray.get(ready[0])
+          ^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147887/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147887/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147887/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147887/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(SystemError): [36mray::CPUFitnessActor.s1()[39m (pid=1805222, ip=10.10.7.3, actor_id=884f6c68d16066dd6a62acef01000000, repr=<gp6d_engine.CPUFitnessActor object at 0x7f437c2ef380>)
+    
+SystemExit: 1
+
+The above exception was the direct cause of the following exception:
+
+SystemError: <function _numba_unpickle at 0x7f267106ef20> returned a result with an exception set
+
+The above exception was the direct cause of the following exception:
+
+SystemError: <function _numba_unpickle at 0x7f267106ef20> returned a result with an exception set
+
+The above exception was the direct cause of the following exception:
+
+[36mray::CPUFitnessActor.s1()[39m (pid=1805222, ip=10.10.7.3, actor_id=884f6c68d16066dd6a62acef01000000, repr=<gp6d_engine.CPUFitnessActor object at 0x7f437c2ef380>)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/gp6d_engine.py", line 239, in s1
+    return [stage_s1(item) for item in items]
+            ^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/gp6d_engine.py", line 189, in stage_s1
+    value, consts, grid = _adam(expression, consts, value, grid)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/gp6d_engine.py", line 134, in _adam
+    values.append(_grid(expression, shifted)[0])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/gp6d_engine.py", line 88, in _grid
+    grid = lattice_numbers(expression, np.asarray(constants, dtype=np.float64))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/core/lattice.py", line 143, in lattice_numbers
+    values_flat, _, _ = lattice_vgrad(*prog, ctx["points"])   # raw V on the grid
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SystemError: CPUDispatcher(<function lattice_vgrad at 0x7f2670a26200>) returned a result with an exception set
+[2026-09-20 05:15:29,613 E 1480145 1480178] core_worker.cc:475: :info_message: Attempting to recover 3 lost objects by resubmitting their tasks or setting a new primary location from existing copies. To disable object reconstruction, set @ray.remote(max_retries=0).
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination

@@ -1,0 +1,341 @@
+local env ready on all nodes in 68 s: python=/tmp/flex_147957/bin/python
+V10 port: cma resumable=1 select=kappa cap=2500 first_cap=5000 deep=6 x 2500 slices=20 x 500
+FLEX_MIGRATION_FIX=1 SYMCLF6D_B_NORM=l1 SYMCLF6D_GRID_POINTS=21 SYMCLF6D_LATTICE_LINES=9 SYMCLF6D_LATTICE_MESH=21 SYMCLF6D_LATTICE_SAMPLES=801 SYMCLF6D_SKIP_DEAD_ADAM=1 SYMCLF6D_SYSTEM=link2 SYMCLF6D_TEMPLATE=full SYMCLF6D_TEMPLATE_X0=1.0 SYMCLF_CMA_DEEP_COUNT=6 SYMCLF_CMA_DEEP_EVALS=2500 SYMCLF_CMA_ELITE_COUNT=3 SYMCLF_CMA_ELITE_EVALS=2000 SYMCLF_CMA_ELITE_MAX_FITNESS=10000 SYMCLF_CMA_ELITE_POPSIZE=18 SYMCLF_CMA_ELITE_SEED=2 SYMCLF_CMA_FIRST_MAX_EVALS=5000 SYMCLF_CMA_MAX_EVALS_PER_STRUCTURE=2500 SYMCLF_CMA_MAX_RESTARTS=100 SYMCLF_CMA_RESUMABLE=1 SYMCLF_CMA_SELECT=kappa SYMCLF_CMA_SLICE_COUNT=20 SYMCLF_CMA_SLICE_EVALS=500 SYMCLF_CP3D_NESTED_PENALTY=50 SYMCLF_CP3D_ROA_C_TARGET=0.004 SYMCLF_CP3D_ROA_WEIGHT=500 SYMCLF_DET4_B_REL_TOL=1e-6 SYMCLF_DET4_GATE_KAPPA_CAP=1e6 SYMCLF_DET4_KAPPA_MIN=0 SYMCLF_DET4_ORIGIN_SEEDS=1 SYMCLF_DET4_PD_EPS=1e-4 SYMCLF_DET4_PEN_CV=10 SYMCLF_DET4_PEN_CV_TARGET=0.05 SYMCLF_DET4_PEN_KAPPA=100 SYMCLF_DET4_PEN_KAPPA_TARGET=1.0 SYMCLF_DET4_PEN_VOL=20 SYMCLF_DET4_PEN_VOL_TARGET=0.02 SYMCLF_DET4_PROJECT_ASCENT=1 SYMCLF_DET4_RHO=1000 SYMCLF_GPU2_TUNER_GENERATIONS=5 SYMCLF_GPU2_TUNER_RANDOM_POPULATION=35 SYMCLF_LENGTH_REG=0.005 SYMCLF_MAX_TREE_LENGTH=90 SYMCLF_TUNER_ADAM_EXIT_ZERO_GRAD=1 SYMCLF_TUNER_ADAM_PATIENCE=0 SYMCLF_TUNER_CONST_PERTURB_FRAC=0.5 SYMCLF_TUNER_CONST_RANGE=30 SYMCLF_TUNER_REFINE_LR=0.30 SYMCLF_TUNER_REFINE_STEPS=40 SYMCLF_TUNER_SKIP_ADAM_AT_ZERO=1 SYMCLF_V2_BOX=0.5,0.5,0.5,0.5 
+
+numba warm-up done
+Starting Ray head on s08n12 (attempt 1)...
+2026-09-20 21:35:30,284	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-09-20 21:35:30,285	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.8.12[22m
+2026-09-20 21:35:32,886	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-09-20 21:35:32,886	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-09-20 21:35:32,886	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-09-20 21:35:32,887	INFO scripts.py:983 -- [36mNext steps[39m
+2026-09-20 21:35:32,887	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-09-20 21:35:32,887	INFO scripts.py:989 -- [1m  ray start --address='10.10.8.12:47957'[22m
+2026-09-20 21:35:32,887	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-09-20 21:35:32,887	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-09-20 21:35:32,887	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.8.12'[39m[26m)
+2026-09-20 21:35:32,887	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-09-20 21:35:32,887	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-09-20 21:35:32,887	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-09-20 21:35:32,887	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-09-20 21:35:32,887	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 21:35:32,887	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 21:35:32,887	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 21:35:32,887	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_21-35-30_285806_1295313/logs/ray_process_exit.log[22m[26m
+2026-09-20 21:35:50,999	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.8.22[22m
+2026-09-20 21:35:52,190	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 21:35:52,190	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 21:35:52,190	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 21:35:52,190	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 21:35:52,190	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 21:35:52,190	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 21:35:52,190	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 21:35:52,190	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 21:35:52,190	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_21-35-30_285806_1295313/logs/ray_process_exit.log[22m[26m
+all 2 Ray nodes registered
+======== Autoscaler status: 2026-09-20 21:36:01.399828 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_69bba6cef9027b121e0dcdcbb8d723d52e070ee4cb33791cf3fd5565
+ 1 node_d5a5db71f7c487b8f28587222ae68558188135aa83aea0c392cd7616
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/128.0 CPU
+ 0B/704.48GiB memory
+ 0B/301.92GiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting run.py (6-D GP) 21:36:02
+6D Ray resources: {'object_store_memory': 324185930956.0, 'memory': 756433838900.0, 'CPU': 128.0, 'node:10.10.8.22': 1.0, 'node:10.10.8.12': 1.0, 'node:__internal_head__': 1.0}
+6D system link2: box (0.5, 0.5, 0.5, 0.5) rho 1000.0 b-norm l1 grid 21^6 | hinges cv 10.0@0.05 kappa 100.0@1.0 vol 20.0@0.02
+6D GP hyperparameters: population=2500 (num_individuals=500 x num_islands=5), generations=20000, crossover=0.7, mutation=0.3, reg_param=0.005, mig_freq=10, mig_frac=0.05
+6D scheduling: 126 single-thread CPU actors on {'s08n12.prime.net': 63, 's08n22.prime.net': 63} | tuner SEA 36 x 5 + Adam 40 | max_len 90 | CMA 3 x 2000 evals, popsize 18, seed 2, gate 10000
+Generating initial population(s)...
+ Seeding population with individuals... (3 of 5 islands)
+DONE.
+Evaluating initial population(s)...
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=500 n_individuals=500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=500 n_individuals=500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 5004 evals, 1 certified, 0 resumed, restarts [26], states held 1
+6D stages: candidates=500 s1_s=78.4 tune_mean_s=2.77 det4_candidates=23 det4_unique=23 det4_checked=23 det4_cached=0 s2_s=12.2 dead=477 certified=1 fitness_min=0.295 cma_runs=1 cma_certified=1 cma_best=0.295 cma_s=1124.3 cache_entries=23 seed_exprs=2 seeds_in_entries=2 states=1
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=500 n_individuals=500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=500 n_individuals=500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D stages: candidates=500 s1_s=71.1 tune_mean_s=3.03 det4_candidates=20 det4_unique=20 det4_checked=18 det4_cached=2 s2_s=3.5 dead=480 certified=0 fitness_min=600.095 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=41 seed_exprs=2 seeds_in_entries=2 states=1
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=500 n_individuals=500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=500 n_individuals=500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D stages: candidates=500 s1_s=72.0 tune_mean_s=2.49 det4_candidates=22 det4_unique=22 det4_checked=20 det4_cached=2 s2_s=3.5 dead=478 certified=0 fitness_min=600.095 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=61 seed_exprs=2 seeds_in_entries=2 states=1
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 5004 evals, 0 certified, 0 resumed, restarts [4], states held 2
+6D stages: candidates=500 s1_s=49.2 tune_mean_s=2.87 det4_candidates=29 det4_unique=29 det4_checked=29 det4_cached=0 s2_s=11.7 dead=471 certified=0 fitness_min=8537.83 cma_runs=1 cma_certified=0 cma_best=8537.83 cma_s=787.1 cache_entries=90 seed_exprs=2 seeds_in_entries=0 states=2
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 5004 evals, 0 certified, 0 resumed, restarts [8], states held 3
+6D stages: candidates=500 s1_s=25.3 tune_mean_s=2.42 det4_candidates=22 det4_unique=22 det4_checked=22 det4_cached=0 s2_s=3.7 dead=478 certified=0 fitness_min=8537.83 cma_runs=1 cma_certified=0 cma_best=8537.83 cma_s=845.9 cache_entries=112 seed_exprs=2 seeds_in_entries=0 states=3
+DONE.
+ -= START OF EVOLUTION =- 
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 6 structures (6 deep, 0 slices), 7 loops in flight, 17514 evals, 0 certified, 0 resumed, restarts [3, 4, 4, 2, 3, 4], states held 9
+6D stages: candidates=2500 s1_s=98.3 tune_mean_s=3.11 det4_candidates=124 det4_unique=120 det4_checked=116 det4_cached=6 s2_s=16.1 dead=2376 certified=0 fitness_min=600.095 cma_runs=6 cma_certified=0 cma_best=663.732 cma_s=1330.9 cache_entries=228 seed_exprs=2 seeds_in_entries=3 states=9
+   	     	                      fitness                      	             size            
+   	     	---------------------------------------------------	-----------------------------
+gen	evals	min  	avg        	max        	std        	min	avg   	max	std  
+1  	2500 	0.295	2.45475e+07	2.01009e+08	4.94712e+07	2  	6.3916	59 	4.286
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 1 best fitness=0.295 len=59 :: grid=0 [roa=0] lattice c_v=0.2902 kappa=35.14 | extra=0.295 | det4 price=0 c_v*=0.2897 kappa*=1.262 certified=True worst_r=0.609 pen=0/0/0 | cma 643.6->0.295 (5004 evals, certified_at 2, 1.12e+03 s) | boundary_min=0.1012 volume=0.0655
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 21 structures (5 deep, 16 slices), 7 loops in flight, 21402 evals, 1 certified, 1 resumed, restarts [0, 0, 100, 0, 100, 1], states held 29
+6D stages: candidates=2500 s1_s=154.9 tune_mean_s=3.67 det4_candidates=174 det4_unique=171 det4_checked=164 det4_cached=8 s2_s=13.1 dead=2326 certified=1 fitness_min=0.295 cma_runs=21 cma_certified=1 cma_best=0.295 cma_s=961.5 cache_entries=392 seed_exprs=2 seeds_in_entries=2 states=29
+2  	2500 	0.295	3.95951e+06	7.00854e+06	1.58223e+06	2  	6.8316	59 	4.9665
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 2 best fitness=0.295 len=59 :: grid=0 [roa=0] lattice c_v=0.2902 kappa=35.14 | extra=0.295 | det4 price=0 c_v*=0.2897 kappa*=1.262 certified=True worst_r=0.609 pen=0/0/0 | cma 643.6->0.295 (5004 evals, certified_at 2, 1.12e+03 s) | boundary_min=0.1012 volume=0.0655
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 26 structures (3 deep, 23 slices), 7 loops in flight, 24084 evals, 6 certified, 3 resumed, restarts [0, 4, 3, 0, 27, 27], states held 52
+6D stages: candidates=2500 s1_s=196.1 tune_mean_s=4.82 det4_candidates=279 det4_unique=276 det4_checked=259 det4_cached=18 s2_s=10.6 dead=2221 certified=6 fitness_min=0.285 cma_runs=26 cma_certified=6 cma_best=0.285 cma_s=1093.0 cache_entries=651 seed_exprs=2 seeds_in_entries=3 states=52
+3  	2500 	0.285	2.69741e+06	4.66707e+06	1.05893e+06	3  	8.6828	61 	6.5191
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, a)), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 3 best fitness=0.285 len=57 :: grid=0 [roa=0] lattice c_v=0.2431 kappa=31.77 | extra=0.285 | det4 price=0 c_v*=0.2428 kappa*=1.058 certified=True worst_r=0.00766 pen=0/0/0 | cma 948.7->0.285 (504 evals, certified_at 22, 149 s) | boundary_min=0.0868 volume=0.0471
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+[36m(_cma_loop_task_resumable pid=1356415)[0m NOTE (module=cma, iteration=43):  
+[36m(_cma_loop_task_resumable pid=1356415)[0m condition in coordinate system exceeded 1.1e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1356415)[0m condition changed from 3.4e+07 to 1.4e+00
+[36m(_cma_loop_task_resumable pid=1356415)[0m NOTE (module=cma, iteration=67):  
+[36m(_cma_loop_task_resumable pid=1356415)[0m condition in coordinate system exceeded 2.3e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1356415)[0m condition changed from 8.1e+07 to 1.0e+00
+6D cma (resumable): 25 structures (2 deep, 23 slices), 7 loops in flight, 23076 evals, 5 certified, 4 resumed, restarts [0, 0, 27, 1, 0, 1], states held 73
+6D stages: candidates=2500 s1_s=253.8 tune_mean_s=6.53 det4_candidates=464 det4_unique=457 det4_checked=417 det4_cached=43 s2_s=15.6 dead=2036 certified=5 fitness_min=0.295 cma_runs=25 cma_certified=5 cma_best=0.295 cma_s=1126.9 cache_entries=1068 seed_exprs=2 seeds_in_entries=3 states=73
+4  	2500 	0.285	1.87317e+06	3.0344e+06 	924803     	3  	11.7188	67 	7.9902
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, a)), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 4 best fitness=0.285 len=57 :: grid=0 [roa=0] lattice c_v=0.2431 kappa=31.77 | extra=0.285 | det4 price=0 c_v*=0.2428 kappa*=1.058 certified=True worst_r=0.00766 pen=0/0/0 | cma 948.7->0.285 (504 evals, certified_at 22, 149 s) | boundary_min=0.0868 volume=0.0471
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+[36m(_cma_loop_task_resumable pid=1367588)[0m NOTE (module=cma, iteration=28):  
+[36m(_cma_loop_task_resumable pid=1367588)[0m condition in coordinate system exceeded 1.4e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1367588)[0m condition changed from 9.1e+07 to 1.6e+00
+[36m(_cma_loop_task_resumable pid=1367588)[0m NOTE (module=cma, iteration=57):  
+[36m(_cma_loop_task_resumable pid=1367588)[0m condition in coordinate system exceeded 1.1e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1367588)[0m condition changed from 9.6e+07 to 1.9e+00
+[36m(_cma_loop_task_resumable pid=1367588)[0m NOTE (module=cma, iteration=83):  
+[36m(_cma_loop_task_resumable pid=1367588)[0m condition in coordinate system exceeded 1.4e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1367588)[0m condition changed from 5.3e+07 to 2.2e+00
+[36m(_cma_loop_task_resumable pid=1367588)[0m NOTE (module=cma, iteration=108):  
+[36m(_cma_loop_task_resumable pid=1367588)[0m condition in coordinate system exceeded 1.2e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1367588)[0m condition changed from 7.0e+07 to 2.0e+00
+6D cma (resumable): 26 structures (2 deep, 24 slices), 7 loops in flight, 24390 evals, 6 certified, 5 resumed, restarts [27, 4, 0, 100, 1, 4], states held 94
+6D stages: candidates=2500 s1_s=331.4 tune_mean_s=12.66 det4_candidates=860 det4_unique=853 det4_checked=791 det4_cached=68 s2_s=26.1 dead=1640 certified=6 fitness_min=0.28 cma_runs=26 cma_certified=6 cma_best=0.28 cma_s=1512.3 cache_entries=1859 seed_exprs=2 seeds_in_entries=4 states=94
+5  	2500 	0.28 	1.11573e+06	2.41559e+06	787121     	5  	16.1468	72 	9.8916
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), sin(a)), mul(a, mul(x4, x4)))
+GEN 5 best fitness=0.28 len=56 :: grid=0 [roa=0] lattice c_v=0.2313 kappa=67.23 | extra=0.28 | det4 price=0 c_v*=0.2311 kappa*=1.339 certified=True worst_r=0.062 pen=0/0/0 | cma 617.4->0.28 (504 evals, certified_at 2, 140 s) | boundary_min=0.08252 volume=0.0405
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+[36m(_cma_loop_task_resumable pid=1382290)[0m NOTE (module=cma, iteration=43):  
+[36m(_cma_loop_task_resumable pid=1382290)[0m condition in coordinate system exceeded 1.3e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1382290)[0m condition changed from 4.6e+07 to 1.5e+00
+[36m(_cma_loop_task_resumable pid=1382290)[0m NOTE (module=cma, iteration=44):  
+[36m(_cma_loop_task_resumable pid=1382290)[0m condition in coordinate system exceeded 1.2e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1382290)[0m condition changed from 4.3e+07 to 1.7e+00
+6D cma (resumable): 38 structures (1 deep, 37 slices), 7 loops in flight, 29124 evals, 13 certified, 12 resumed, restarts [55, 0, 0, 0, 1, 0], states held 120
+6D stages: candidates=2500 s1_s=457.3 tune_mean_s=19.97 det4_candidates=1343 det4_unique=1329 det4_checked=1221 det4_cached=117 s2_s=39.6 dead=1155 certified=13 fitness_min=0.295 cma_runs=38 cma_certified=13 cma_best=0.295 cma_s=1907.4 cache_entries=3080 seed_exprs=2 seeds_in_entries=2 states=120
+6  	2500 	0.28 	479048     	2.00854e+06	558339     	7  	20.9336	73 	12.0847
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), sin(a)), mul(a, mul(x4, x4)))
+GEN 6 best fitness=0.28 len=56 :: grid=0 [roa=0] lattice c_v=0.2313 kappa=67.23 | extra=0.28 | det4 price=0 c_v*=0.2311 kappa*=1.339 certified=True worst_r=0.062 pen=0/0/0 | cma 617.4->0.28 (504 evals, certified_at 2, 140 s) | boundary_min=0.08252 volume=0.0405
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 39 structures (1 deep, 38 slices), 7 loops in flight, 31122 evals, 19 certified, 13 resumed, restarts [1, 0, 9, 0, 11, 83], states held 146
+6D stages: candidates=2500 s1_s=624.7 tune_mean_s=28.54 det4_candidates=1781 det4_unique=1760 det4_checked=1605 det4_cached=171 s2_s=51.9 dead=719 certified=20 fitness_min=0.265 cma_runs=39 cma_certified=19 cma_best=0.265 cma_s=2011.1 cache_entries=4685 seed_exprs=2 seeds_in_entries=2 states=146
+7  	2500 	0.265	86884.8    	1.00948e+06	218656     	8  	25.7   	81 	14.8013
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 7 best fitness=0.265 len=53 :: grid=0 [roa=0] lattice c_v=0.5899 kappa=12.48 | extra=0.265 | det4 price=0 c_v*=0.5888 kappa*=1.056 certified=True worst_r=0.615 pen=0/0/0 | cma 631.9->0.265 (504 evals, certified_at 8, 121 s) | boundary_min=0.2177 volume=0.0991
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 42 structures (1 deep, 41 slices), 7 loops in flight, 31446 evals, 17 certified, 16 resumed, restarts [1, 100, 0, 100, 0, 0], states held 172
+6D stages: candidates=2500 s1_s=796.0 tune_mean_s=35.77 det4_candidates=1940 det4_unique=1914 det4_checked=1740 det4_cached=191 s2_s=57.9 dead=553 certified=18 fitness_min=0.28 cma_runs=42 cma_certified=17 cma_best=0.28 cma_s=1701.3 cache_entries=6425 seed_exprs=2 seeds_in_entries=2 states=172
+8  	2500 	0.265	7966.7     	28881      	3722.52    	9  	26.4116	87 	14.7165
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 8 best fitness=0.265 len=53 :: grid=0 [roa=0] lattice c_v=0.5899 kappa=12.48 | extra=0.265 | det4 price=0 c_v*=0.5888 kappa*=1.056 certified=True worst_r=0.615 pen=0/0/0 | cma 631.9->0.265 (504 evals, certified_at 8, 121 s) | boundary_min=0.2177 volume=0.0991
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 40 structures (1 deep, 39 slices), 7 loops in flight, 28944 evals, 28 certified, 14 resumed, restarts [100, 0, 100, 0, 54, 0], states held 198
+6D stages: candidates=2500 s1_s=764.0 tune_mean_s=35.48 det4_candidates=2029 det4_unique=1998 det4_checked=1816 det4_cached=200 s2_s=59.9 dead=464 certified=30 fitness_min=0.265 cma_runs=40 cma_certified=28 cma_best=0.265 cma_s=2068.4 cache_entries=8241 seed_exprs=2 seeds_in_entries=3 states=198
+9  	2500 	0.265	6676.46    	8814.06    	3389.66    	9  	30.3372	89 	17.5219
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 9 best fitness=0.265 len=53 :: grid=0 [roa=0] lattice c_v=0.5899 kappa=12.48 | extra=0.265 | det4 price=0 c_v*=0.5888 kappa*=1.056 certified=True worst_r=0.615 pen=0/0/0 | cma 631.9->0.265 (504 evals, certified_at 8, 121 s) | boundary_min=0.2177 volume=0.0991
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 43 structures (0 deep, 43 slices), 7 loops in flight, 26154 evals, 31 certified, 17 resumed, restarts [100, 55, 0, 0, 0, 0], states held 224
+6D stages: candidates=2500 s1_s=873.9 tune_mean_s=39.80 det4_candidates=2070 det4_unique=2039 det4_checked=1843 det4_cached=214 s2_s=62.1 dead=413 certified=46 fitness_min=0.295 cma_runs=43 cma_certified=31 cma_best=0.295 cma_s=1547.5 cache_entries=10084 seed_exprs=2 seeds_in_entries=7 states=224
+FLEX migration at generation 10: position-based ring, 25 individuals per island
+10 	2500 	0.265	5376.63    	8587.92    	3864.27    	9  	36.7048	89 	19.9449
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 10 best fitness=0.265 len=53 :: grid=0 [roa=0] lattice c_v=0.5899 kappa=12.48 | extra=0.265 | det4 price=0 c_v*=0.5888 kappa*=1.056 certified=True worst_r=0.615 pen=0/0/0 | cma 631.9->0.265 (504 evals, certified_at 8, 121 s) | boundary_min=0.2177 volume=0.0991
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+[36m(_cma_loop_task_resumable pid=1481534)[0m NOTE (module=cma, iteration=29):  
+[36m(_cma_loop_task_resumable pid=1481534)[0m condition in coordinate system exceeded 1.4e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1481534)[0m condition changed from 7.6e+07 to 1.1e+00
+6D cma (resumable): 44 structures (0 deep, 44 slices), 7 loops in flight, 26946 evals, 36 certified, 18 resumed, restarts [2, 3, 0, 0, 1, 0], states held 250
+6D stages: candidates=2500 s1_s=996.4 tune_mean_s=45.99 det4_candidates=2128 det4_unique=2100 det4_checked=1907 det4_cached=210 s2_s=67.0 dead=345 certified=65 fitness_min=0.265 cma_runs=44 cma_certified=36 cma_best=0.265 cma_s=1653.9 cache_entries=11991 seed_exprs=2 seeds_in_entries=1 states=250
+11 	2500 	0.265	4050.62    	8553.1     	3917.68    	11 	41.9384	89 	21.5409
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 11 best fitness=0.265 len=53 :: grid=0 [roa=0] lattice c_v=0.5899 kappa=12.48 | extra=0.265 | det4 price=0 c_v*=0.5888 kappa*=1.056 certified=True worst_r=0.615 pen=0/0/0 | cma 631.9->0.265 (504 evals, certified_at 8, 121 s) | boundary_min=0.2177 volume=0.0991
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+[36m(_cma_loop_task_resumable pid=1501574)[0m NOTE (module=cma, iteration=43):  
+[36m(_cma_loop_task_resumable pid=1501574)[0m condition in coordinate system exceeded 1.5e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1501574)[0m condition changed from 4.9e+07 to 1.5e+00
+6D cma (resumable): 46 structures (1 deep, 45 slices), 7 loops in flight, 32652 evals, 36 certified, 20 resumed, restarts [1, 1, 5, 1, 0, 13], states held 276
+6D stages: candidates=2500 s1_s=1019.1 tune_mean_s=46.83 det4_candidates=2184 det4_unique=2147 det4_checked=1940 det4_cached=238 s2_s=69.1 dead=287 certified=104 fitness_min=0.255 cma_runs=46 cma_certified=36 cma_best=0.255 cma_s=1928.2 cache_entries=13931 seed_exprs=2 seeds_in_entries=4 states=276
+12 	2500 	0.255	3497.94    	8542.63    	3858.73    	11 	43.902 	89 	21.9435
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), a), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), a), mul(a, mul(x4, x4)))
+GEN 12 best fitness=0.255 len=51 :: grid=0 [roa=0] lattice c_v=4.847 kappa=49.57 | extra=0.255 | det4 price=0 c_v*=4.836 kappa*=1.04 certified=True worst_r=0.1 pen=0/0/0 | cma 47.44->0.255 (504 evals, certified_at 4, 124 s) | boundary_min=1.818 volume=0.0639
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 56 structures (1 deep, 55 slices), 7 loops in flight, 38196 evals, 45 certified, 30 resumed, restarts [3, 2, 2, 5, 13, 0], states held 302
+6D stages: candidates=2500 s1_s=1121.8 tune_mean_s=51.41 det4_candidates=2176 det4_unique=2135 det4_checked=1929 det4_cached=243 s2_s=70.4 dead=277 certified=147 fitness_min=0.265 cma_runs=56 cma_certified=45 cma_best=0.265 cma_s=2069.8 cache_entries=15860 seed_exprs=2 seeds_in_entries=7 states=302
+13 	2500 	0.255	3214.27    	8539.04    	3820.9     	11 	44.742 	89 	22.0177
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), a), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), a), mul(a, mul(x4, x4)))
+GEN 13 best fitness=0.255 len=51 :: grid=0 [roa=0] lattice c_v=4.847 kappa=49.57 | extra=0.255 | det4 price=0 c_v*=4.836 kappa*=1.04 certified=True worst_r=0.1 pen=0/0/0 | cma 47.44->0.255 (504 evals, certified_at 4, 124 s) | boundary_min=1.818 volume=0.0639
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 53 structures (1 deep, 52 slices), 7 loops in flight, 36648 evals, 45 certified, 27 resumed, restarts [3, 4, 3, 4, 0, 0], states held 328
+6D stages: candidates=2500 s1_s=1062.3 tune_mean_s=50.32 det4_candidates=2164 det4_unique=2136 det4_checked=1941 det4_cached=217 s2_s=70.6 dead=276 certified=179 fitness_min=0.275 cma_runs=53 cma_certified=45 cma_best=0.275 cma_s=2289.0 cache_entries=17801 seed_exprs=2 seeds_in_entries=2 states=328
+14 	2500 	0.255	2793.85    	8537.97    	3686.93    	11 	45.832 	89 	22.3863
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), a), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), a), mul(a, mul(x4, x4)))
+GEN 14 best fitness=0.255 len=51 :: grid=0 [roa=0] lattice c_v=4.847 kappa=49.57 | extra=0.255 | det4 price=0 c_v*=4.836 kappa*=1.04 certified=True worst_r=0.1 pen=0/0/0 | cma 47.44->0.255 (504 evals, certified_at 4, 124 s) | boundary_min=1.818 volume=0.0639
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 59 structures (1 deep, 58 slices), 7 loops in flight, 40662 evals, 50 certified, 33 resumed, restarts [4, 4, 15, 10, 11, 2], states held 354
+6D stages: candidates=2500 s1_s=1182.9 tune_mean_s=53.55 det4_candidates=2178 det4_unique=2141 det4_checked=1941 det4_cached=232 s2_s=72.5 dead=262 certified=253 fitness_min=0.255 cma_runs=59 cma_certified=50 cma_best=0.255 cma_s=2593.4 cache_entries=19742 seed_exprs=2 seeds_in_entries=7 states=354
+15 	2500 	0.255	2173.3     	8537.9     	3373.07    	11 	49.3308	89 	22.4958
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), a), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), a), mul(a, mul(x4, x4)))
+GEN 15 best fitness=0.255 len=51 :: grid=0 [roa=0] lattice c_v=4.847 kappa=49.57 | extra=0.255 | det4 price=0 c_v*=4.836 kappa*=1.04 certified=True worst_r=0.1 pen=0/0/0 | cma 47.44->0.255 (504 evals, certified_at 4, 124 s) | boundary_min=1.818 volume=0.0639
+6D seed item: nodes=59 features_length=59 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(add(add(add(add(add(mul(
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=253 gate=None dead=False consts=10 fitness=(643.5788600747657,) needs_det4=False det4_status=ok pre_exact=0.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 57 structures (1 deep, 56 slices), 7 loops in flight, 38682 evals, 55 certified, 31 resumed, restarts [6, 3, 4, 4, 14, 13], states held 380
+6D stages: candidates=2500 s1_s=1282.7 tune_mean_s=60.13 det4_candidates=2145 det4_unique=2120 det4_checked=1931 det4_cached=213 s2_s=73.6 dead=283 certified=316 fitness_min=0.255 cma_runs=57 cma_certified=55 cma_best=0.255 cma_s=2607.5 cache_entries=21673 seed_exprs=2 seeds_in_entries=4 states=380
+16 	2500 	0.255	1944.62    	8537.88    	3306.94    	11 	51.7552	89 	22.7226
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), a), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), a), mul(a, mul(x4, x4)))
+GEN 16 best fitness=0.255 len=51 :: grid=0 [roa=0] lattice c_v=4.847 kappa=49.57 | extra=0.255 | det4 price=0 c_v*=4.836 kappa*=1.04 certified=True worst_r=0.1 pen=0/0/0 | cma 47.44->0.255 (504 evals, certified_at 4, 124 s) | boundary_min=1.818 volume=0.0639
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']
+6D cma (resumable): 60 structures (1 deep, 59 slices), 7 loops in flight, 38664 evals, 58 certified, 34 resumed, restarts [4, 6, 6, 8, 0, 5], states held 406
+6D stages: candidates=2500 s1_s=1377.4 tune_mean_s=61.25 det4_candidates=2182 det4_unique=2161 det4_checked=1956 det4_cached=222 s2_s=76.5 dead=244 certified=402 fitness_min=0.265 cma_runs=60 cma_certified=58 cma_best=0.265 cma_s=2586.4 cache_entries=23629 seed_exprs=2 seeds_in_entries=1 states=406
+17 	2500 	0.255	1860.5     	8537.87    	3345.82    	11 	56.396 	89 	21.1864
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), a), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), a), mul(a, mul(x4, x4)))
+GEN 17 best fitness=0.255 len=51 :: grid=0 [roa=0] lattice c_v=4.847 kappa=49.57 | extra=0.255 | det4 price=0 c_v*=4.836 kappa*=1.04 certified=True worst_r=0.1 pen=0/0/0 | cma 47.44->0.255 (504 evals, certified_at 4, 124 s) | boundary_min=1.818 volume=0.0639
+6D seed item: nodes=19 features_length=19 nested=0.0 n_features=2500 n_individuals=2500 expr=add(add(add(add(mul(x1, x1), mul(x2, x2)
+6D seed entry: len=83 gate=None dead=False consts=0 fitness=(600.095,) needs_det4=False det4_status=ok pre_exact=600.0 keys=['consts', 'dead', 'det4', 'det4_certified', 'expression', 'extra_penalty', 'fitness', 'grid', 'needs_det4', 'pre_exact', 'price', 'tune_seconds']

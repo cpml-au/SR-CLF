@@ -1,0 +1,6 @@
+Best Expression:
+add(add(add(add(add(add(mul(x1, x1), mul(x2, x2)), mul(add(x3, x4), x3)), mul(x4, x4)), mul(x5, x5)), mul(x6, x6)), mul(x1, x2))
+Best Fitness:
+603.1367806356195
+Best Parameters:
+[]

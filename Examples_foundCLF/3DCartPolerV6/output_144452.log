@@ -1,0 +1,131 @@
+V6 DET4_FAST=1 numba_threads=3 gate_kappa_cap=1e6 det4_all=1 refine=adam/price top10 x100 lr0.02 pen cv=10@0.05 kappa=30@0.05 vol=20@0.02 tuner_skip=1/1
+V3 positivity=300 const_range=30 refine=40x top4
+V3 box=0.25,0.0494,0.1155 shape=300 rho_mult=1.0 cert=500 vdot=0
+CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+3DCartPole V_GRAD targets: 6.6741 / 2.4507
+3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+CP3D JAX devices: TFRT_CPU_0
+[261s]  SMOKE V3 DET4 PASS
+Project root: /home/qaragoez/symclf_clean/symclf
+PYTHONPATH: /home/qaragoez/symclf_clean/symclf/examples/3DCartPolerV6:/home/qaragoez/symclf_clean/symclf:
+Conda environment: /home/qaragoez/miniforge3/envs/flex
+Python: /home/qaragoez/miniforge3/envs/flex/bin/python
+Python 3.12.0
+Ray Python package: 2.55.1 /home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/__init__.py
+JAX: 0.5.0 devices: [CudaDevice(id=0), CudaDevice(id=1), CudaDevice(id=2)]
+GPU 0: NVIDIA A100-PCIE-40GB (UUID: GPU-8806a028-3fad-4d77-cd1f-e35537f6ba08)
+GPU 1: NVIDIA A100-PCIE-40GB (UUID: GPU-5fed31ff-efb8-eddd-10a0-3e59d233cab1)
+GPU 2: NVIDIA A100-PCIE-40GB (UUID: GPU-27a4ce9b-4204-cd33-f46c-b27e50f5a18a)
+Ray CLI: /home/qaragoez/miniforge3/envs/flex/bin/ray
+ray, version 2.55.1
+Allocated nodes: s02n01
+Head node: s02n01
+Head IP: 10.10.2.1
+Head address: 10.10.2.1:44452
+Starting Ray head on s02n01...
+2026-09-11 15:25:02,491	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-09-11 15:25:02,491	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.2.1[22m
+2026-09-11 15:25:16,524	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-09-11 15:25:16,525	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-09-11 15:25:16,525	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-09-11 15:25:16,525	INFO scripts.py:983 -- [36mNext steps[39m
+2026-09-11 15:25:16,525	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-09-11 15:25:16,525	INFO scripts.py:989 -- [1m  ray start --address='10.10.2.1:44452'[22m
+2026-09-11 15:25:16,525	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-09-11 15:25:16,525	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-09-11 15:25:16,525	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.2.1'[39m[26m)
+2026-09-11 15:25:16,525	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-09-11 15:25:16,525	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-09-11 15:25:16,525	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-09-11 15:25:16,525	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-09-11 15:25:16,526	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-11 15:25:16,526	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-11 15:25:16,526	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-11 15:25:16,526	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-11_15-25-02_492692_1617764/logs/ray_process_exit.log[22m[26m
+Ray cluster status:
+======== Autoscaler status: 2026-09-11 15:25:40.174720 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_98a97889c2aeb5152c06e4c6ada8189f97878d5e01225039e1120524
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/32.0 CPU
+ 0.0/3.0 GPU
+ 0B/176.03GiB memory
+ 0B/75.44GiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting run.py (CP3D V6 penalties + price-selected Adam elites; well-conditioned reference + local constant refinement)...
+CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+3DCartPole V_GRAD targets: 6.6741 / 2.4507
+3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+V2 box half-widths = (0.25, 0.0494, 0.1155)  grid = 41^3
+GPU5 Ray resources: {'memory': 189013777613.0, 'node:10.10.2.1': 1.0, 'accelerator_type:A100': 1.0, 'GPU': 3.0, 'node:__internal_head__': 1.0, 'object_store_memory': 81005904691.0, 'CPU': 32.0}
+GPU5 GP hyperparameters: population=2500 (num_individuals=500 x num_islands=5), generations=20000, crossover=0.7, mutation=0.3, reg_param=0.005, mig_freq=10, mig_frac=0.05
+[36m(GPUFitnessActor pid=1618337)[0m CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1618337)[0m 3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+[36m(GPUFitnessActor pid=1618334)[0m CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1618334)[0m 3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+[36m(GPUFitnessActor pid=1618334)[0m 3DCartPole V_GRAD targets: 6.6741 / 2.4507
+[36m(GPUFitnessActor pid=1618334)[0m 3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+[36m(GPUFitnessActor pid=1618329)[0m CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1618329)[0m 3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+[36m(GPUFitnessActor pid=1618329)[0m 3DCartPole V_GRAD targets: 6.6741 / 2.4507
+[36m(GPUFitnessActor pid=1618329)[0m 3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+[36m(GPUFitnessActor pid=1618333)[0m CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1618333)[0m 3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+[36m(GPUFitnessActor pid=1618333)[0m 3DCartPole V_GRAD targets: 6.6741 / 2.4507
+[36m(GPUFitnessActor pid=1618333)[0m 3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+[36m(GPUFitnessActor pid=1618330)[0m CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1618330)[0m 3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+[36m(GPUFitnessActor pid=1618330)[0m 3DCartPole V_GRAD targets: 6.6741 / 2.4507
+[36m(GPUFitnessActor pid=1618330)[0m 3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+[36m(GPUFitnessActor pid=1618336)[0m CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1618336)[0m 3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+[36m(GPUFitnessActor pid=1618336)[0m 3DCartPole V_GRAD targets: 6.6741 / 2.4507
+[36m(GPUFitnessActor pid=1618336)[0m 3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+[36m(GPUFitnessActor pid=1618337)[0m 3DCartPole V_GRAD targets: 6.6741 / 2.4507
+[36m(GPUFitnessActor pid=1618337)[0m 3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+[36m(GPUFitnessActor pid=1618335)[0m CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1618335)[0m 3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+[36m(GPUFitnessActor pid=1618335)[0m 3DCartPole V_GRAD targets: 6.6741 / 2.4507
+[36m(GPUFitnessActor pid=1618335)[0m 3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+[36m(GPUFitnessActor pid=1618339)[0m CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1618339)[0m 3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+[36m(GPUFitnessActor pid=1618339)[0m 3DCartPole V_GRAD targets: 6.6741 / 2.4507
+[36m(GPUFitnessActor pid=1618339)[0m 3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+[36m(GPUFitnessActor pid=1618338)[0m CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+[36m(GPUFitnessActor pid=1618338)[0m 3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+[36m(GPUFitnessActor pid=1618338)[0m 3DCartPole V_GRAD targets: 6.6741 / 2.4507
+[36m(GPUFitnessActor pid=1618338)[0m 3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+[36m(GPUFitnessActor pid=1618336)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1618337)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1618338)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1618329)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1618330)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1618335)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1618334)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1618333)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=1618339)[0m CP3D JAX devices: cuda:0
+GPU5 Artstein warm-up: gpu0=ok:12.47s, gpu1=ok:12.52s, gpu2=ok:12.55s, gpu3=ok:12.51s, gpu4=ok:12.45s, gpu5=ok:12.49s, gpu6=ok:12.20s, gpu7=ok:12.18s, gpu8=ok:12.52s
+GPU5 full exact warm-up: gpu0=ok:33.72s, gpu1=ok:33.33s, gpu2=ok:32.72s, gpu3=ok:33.15s, gpu4=ok:35.17s, gpu5=ok:34.34s, gpu6=ok:33.51s, gpu7=ok:33.96s, gpu8=ok:33.71s
+GPU5 scheduling: 9 persistent actors (3 GPUs x 3 actors/GPU, gpu_fraction=0.333, cpus/actor=3), pre_batch_size=16, exact_batch_size=24, cheap_batch_size=32, exact_wave_cheap_limits=(500,1500), full_exact_enabled=1, tuner_fusion=2, population=2500
+GPU5 actor devices: ['cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0']
+Generating initial population(s)...
+ Seeding population with individuals...
+DONE.
+Evaluating initial population(s)...
+GPU5 stages: candidates=500 pre_s=27.732 cheap_candidates=500 cheap_unique=377 cheap_s=18.096/40.000 cheap_rejected=138 cheap_a_min=-4.14511343443e+14 cheap_a_p50=-628.875551883 cheap_a_p95=4.6931538034e+13 cheap_a_max=4.76497156358e+13 exact_a_gate=0.15 exact_provisional_penalty=161.010870435 exact_candidates=362 exact_unique=275 full_exact_enabled=1 exact_capacity=1200 exact_waves=134 exact_scheduled=275 exact_deferred=0 exact_wave=275/1200 exact_queue_depth=0 exact_pending_instances=0 exact_s=266.404 exact_ok=275 exact_margin_max=5.80920335268 exact_scan_mean_s=0.090 exact_bisect_mean_s=0.031 exact_polish_mean_s=0.011 exact_final_mean_s=0.049 exact_margin_abs_b_max=9.51e-15 cache_hits=0 cache_misses=0 cache_waits=0
+Stopping Ray Slurm steps...

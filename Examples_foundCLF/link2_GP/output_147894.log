@@ -1,0 +1,112 @@
+local env ready on all nodes in 70 s: python=/tmp/flex_147894/bin/python
+V10 port: cma resumable=1 select=kappa cap=2500 first_cap=5000 deep=6 x 2500 slices=20 x 500
+FLEX_MIGRATION_FIX=1 SYMCLF6D_B_NORM=l1 SYMCLF6D_GRID_POINTS=21 SYMCLF6D_LATTICE_LINES=9 SYMCLF6D_LATTICE_MESH=21 SYMCLF6D_LATTICE_SAMPLES=801 SYMCLF6D_SKIP_DEAD_ADAM=1 SYMCLF6D_SYSTEM=link2 SYMCLF6D_TEMPLATE=full SYMCLF6D_TEMPLATE_X0=1.0 SYMCLF_CMA_DEEP_COUNT=6 SYMCLF_CMA_DEEP_EVALS=2500 SYMCLF_CMA_ELITE_COUNT=3 SYMCLF_CMA_ELITE_EVALS=2000 SYMCLF_CMA_ELITE_MAX_FITNESS=10000 SYMCLF_CMA_ELITE_POPSIZE=18 SYMCLF_CMA_ELITE_SEED=2 SYMCLF_CMA_FIRST_MAX_EVALS=5000 SYMCLF_CMA_MAX_EVALS_PER_STRUCTURE=2500 SYMCLF_CMA_MAX_RESTARTS=9 SYMCLF_CMA_RESUMABLE=1 SYMCLF_CMA_SELECT=kappa SYMCLF_CMA_SLICE_COUNT=20 SYMCLF_CMA_SLICE_EVALS=500 SYMCLF_CP3D_NESTED_PENALTY=50 SYMCLF_CP3D_ROA_C_TARGET=0.004 SYMCLF_CP3D_ROA_WEIGHT=500 SYMCLF_DET4_B_REL_TOL=1e-6 SYMCLF_DET4_GATE_KAPPA_CAP=1e6 SYMCLF_DET4_KAPPA_MIN=0 SYMCLF_DET4_ORIGIN_SEEDS=1 SYMCLF_DET4_PD_EPS=1e-4 SYMCLF_DET4_PEN_CV=10 SYMCLF_DET4_PEN_CV_TARGET=0.05 SYMCLF_DET4_PEN_KAPPA=100 SYMCLF_DET4_PEN_KAPPA_TARGET=1.0 SYMCLF_DET4_PEN_VOL=20 SYMCLF_DET4_PEN_VOL_TARGET=0.02 SYMCLF_DET4_PROJECT_ASCENT=1 SYMCLF_DET4_RHO=1000 SYMCLF_GPU2_TUNER_GENERATIONS=5 SYMCLF_GPU2_TUNER_RANDOM_POPULATION=35 SYMCLF_LENGTH_REG=0.005 SYMCLF_MAX_TREE_LENGTH=90 SYMCLF_TUNER_ADAM_EXIT_ZERO_GRAD=1 SYMCLF_TUNER_ADAM_PATIENCE=0 SYMCLF_TUNER_CONST_PERTURB_FRAC=0.5 SYMCLF_TUNER_CONST_RANGE=30 SYMCLF_TUNER_REFINE_LR=0.30 SYMCLF_TUNER_REFINE_STEPS=40 SYMCLF_TUNER_SKIP_ADAM_AT_ZERO=1 SYMCLF_V2_BOX=0.5,0.5,0.5,0.5 
+
+numba warm-up done
+Starting Ray head on s08n12 (attempt 1)...
+2026-09-20 05:16:58,795	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-09-20 05:16:58,795	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.8.12[22m
+2026-09-20 05:17:01,382	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-09-20 05:17:01,382	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-09-20 05:17:01,382	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-09-20 05:17:01,382	INFO scripts.py:983 -- [36mNext steps[39m
+2026-09-20 05:17:01,382	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-09-20 05:17:01,382	INFO scripts.py:989 -- [1m  ray start --address='10.10.8.12:47894'[22m
+2026-09-20 05:17:01,382	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-09-20 05:17:01,382	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-09-20 05:17:01,382	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.8.12'[39m[26m)
+2026-09-20 05:17:01,382	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-09-20 05:17:01,383	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-09-20 05:17:01,383	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-09-20 05:17:01,383	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-09-20 05:17:01,383	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 05:17:01,383	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 05:17:01,383	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 05:17:01,383	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_05-16-58_795989_801801/logs/ray_process_exit.log[22m[26m
+2026-09-20 05:17:19,497	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.8.22[22m
+2026-09-20 05:17:20,687	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 05:17:20,687	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 05:17:20,687	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 05:17:20,687	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 05:17:20,687	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 05:17:20,687	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 05:17:20,687	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 05:17:20,687	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 05:17:20,687	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_05-16-58_795989_801801/logs/ray_process_exit.log[22m[26m
+all 2 Ray nodes registered
+======== Autoscaler status: 2026-09-20 05:17:29.886792 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_be43f3ea9dbe169b75aedd4e00320bd1650803e0885d448393350927
+ 1 node_96e911924d86d38cb577846aeb511d21405807424c930b7961c28f69
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/128.0 CPU
+ 0B/704.49GiB memory
+ 0B/301.92GiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting run.py (6-D GP) 05:17:30
+6D Ray resources: {'CPU': 128.0, 'node:10.10.8.22': 1.0, 'object_store_memory': 324189172531.0, 'memory': 756441402573.0, 'node:__internal_head__': 1.0, 'node:10.10.8.12': 1.0}
+6D system link2: box (0.5, 0.5, 0.5, 0.5) rho 1000.0 b-norm l1 grid 21^6 | hinges cv 10.0@0.05 kappa 100.0@1.0 vol 20.0@0.02
+6D GP hyperparameters: population=2500 (num_individuals=500 x num_islands=5), generations=20000, crossover=0.7, mutation=0.3, reg_param=0.005, mig_freq=10, mig_frac=0.05
+6D scheduling: 126 single-thread CPU actors on {'s08n12.prime.net': 63, 's08n22.prime.net': 63} | tuner SEA 36 x 5 + Adam 40 | max_len 90 | CMA 3 x 2000 evals, popsize 18, seed 2, gate 10000
+Generating initial population(s)...
+ Seeding population with individuals...
+DONE.
+Evaluating initial population(s)...
+6D stages: candidates=500 s1_s=11.4 tune_mean_s=2.36 det4_candidates=2 det4_unique=2 det4_checked=2 det4_cached=0 s2_s=10.4 dead=206 certified=0 fitness_min=1.18171e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=2
+6D stages: candidates=500 s1_s=10.0 tune_mean_s=1.84 det4_candidates=0 det4_unique=0 det4_checked=0 det4_cached=0 s2_s=0.0 dead=219 certified=0 fitness_min=2.01241e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=2
+6D stages: candidates=500 s1_s=25.7 tune_mean_s=1.72 det4_candidates=3 det4_unique=3 det4_checked=3 det4_cached=0 s2_s=10.7 dead=215 certified=0 fitness_min=1.59549e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=5
+6D stages: candidates=500 s1_s=9.6 tune_mean_s=1.72 det4_candidates=1 det4_unique=1 det4_checked=1 det4_cached=0 s2_s=3.0 dead=213 certified=0 fitness_min=2.76841e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=6
+6D stages: candidates=500 s1_s=10.9 tune_mean_s=1.64 det4_candidates=2 det4_unique=2 det4_checked=2 det4_cached=0 s2_s=3.1 dead=219 certified=0 fitness_min=3.00854e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=8
+DONE.
+ -= START OF EVOLUTION =- 
+6D stages: candidates=2500 s1_s=46.0 tune_mean_s=2.56 det4_candidates=10 det4_unique=10 det4_checked=10 det4_cached=0 s2_s=11.2 dead=889 certified=0 fitness_min=197755 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=18
+   	     	                  fitness                  	             size             
+   	     	-------------------------------------------	------------------------------
+gen	evals	min   	avg        	max  	std        	min	avg   	max	std   
+1  	2500 	197755	7.03081e+07	1e+08	4.32843e+07	2  	5.5244	125	4.2539
+Best individuals of this generation:
+mul(sub(sub(sin(x1), sin(x3)), mul(x4, a)), sub(sub(x4, x2), mul(x2, a)))
+GEN 1 best fitness=197755 len=17 :: grid=1.626e+04 [roa=1.63e+04] lattice c_v=-0.0007727 kappa=1.682e+04 | extra=0.085 | det4 price=1.815e+05 c_v*=-0.01892 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=-0.0005257 volume=0
+6D stages: candidates=2500 s1_s=44.6 tune_mean_s=2.80 det4_candidates=12 det4_unique=12 det4_checked=12 det4_cached=0 s2_s=10.6 dead=1189 certified=0 fitness_min=1e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=30
+2  	2500 	197755	4.20273e+07	1e+08	4.46402e+07	2  	5.0436	125	3.7951
+Best individuals of this generation:
+mul(sub(sub(sin(x1), sin(x3)), mul(x4, a)), sub(sub(x4, x2), mul(x2, a)))
+GEN 2 best fitness=197755 len=17 :: grid=1.626e+04 [roa=1.63e+04] lattice c_v=-0.0007727 kappa=1.682e+04 | extra=0.085 | det4 price=1.815e+05 c_v*=-0.01892 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=-0.0005257 volume=0
+6D stages: candidates=2500 s1_s=65.9 tune_mean_s=2.85 det4_candidates=16 det4_unique=16 det4_checked=15 det4_cached=1 s2_s=10.9 dead=1854 certified=0 fitness_min=9017.72 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=45
+3  	2500 	9017.72	6.70039e+06	1e+08	1.08792e+07	2  	4.4916	125	3.3303
+Best individuals of this generation:
+mul(sub(mul(a, mul(mul(x1, x3), add(x2, x4))), sub(x2, x3)), sin(mul(a, x3)))
+GEN 3 best fitness=9017.72 len=18 :: grid=9017 [roa=9.02e+03] lattice c_v=-4.789e-05 kappa=4598 | extra=0.09 | det4 price=0.9573 c_v*=-4.799e-05 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=-1.565e-05 volume=0
+6D stages: candidates=2500 s1_s=68.7 tune_mean_s=2.96 det4_candidates=26 det4_unique=26 det4_checked=24 det4_cached=2 s2_s=11.1 dead=2142 certified=0 fitness_min=8538.16 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=69
+4  	2500 	8538.16	3.88807e+06	7.00645e+06	1.19661e+06	2  	4.7144	21 	2.5754
+Best individuals of this generation:
+mul(x4, mul(x2, mul(x3, mul(mul(a, a), mul(mul(add(x1, mul(x3, x3)), x1), a)))))
+GEN 4 best fitness=8538.16 len=19 :: grid=8538 [roa=8.54e+03] lattice c_v=-3.068e-08 kappa=4033 | extra=0.095 | det4 price=0.0003839 c_v*=-3.071e-08 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=-1.152e-08 volume=0
+6D stages: candidates=2500 s1_s=79.0 tune_mean_s=3.16 det4_candidates=52 det4_unique=51 det4_checked=47 det4_cached=5 s2_s=11.7 dead=2112 certified=0 fitness_min=8541.37 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=116
+5  	2500 	8538.16	3.12256e+06	5.00854e+06	906739     	2  	5.626 	27 	2.9854
+Best individuals of this generation:
+mul(x4, mul(x2, mul(x3, mul(mul(a, a), mul(mul(add(x1, mul(x3, x3)), x1), a)))))
+GEN 5 best fitness=8538.16 len=19 :: grid=8538 [roa=8.54e+03] lattice c_v=-3.068e-08 kappa=4033 | extra=0.095 | det4 price=0.0003839 c_v*=-3.071e-08 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=-1.152e-08 volume=0
+6D stages: candidates=2500 s1_s=102.0 tune_mean_s=3.42 det4_candidates=103 det4_unique=102 det4_checked=96 det4_cached=7 s2_s=13.2 dead=2075 certified=0 fitness_min=8538.52 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=212
+6  	2500 	8538.16	2.54957e+06	3.84445e+06	731839     	3  	6.714 	27 	3.595 
+Best individuals of this generation:
+mul(x4, mul(x2, mul(x3, mul(mul(a, a), mul(mul(add(x1, mul(x3, x3)), x1), a)))))
+GEN 6 best fitness=8538.16 len=19 :: grid=8538 [roa=8.54e+03] lattice c_v=-3.068e-08 kappa=4033 | extra=0.095 | det4 price=0.0003839 c_v*=-3.071e-08 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=-1.152e-08 volume=0
+6D stages: candidates=2500 s1_s=111.5 tune_mean_s=4.67 det4_candidates=202 det4_unique=200 det4_checked=191 det4_cached=10 s2_s=14.1 dead=1980 certified=0 fitness_min=8537.84 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=403
+7  	2500 	8537.84	2.06885e+06	3.00854e+06	785395     	3  	8.5576	35 	4.5328
+Best individuals of this generation:
+mul(sub(x2, mul(sub(a, a), sub(x4, x1))), mul(sin(mul(x2, x3)), x3))
+GEN 7 best fitness=8537.84 len=16 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6400 | extra=0.08 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0

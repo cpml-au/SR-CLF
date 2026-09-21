@@ -1,0 +1,60 @@
+{
+ "generation": 51,
+ "expression": "add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(x1, x1), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x2, x1))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(a, mul(x1, x2)))), mul(a, mul(x4, x4))), mul(a, mul(x1, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))",
+ "constants": [
+  1.0080226386641482,
+  0.06734637111540938,
+  0.7443667930658534,
+  0.5134814087271489,
+  0.4078539202613435,
+  1.0834508129669986,
+  1.1149148549227381,
+  0.31172140338662363,
+  0.5774879426802321,
+  0.47422542905421033,
+  1.0311357147483824,
+  0.22629249008032282,
+  0.10596227535271867,
+  1.2513591999036058,
+  1.4805897932382552,
+  1.2082348795381637
+ ],
+ "fitness": 0.47500000000000003,
+ "breakdown": {
+  "pre_exact": 0.0,
+  "extra_penalty": 0.47500000000000003,
+  "dead": false,
+  "grid_roa": 0.0,
+  "grid_cv": 0.38837981221811796,
+  "grid_kappa": 13.188904997918355,
+  "grid_boundary_min": 6.922732991914476,
+  "grid_w_scale": 24.00043787489794,
+  "grid_certified_volume": 0.020187166911745956,
+  "det4": {
+   "cv": 0.38368983286716307,
+   "kappa": 1.000726143172151,
+   "worst_r": 2.766863700096602,
+   "penalty_terms": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "pd_valid": true
+  },
+  "det4_price": 0.0,
+  "det4_certified": true,
+  "cma": {
+   "n_constants": 16,
+   "before": 86.88477973368512,
+   "after": 0.47500000000000003,
+   "improved": true,
+   "evals": 2017,
+   "popsize": 18,
+   "seed": 2,
+   "certified_at": 2,
+   "n_certified": 1926,
+   "seconds": 506.948836955009
+  },
+  "gate": null
+ }
+}

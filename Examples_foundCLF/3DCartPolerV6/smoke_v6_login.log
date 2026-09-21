@@ -1,0 +1,43 @@
+CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+3DCartPole V_GRAD targets: 6.6741 / 2.4507
+3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+CP3D JAX devices: TFRT_CPU_0
+PASS ledger ARE (CLF): pre_exact 0 = sum(terms)+symbolic 0 (lattice c_v 0.06362 kappa 2.009)
+PASS ledger all-ones: pre_exact 1375.21 = sum(terms)+symbolic 1375.21 (lattice c_v 1 kappa -4.422)
+PASS ledger bad tree: pre_exact 6.0081e+06 = sum(terms)+symbolic 6.0081e+06 (lattice c_v -0.5 kappa 753.4)
+PASS ARE certified on the lattice, grid score 0
+PASS all-ones not certified on the lattice, grid score 1375
+PASS Pallas rows V / x.gradV vs numba: 0.00e+00 / 1.15e-16
+PASS crease champion on the grid: cv_w -6.29e-15 cv_rad -6.29e-15 price 8468 (>= 1500)
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+  @njit(cache=True, parallel=True)
+PASS crease champion by the full check: cv_w 190.6985650725001 cv_rad 1.1871452933955336e-21 -> c_v* 1.1871452933955336e-21 kappa* -1000000.0
+PASS cheap screen, ARE: {'status': 'det4_all', 'roots': 537, 'violations': 0, 'ratio_max': -0.6493401969836112, 'cv': 0.06359440663186906, 'kappa': 0.6493391502538035, 'kappa_source': 'det4_fast', 'cheap_cv': 0.06362245994506915, 'penalty_terms': (0.0, 0.0, 0.0), 'certified': True, 'penalty': 0.0, 'metrics': {'engine': 'gpu_artstein', 'artstein_total_s': 79.8296606290387, 'total_s': 79.8296606290387, 'device_syncs': 1, 'scan_points': 176400, 'brackets': 537, 'roots_before_polish': 537, 'polished_accepted': 0, 'program_nodes': 37, 'fused_candidates': 32, 'a_max': -4.696529514752886e-05, 'margin_mean_pos': 0.0, 'det4_ratio_max': -0.6493401969836112}}
+PASS cheap screen, all-ones: {'status': 'det4_all', 'roots': 302, 'violations': 153, 'ratio_max': 5.365402084421085, 'cv': 0.9999999999999997, 'kappa': -5.366563145951593, 'kappa_source': 'det4_fast', 'cheap_cv': 0.99999999999999, 'penalty_terms': (0.0, 30.0, 0.0), 'certified': False, 'penalty': 80.31961748473236, 'metrics': {'engine': 'gpu_artstein', 'artstein_total_s': 79.8296606290387, 'total_s': 79.8296606290387, 'device_syncs': 1, 'scan_points': 176400, 'brackets': 302, 'roots_before_polish': 302, 'polished_accepted': 0, 'program_nodes': 11, 'fused_candidates': 32, 'a_max': 0.06280244106975424, 'margin_mean_pos': 0.008695914407489687, 'det4_ratio_max': 5.365402084421085}}
+PASS ARE promoted to the full check
+PASS exact stage certifies the ARE: roots 348 viol 0 kappa* 0.6493391502538035 c_v* 0.06359440663186906
+PASS ARE fitness = length term only: 0.175 (extra 0.175)
+PASS all-ones not promoted; fitness = escalated cheap rule on kappa_cheap (-5.3666 x 1) + length: 1455.5849 vs 1455.5849
+PASS ARE (CLF) vs referee: kappa* 0.649339150 / 0.649339150 (new - ref +0.00e+00); c_v* 0.063594407 / 0.063594407 (diff 0.00e+00)
+PASS all-ones vs referee: kappa* -5.366563146 / -5.366563146 (new - ref -1.83e-12); c_v* 1.000000000 / 1.000000000 (diff 0.00e+00)
+PASS V6 rule: ARE penalty 0; gen 27 19.99 < gen 147 (needle) 26.75 < plateau gen 119 556.67
+PASS V6 elite selection: top-3 distinct by price -> keys ['b', 'e', 'c'] (no-constant and duplicate entries skipped)
+PASS V6 refine sees a slope on the plateau: gen 119 kappa* 0.0011163760334064684, rule 556.69, |grad| 1.21e+08
+PASS V6 Adam refine (4 evaluations, keep-best): rule 578.715 -> 570.459, kappa* -0.04124 -> -0.022525583466647504, accepted steps 3
+PASS V6 tuner exits (floor / zero gradient) are bit-identical to the full 40-step Adam
+PASS bad tree stays far above: fitness 6.009e+06
+[201s]  SMOKE V3 DET4 PASS
+exit 0
