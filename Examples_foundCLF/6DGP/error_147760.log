@@ -1,0 +1,9 @@
+2026-09-19 14:22:16,340	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.7.2:47760...
+2026-09-19 14:22:16,407	INFO worker.py:2012 -- Connected to Ray cluster.
+/tmp/flex_147760/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+srun: forcing job termination
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-09-19T14:23:36.120] error: *** STEP 147760.2 ON s07n02 CANCELLED AT 2026-09-19T14:23:36 DUE to SIGNAL Killed ***
+srun: error: s07n02: task 0: Killed
+srun: Terminating StepId=147760.2

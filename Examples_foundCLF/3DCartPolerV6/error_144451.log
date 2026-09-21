@@ -1,0 +1,27 @@
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1m[1mCannot cache compiled function "_nnls" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1m[1mCannot cache compiled function "_ldp" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1m[1mCannot cache compiled function "_lsi" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1m[1mCannot cache compiled function "_lsei" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1m[1mCannot cache compiled function "_lsq" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:993: NumbaWarning: [1m[1mCannot cache compiled function "slsqp_solve" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m[0m
+  x, f, mode, it = slsqp_solve(kind, seeds[k], lb, ub, op, opr, lit, n_ops, params, v0, rho,
+/home/qaragoez/symclf_clean/symclf/examples/DET4Fast/slsqp_nb.py:984: NumbaWarning: [1mCannot cache compiled function "slsqp_many" as it uses dynamic globals (such as ctypes pointers and large global arrays)[0m
+  @njit(cache=True, parallel=True)
+srun: error: s02n01: task 0: Exited with exit code 1
+srun: Terminating StepId=144451.1
+2026-09-11 15:17:43,142	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.2.1:44451...
+[2026-09-11 15:17:48,153 W 1616774 1616774] rpc_client.h:153: Failed to connect to GCS at address 10.10.2.1:44451 within 5 seconds.
+[2026-09-11 15:18:18,156 W 1616774 1616774] gcs_client.cc:205: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2026-09-11 15:18:25,615 W 1616774 1616774] rpc_client.h:153: Failed to connect to GCS at address 10.10.2.1:44451 within 5 seconds.
+[2026-09-11 15:18:55,617 W 1616774 1616774] gcs_client.cc:205: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2026-09-11 15:19:01,622 W 1616774 1616774] rpc_client.h:153: Failed to connect to GCS at address 10.10.2.1:44451 within 5 seconds.
+[2026-09-11 15:19:31,624 W 1616774 1616774] gcs_client.cc:205: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-09-11T15:19:35.184] error: *** JOB 144451 ON s02n01 CANCELLED AT 2026-09-11T15:19:35 DUE to SIGNAL Terminated ***
+[2026-09-11T15:19:35.184] error: *** STEP 144451.2 ON s02n01 CANCELLED AT 2026-09-11T15:19:35 DUE to SIGNAL Terminated ***
+[2026-09-11 15:19:37,734 W 1616774 1616774] rpc_client.h:153: Failed to connect to GCS at address 10.10.2.1:44451 within 5 seconds.

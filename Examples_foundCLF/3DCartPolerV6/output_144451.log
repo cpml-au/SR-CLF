@@ -1,0 +1,53 @@
+V6 DET4_FAST=1 numba_threads=3 gate_kappa_cap=1e6 det4_all=1 refine=adam/price top10 x100 lr0.02 pen cv=10@0.05 kappa=30@0.05 vol=20@0.02 tuner_skip=1/1
+V3 positivity=300 const_range=30 refine=40x top4
+V3 box=0.25,0.0494,0.1155 shape=300 rho_mult=1.0 cert=500 vdot=0
+CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+3DCartPole V_GRAD targets: 6.6741 / 2.4507
+3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+CP3D JAX devices: TFRT_CPU_0
+[263s]  SMOKE V3 DET4 PASS
+Project root: /home/qaragoez/symclf_clean/symclf
+PYTHONPATH: /home/qaragoez/symclf_clean/symclf/examples/3DCartPolerV6:/home/qaragoez/symclf_clean/symclf:
+Conda environment: /home/qaragoez/miniforge3/envs/flex
+Python: /home/qaragoez/miniforge3/envs/flex/bin/python
+Python 3.12.0
+Ray Python package: 2.55.1 /home/qaragoez/miniforge3/envs/flex/lib/python3.12/site-packages/ray/__init__.py
+JAX: 0.5.0 devices: [CudaDevice(id=0), CudaDevice(id=1), CudaDevice(id=2)]
+GPU 0: NVIDIA A100-PCIE-40GB (UUID: GPU-8806a028-3fad-4d77-cd1f-e35537f6ba08)
+GPU 1: NVIDIA A100-PCIE-40GB (UUID: GPU-5fed31ff-efb8-eddd-10a0-3e59d233cab1)
+GPU 2: NVIDIA A100-PCIE-40GB (UUID: GPU-27a4ce9b-4204-cd33-f46c-b27e50f5a18a)
+Ray CLI: /home/qaragoez/miniforge3/envs/flex/bin/ray
+ray, version 2.55.1
+Allocated nodes: s02n01
+Head node: s02n01
+Head IP: 10.10.2.1
+Head address: 10.10.2.1:44451
+Starting Ray head on s02n01...
+Ray cluster status:
+No cluster status. It may take a few seconds for the Ray internal services to start up.
+Starting run.py (CP3D V6 penalties + price-selected Adam elites; well-conditioned reference + local constant refinement)...
+2026-09-11 15:16:02,620	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-09-11 15:16:02,620	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.2.1[22m
+2026-09-11 15:17:08,293	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-09-11 15:17:08,294	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-09-11 15:17:08,294	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-09-11 15:17:08,294	INFO scripts.py:983 -- [36mNext steps[39m
+2026-09-11 15:17:08,294	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-09-11 15:17:08,294	INFO scripts.py:989 -- [1m  ray start --address='10.10.2.1:44451'[22m
+2026-09-11 15:17:08,294	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-09-11 15:17:08,294	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-09-11 15:17:08,294	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.2.1'[39m[26m)
+2026-09-11 15:17:08,294	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-09-11 15:17:08,294	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-09-11 15:17:08,294	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-09-11 15:17:08,294	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-09-11 15:17:08,295	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-11 15:17:08,295	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-11 15:17:08,295	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-11 15:17:08,295	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-11_15-16-02_621645_1616377/logs/ray_process_exit.log[22m[26m
+CP3D strict margin predicate: violation iff margin > -1.0e-09  (a == 0 is now a violation)
+3DCartPole reference = ARE solution; eig(PA+A'P) on {B'Px=0} = [-3.79816  -0.045537]  (must be [-1, -1])
+3DCartPole V_GRAD targets: 6.6741 / 2.4507
+3DCartPolerV6 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; GPU5_7 scheduling (cheap screen on every gate-1 pass, full check if max a/W <= 0.15 or certified, escalation 2); elites 10 x 100 steps; origin exclusion 0 (absolute root check ball 0.0011)
+V2 box half-widths = (0.25, 0.0494, 0.1155)  grid = 41^3

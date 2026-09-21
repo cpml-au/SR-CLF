@@ -1,0 +1,23 @@
+2026-09-20 18:42:38,128	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.7.2:47942...
+2026-09-20 18:42:38,191	INFO worker.py:2012 -- Connected to Ray cluster.
+/tmp/flex_147942/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-09-21T11:25:48.953] error: *** STEP 147942.3 ON s07n03 CANCELLED AT 2026-09-21T11:25:48 DUE to SIGNAL Terminated ***
+[2026-09-21T11:25:48.961] error: *** STEP 147942.4 ON s07n04 CANCELLED AT 2026-09-21T11:25:48 DUE to SIGNAL Terminated ***
+[2026-09-21T11:25:48.973] error: *** JOB 147942 ON s07n02 CANCELLED AT 2026-09-21T11:25:48 DUE to SIGNAL Terminated ***
+[2026-09-21T11:25:48.974] error: *** STEP 147942.2 ON s07n02 CANCELLED AT 2026-09-21T11:25:48 DUE to SIGNAL Terminated ***
+[2026-09-21T11:25:48.985] error: *** STEP 147942.5 ON s07n05 CANCELLED AT 2026-09-21T11:25:48 DUE to SIGNAL Terminated ***
+Traceback (most recent call last):
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/run.py", line 220, in <module>
+    if __name__ == "__main__":
+        ^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/6DGP/run.py", line 202, in main
+[2026-09-21 11:25:49,057 E 3783601 3783636] core_worker.cc:475: :info_message: Attempting to recover 3 lost objects by resubmitting their tasks or setting a new primary location from existing copies. To disable object reconstruction, set @ray.remote(max_retries=0).
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination
+srun: forcing job termination

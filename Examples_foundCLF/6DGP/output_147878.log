@@ -1,0 +1,111 @@
+local env ready on all nodes in 114 s: python=/tmp/flex_147878/bin/python
+V10 port: cma resumable=1 select=kappa cap=2500 first_cap=5000 deep=6 x 2500 slices=20 x 500
+FLEX_MIGRATION_FIX=1 SYMCLF6D_B_NORM=l1 SYMCLF6D_GRID_POINTS=7 SYMCLF6D_LATTICE_LINES=3 SYMCLF6D_LATTICE_MESH=7 SYMCLF6D_LATTICE_SAMPLES=801 SYMCLF6D_SKIP_DEAD_ADAM=1 SYMCLF6D_SYSTEM=quad6d SYMCLF6D_TEMPLATE=full SYMCLF6D_TEMPLATE_X0=1.0 SYMCLF_CMA_DEEP_COUNT=6 SYMCLF_CMA_DEEP_EVALS=2500 SYMCLF_CMA_ELITE_COUNT=3 SYMCLF_CMA_ELITE_EVALS=2000 SYMCLF_CMA_ELITE_MAX_FITNESS=3000 SYMCLF_CMA_ELITE_POPSIZE=18 SYMCLF_CMA_ELITE_SEED=2 SYMCLF_CMA_FIRST_MAX_EVALS=5000 SYMCLF_CMA_MAX_EVALS_PER_STRUCTURE=2500 SYMCLF_CMA_MAX_RESTARTS=9 SYMCLF_CMA_RESUMABLE=1 SYMCLF_CMA_SELECT=kappa SYMCLF_CMA_SLICE_COUNT=20 SYMCLF_CMA_SLICE_EVALS=500 SYMCLF_CP3D_NESTED_PENALTY=50 SYMCLF_CP3D_ROA_C_TARGET=0.004 SYMCLF_CP3D_ROA_WEIGHT=500 SYMCLF_DET4_B_REL_TOL=1e-6 SYMCLF_DET4_GATE_KAPPA_CAP=1e6 SYMCLF_DET4_KAPPA_MIN=0 SYMCLF_DET4_ORIGIN_SEEDS=1 SYMCLF_DET4_PD_EPS=1e-4 SYMCLF_DET4_PEN_CV=10 SYMCLF_DET4_PEN_CV_TARGET=0.05 SYMCLF_DET4_PEN_KAPPA=100 SYMCLF_DET4_PEN_KAPPA_TARGET=1.0 SYMCLF_DET4_PEN_VOL=20 SYMCLF_DET4_PEN_VOL_TARGET=0.02 SYMCLF_DET4_PROJECT_ASCENT=1 SYMCLF_DET4_RHO=1000 SYMCLF_GPU2_TUNER_GENERATIONS=5 SYMCLF_GPU2_TUNER_RANDOM_POPULATION=35 SYMCLF_LENGTH_REG=0.005 SYMCLF_MAX_TREE_LENGTH=190 SYMCLF_TUNER_ADAM_EXIT_ZERO_GRAD=1 SYMCLF_TUNER_ADAM_PATIENCE=0 SYMCLF_TUNER_CONST_PERTURB_FRAC=0.5 SYMCLF_TUNER_CONST_RANGE=30 SYMCLF_TUNER_REFINE_LR=0.30 SYMCLF_TUNER_REFINE_STEPS=40 SYMCLF_TUNER_SKIP_ADAM_AT_ZERO=1 SYMCLF_V2_BOX=3,3,3,3,3,3 
+
+numba warm-up done
+Starting Ray head on s06n02 (attempt 1)...
+2026-09-20 03:53:11,512	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-09-20 03:53:11,512	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.6.2[22m
+2026-09-20 03:53:13,900	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-09-20 03:53:13,900	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-09-20 03:53:13,900	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-09-20 03:53:13,900	INFO scripts.py:983 -- [36mNext steps[39m
+2026-09-20 03:53:13,900	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-09-20 03:53:13,900	INFO scripts.py:989 -- [1m  ray start --address='10.10.6.2:47878'[22m
+2026-09-20 03:53:13,900	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-09-20 03:53:13,900	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-09-20 03:53:13,901	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.6.2'[39m[26m)
+2026-09-20 03:53:13,901	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-09-20 03:53:13,901	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-09-20 03:53:13,901	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-09-20 03:53:13,901	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-09-20 03:53:13,901	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 03:53:13,901	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 03:53:13,901	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 03:53:13,901	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_03-53-11_512953_1466473/logs/ray_process_exit.log[22m[26m
+2026-09-20 03:53:32,247	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.7.4[22m
+2026-09-20 03:53:33,453	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 03:53:33,454	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 03:53:33,454	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 03:53:33,454	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 03:53:33,454	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 03:53:33,455	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 03:53:33,455	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 03:53:33,456	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 03:53:33,456	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_03-53-11_512953_1466473/logs/ray_process_exit.log[22m[26m
+2026-09-20 03:53:32,255	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.7.2[22m
+2026-09-20 03:53:33,468	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 03:53:33,469	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 03:53:33,469	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 03:53:33,469	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 03:53:33,469	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 03:53:33,470	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 03:53:33,470	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 03:53:33,470	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 03:53:33,471	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_03-53-11_512953_1466473/logs/ray_process_exit.log[22m[26m
+2026-09-20 03:53:32,261	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.7.3[22m
+2026-09-20 03:53:33,488	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 03:53:33,489	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 03:53:33,489	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 03:53:33,489	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 03:53:33,489	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 03:53:33,490	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 03:53:33,490	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 03:53:33,490	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 03:53:33,491	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_03-53-11_512953_1466473/logs/ray_process_exit.log[22m[26m
+all 4 Ray nodes registered
+======== Autoscaler status: 2026-09-20 03:53:42.385100 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_316a7277dd89992987729a0a42aeebc0af1cd71379b7c9131b0526a0
+ 1 node_49314f237f49b598ba65b90db66f47ce83d27fdabe10094a29388eb2
+ 1 node_6b17aefc8348f6025d5d6114e66be49eaf5f8229f5960ea7f83eb780
+ 1 node_1802ab8695b5c9cb3a657dd96e3c0df8607b5e9b0d67f9a3db0c2b07
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/144.0 CPU
+ 0B/1.03TiB memory
+ 0B/451.84GiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting run.py (6-D GP) 03:53:43
+6D Ray resources: {'memory': 1132042827778.0, 'node:10.10.6.2': 1.0, 'CPU': 144.0, 'node:__internal_head__': 1.0, 'object_store_memory': 485161211902.0, 'node:10.10.7.3': 1.0, 'node:10.10.7.2': 1.0, 'node:10.10.7.4': 1.0}
+6D system quad6d: box (3.0, 3.0, 3.0, 3.0, 3.0, 3.0) rho 1000.0 b-norm l1 grid 7^6 | hinges cv 10.0@0.05 kappa 100.0@1.0 vol 20.0@0.02
+6D GP hyperparameters: population=2500 (num_individuals=500 x num_islands=5), generations=20000, crossover=0.7, mutation=0.3, reg_param=0.005, mig_freq=10, mig_frac=0.05
+6D scheduling: 142 single-thread CPU actors on {'s06n02.prime.net': 35, 's07n04.prime.net': 36, 's07n02.prime.net': 36, 's07n03.prime.net': 35} | tuner SEA 36 x 5 + Adam 40 | max_len 190 | CMA 3 x 2000 evals, popsize 18, seed 2, gate 3000
+Generating initial population(s)...
+ Seeding population with individuals...
+DONE.
+Evaluating initial population(s)...
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 2502 evals, 1 certified, 0 resumed
+6D stages: candidates=500 s1_s=18.9 tune_mean_s=2.24 det4_candidates=3 det4_unique=3 det4_checked=3 det4_cached=0 s2_s=11.5 dead=497 certified=1 fitness_min=0.625 cma_runs=1 cma_certified=1 cma_best=0.625 cma_s=671.7 cache_entries=3
+6D stages: candidates=500 s1_s=10.4 tune_mean_s=1.71 det4_candidates=0 det4_unique=0 det4_checked=0 det4_cached=0 s2_s=0.0 dead=500 certified=0 fitness_min=2.09985e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=3
+6D stages: candidates=500 s1_s=10.2 tune_mean_s=1.58 det4_candidates=1 det4_unique=1 det4_checked=1 det4_cached=0 s2_s=1.4 dead=499 certified=0 fitness_min=3.11701e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=4
+6D stages: candidates=500 s1_s=9.9 tune_mean_s=1.59 det4_candidates=0 det4_unique=0 det4_checked=0 det4_cached=0 s2_s=0.0 dead=500 certified=0 fitness_min=3.00854e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=4
+6D stages: candidates=500 s1_s=10.4 tune_mean_s=1.68 det4_candidates=0 det4_unique=0 det4_checked=0 det4_cached=0 s2_s=0.0 dead=500 certified=0 fitness_min=3.00854e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=4
+DONE.
+ -= START OF EVOLUTION =- 
+6D stages: candidates=2500 s1_s=76.4 tune_mean_s=2.16 det4_candidates=7 det4_unique=7 det4_checked=7 det4_cached=0 s2_s=2.8 dead=2493 certified=0 fitness_min=1.39482e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=11
+   	     	                      fitness                      	             size             
+   	     	---------------------------------------------------	------------------------------
+gen	evals	min  	avg        	max        	std        	min	avg   	max	std   
+1  	2500 	0.625	8.38127e+06	1.30085e+07	2.63418e+06	2  	5.9944	125	4.2247
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 1 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 671 s) | boundary_min=50.4 volume=0.0203
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 1800 evals, 0 certified, 0 resumed
+6D stages: candidates=2500 s1_s=55.1 tune_mean_s=2.81 det4_candidates=8 det4_unique=8 det4_checked=8 det4_cached=0 s2_s=2.6 dead=2492 certified=0 fitness_min=600.13 cma_runs=1 cma_certified=0 cma_best=600.13 cma_s=274.5 cache_entries=19
+2  	2500 	0.625	6.04724e+06	9.00854e+06	1.42243e+06	2  	6.1612	125	4.2454
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))
+GEN 2 best fitness=0.625 len=125 :: grid=0 [roa=0] lattice c_v=2.678 kappa=12.5 | extra=0.625 | det4 price=0 c_v*=2.666 kappa*=1.014 certified=True worst_r=4.6 pen=0/0/0 | cma 600.6->0.625 (2502 evals, certified_at 25, 671 s) | boundary_min=50.4 volume=0.0203

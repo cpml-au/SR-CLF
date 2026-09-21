@@ -1,0 +1,174 @@
+local env ready on all nodes in 70 s: python=/tmp/flex_147944/bin/python
+V10 port: cma resumable=1 select=kappa cap=2500 first_cap=5000 deep=6 x 2500 slices=20 x 500
+FLEX_MIGRATION_FIX=1 SYMCLF6D_B_NORM=l1 SYMCLF6D_GRID_POINTS=21 SYMCLF6D_LATTICE_LINES=9 SYMCLF6D_LATTICE_MESH=21 SYMCLF6D_LATTICE_SAMPLES=801 SYMCLF6D_SKIP_DEAD_ADAM=1 SYMCLF6D_SYSTEM=link2 SYMCLF6D_TEMPLATE=full SYMCLF6D_TEMPLATE_X0=1.0 SYMCLF_CMA_DEEP_COUNT=6 SYMCLF_CMA_DEEP_EVALS=2500 SYMCLF_CMA_ELITE_COUNT=3 SYMCLF_CMA_ELITE_EVALS=2000 SYMCLF_CMA_ELITE_MAX_FITNESS=10000 SYMCLF_CMA_ELITE_POPSIZE=18 SYMCLF_CMA_ELITE_SEED=2 SYMCLF_CMA_FIRST_MAX_EVALS=5000 SYMCLF_CMA_MAX_EVALS_PER_STRUCTURE=2500 SYMCLF_CMA_MAX_RESTARTS=100 SYMCLF_CMA_RESUMABLE=1 SYMCLF_CMA_SELECT=kappa SYMCLF_CMA_SLICE_COUNT=20 SYMCLF_CMA_SLICE_EVALS=500 SYMCLF_CP3D_NESTED_PENALTY=50 SYMCLF_CP3D_ROA_C_TARGET=0.004 SYMCLF_CP3D_ROA_WEIGHT=500 SYMCLF_DET4_B_REL_TOL=1e-6 SYMCLF_DET4_GATE_KAPPA_CAP=1e6 SYMCLF_DET4_KAPPA_MIN=0 SYMCLF_DET4_ORIGIN_SEEDS=1 SYMCLF_DET4_PD_EPS=1e-4 SYMCLF_DET4_PEN_CV=10 SYMCLF_DET4_PEN_CV_TARGET=0.05 SYMCLF_DET4_PEN_KAPPA=100 SYMCLF_DET4_PEN_KAPPA_TARGET=1.0 SYMCLF_DET4_PEN_VOL=20 SYMCLF_DET4_PEN_VOL_TARGET=0.02 SYMCLF_DET4_PROJECT_ASCENT=1 SYMCLF_DET4_RHO=1000 SYMCLF_GPU2_TUNER_GENERATIONS=5 SYMCLF_GPU2_TUNER_RANDOM_POPULATION=35 SYMCLF_LENGTH_REG=0.005 SYMCLF_MAX_TREE_LENGTH=90 SYMCLF_TUNER_ADAM_EXIT_ZERO_GRAD=1 SYMCLF_TUNER_ADAM_PATIENCE=0 SYMCLF_TUNER_CONST_PERTURB_FRAC=0.5 SYMCLF_TUNER_CONST_RANGE=30 SYMCLF_TUNER_REFINE_LR=0.30 SYMCLF_TUNER_REFINE_STEPS=40 SYMCLF_TUNER_SKIP_ADAM_AT_ZERO=1 SYMCLF_V2_BOX=0.5,0.5,0.5,0.5 
+
+numba warm-up done
+Starting Ray head on s08n12 (attempt 1)...
+2026-09-20 18:42:00,755	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-09-20 18:42:00,755	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.8.12[22m
+2026-09-20 18:42:03,347	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-09-20 18:42:03,348	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-09-20 18:42:03,348	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-09-20 18:42:03,348	INFO scripts.py:983 -- [36mNext steps[39m
+2026-09-20 18:42:03,348	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-09-20 18:42:03,348	INFO scripts.py:989 -- [1m  ray start --address='10.10.8.12:47944'[22m
+2026-09-20 18:42:03,348	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-09-20 18:42:03,348	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-09-20 18:42:03,348	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.8.12'[39m[26m)
+2026-09-20 18:42:03,348	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-09-20 18:42:03,348	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-09-20 18:42:03,348	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-09-20 18:42:03,348	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-09-20 18:42:03,348	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 18:42:03,348	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 18:42:03,348	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 18:42:03,348	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_18-42-00_756227_1173584/logs/ray_process_exit.log[22m[26m
+2026-09-20 18:42:21,469	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.8.22[22m
+2026-09-20 18:42:22,658	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 18:42:22,658	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 18:42:22,658	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 18:42:22,658	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 18:42:22,658	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 18:42:22,658	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 18:42:22,658	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 18:42:22,658	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 18:42:22,658	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_18-42-00_756227_1173584/logs/ray_process_exit.log[22m[26m
+all 2 Ray nodes registered
+======== Autoscaler status: 2026-09-20 18:42:31.855158 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_0d9b1d6fe7cb3ee87d257df1b51dc91316d31ab9752d7e150ccc65fe
+ 1 node_7ba4efd1b02f2a16f6e8d3c21c4aeb2fd4193369ab9fcec48bf42755
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/128.0 CPU
+ 0B/704.49GiB memory
+ 0B/301.92GiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting run.py (6-D GP) 18:42:32
+6D Ray resources: {'memory': 756436846592.0, 'CPU': 128.0, 'node:10.10.8.12': 1.0, 'node:__internal_head__': 1.0, 'object_store_memory': 324187219968.0, 'node:10.10.8.22': 1.0}
+6D system link2: box (0.5, 0.5, 0.5, 0.5) rho 1000.0 b-norm l1 grid 21^6 | hinges cv 10.0@0.05 kappa 100.0@1.0 vol 20.0@0.02
+6D GP hyperparameters: population=2500 (num_individuals=500 x num_islands=5), generations=20000, crossover=0.7, mutation=0.3, reg_param=0.005, mig_freq=10, mig_frac=0.05
+6D scheduling: 126 single-thread CPU actors on {'s08n12.prime.net': 63, 's08n22.prime.net': 63} | tuner SEA 36 x 5 + Adam 40 | max_len 90 | CMA 3 x 2000 evals, popsize 18, seed 2, gate 10000
+Generating initial population(s)...
+ Seeding population with individuals...
+DONE.
+Evaluating initial population(s)...
+6D stages: candidates=500 s1_s=12.7 tune_mean_s=2.38 det4_candidates=7 det4_unique=7 det4_checked=7 det4_cached=0 s2_s=11.2 dead=222 certified=0 fitness_min=2.09398e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=7
+6D stages: candidates=500 s1_s=39.6 tune_mean_s=1.98 det4_candidates=3 det4_unique=3 det4_checked=3 det4_cached=0 s2_s=3.3 dead=224 certified=0 fitness_min=2.00854e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=10
+6D stages: candidates=500 s1_s=10.8 tune_mean_s=1.91 det4_candidates=0 det4_unique=0 det4_checked=0 det4_cached=0 s2_s=0.0 dead=239 certified=0 fitness_min=3.00854e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=10
+6D stages: candidates=500 s1_s=9.3 tune_mean_s=1.69 det4_candidates=4 det4_unique=4 det4_checked=4 det4_cached=0 s2_s=3.4 dead=203 certified=0 fitness_min=2.00854e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=14
+6D stages: candidates=500 s1_s=31.6 tune_mean_s=2.14 det4_candidates=3 det4_unique=3 det4_checked=3 det4_cached=0 s2_s=3.1 dead=213 certified=0 fitness_min=2.03588e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=17
+DONE.
+ -= START OF EVOLUTION =- 
+6D stages: candidates=2500 s1_s=35.2 tune_mean_s=2.44 det4_candidates=13 det4_unique=13 det4_checked=11 det4_cached=2 s2_s=11.2 dead=932 certified=0 fitness_min=1.02688e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=28
+   	     	                      fitness                      	             size             
+   	     	---------------------------------------------------	------------------------------
+gen	evals	min        	avg        	max  	std        	min	avg   	max	std   
+1  	2500 	1.02688e+06	6.71232e+07	1e+08	4.43433e+07	2  	5.7032	125	4.4918
+Best individuals of this generation:
+sin(add(sub(a, x4), add(x3, x2)))
+GEN 1 best fitness=1.02688e+06 len=8 :: grid=1.027e+06 [roa=2.69e+04] lattice c_v=-0.001835 kappa=6249 | extra=0.04 | dead (grid price stands, no check) | boundary_min=-4.587e-06 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 2502 evals, 0 certified, 0 resumed, restarts [1], states held 1
+6D stages: candidates=2500 s1_s=64.6 tune_mean_s=2.85 det4_candidates=24 det4_unique=24 det4_checked=23 det4_cached=1 s2_s=11.1 dead=1307 certified=0 fitness_min=8537.87 cma_runs=1 cma_certified=0 cma_best=8537.87 cma_s=415.7 cache_entries=51
+2  	2500 	8537.87    	3.35575e+07	1e+08	4.15308e+07	2  	5.2068	125	3.8514
+Best individuals of this generation:
+mul(mul(mul(mul(a, a), mul(x3, x4)), add(mul(x3, x2), add(x1, x4))), mul(mul(x3, x2), add(x3, x3)))
+GEN 2 best fitness=8537.87 len=23 :: grid=8538 [roa=8.54e+03] lattice c_v=-1.715e-17 kappa=833.3 | extra=0.115 | det4 price=1.819e-12 c_v*=-1.724e-17 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | cma 8550->8538 (2502 evals, certified_at None, 415 s) | boundary_min=-5.483e-18 volume=0
+6D injected CMA [mul(mul(mul(mul(a, a), mul(x3, x4)), add...]: 8537.87 -> 8537.87 in 2502 evals (total 5000/5000), certified_at None, restarts 4
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 5004 evals, 0 certified, 1 resumed, restarts [4, 4], states held 2
+6D stages: candidates=2500 s1_s=69.8 tune_mean_s=3.07 det4_candidates=41 det4_unique=38 det4_checked=36 det4_cached=5 s2_s=11.2 dead=1931 certified=0 fitness_min=8537.82 cma_runs=2 cma_certified=0 cma_best=8537.82 cma_s=463.8 cache_entries=87
+3  	2500 	8537.82    	4.86191e+06	1.20085e+07	1.86321e+06	2  	4.9068	26 	2.8381
+Best individuals of this generation:
+mul(mul(sin(x1), a), add(add(x2, x3), mul(x4, x4)))
+GEN 3 best fitness=8537.82 len=12 :: grid=8538 [roa=8.54e+03] lattice c_v=-6.601e-14 kappa=818 | extra=0.06 | det4 price=3.631e-09 c_v*=-6.638e-14 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | cma 9234->8538 (2502 evals, certified_at None, 462 s) | boundary_min=-5.626e-14 volume=0
+6D cma (resumable): 11 structures (5 deep, 6 slices), 7 loops in flight, 17532 evals, 0 certified, 1 resumed, restarts [0, 0, 0, 1, 4, 4], states held 12
+6D stages: candidates=2500 s1_s=76.5 tune_mean_s=3.25 det4_candidates=62 det4_unique=61 det4_checked=57 det4_cached=4 s2_s=11.6 dead=2097 certified=0 fitness_min=8537.81 cma_runs=11 cma_certified=0 cma_best=8537.81 cma_s=715.4 cache_entries=144
+4  	2500 	8537.81    	3.55484e+06	7.00437e+06	1.1519e+06 	2  	5.7196	26 	3.5101
+Best individuals of this generation:
+mul(x4, mul(sin(mul(a, mul(x3, x1))), x2))
+GEN 4 best fitness=8537.81 len=10 :: grid=8538 [roa=8.54e+03] lattice c_v=-3.602e-15 kappa=4258 | extra=0.05 | det4 price=1.819e-12 c_v*=-3.602e-15 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | cma 8732->8538 (2502 evals, certified_at None, 618 s) | boundary_min=-1.801e-15 volume=0
+6D cma (resumable): 24 structures (5 deep, 19 slices), 7 loops in flight, 23400 evals, 0 certified, 1 resumed, restarts [0, 0, 100, 0, 8, 1], states held 35
+6D stages: candidates=2500 s1_s=88.1 tune_mean_s=3.41 det4_candidates=119 det4_unique=117 det4_checked=107 det4_cached=11 s2_s=4.9 dead=2041 certified=0 fitness_min=8537.8 cma_runs=24 cma_certified=0 cma_best=8537.8 cma_s=930.0 cache_entries=251
+5  	2500 	8537.8     	2.80642e+06	5.00854e+06	1.02263e+06	2  	7.0384	30 	4.096 
+Best individuals of this generation:
+mul(a, mul(x1, sub(x4, add(x2, x3))))
+GEN 5 best fitness=8537.8 len=9 :: grid=8538 [roa=8.54e+03] lattice c_v=-2.371e-11 kappa=7079 | extra=0.045 | det4 price=1.26e-08 c_v*=-2.371e-11 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | cma 9246->8538 (504 evals, certified_at None, 123 s) | boundary_min=-2.053e-11 volume=0
+[36m(_cma_loop_task_resumable pid=1206921)[0m NOTE (module=cma, iteration=44):  
+[36m(_cma_loop_task_resumable pid=1206921)[0m condition in coordinate system exceeded 1.7e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1206921)[0m condition changed from 5.2e+07 to 1.8e+00
+[36m(_cma_loop_task_resumable pid=1206919)[0m NOTE (module=cma, iteration=46):  
+[36m(_cma_loop_task_resumable pid=1206919)[0m condition in coordinate system exceeded 1.3e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1206919)[0m condition changed from 1.2e+08 to 2.5e+00
+[36m(_cma_loop_task_resumable pid=1206920)[0m NOTE (module=cma, iteration=48):  
+[36m(_cma_loop_task_resumable pid=1206920)[0m condition in coordinate system exceeded 1.6e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1206920)[0m condition changed from 1.1e+08 to 1.1e+01
+[36m(_cma_loop_task_resumable pid=1206921)[0m NOTE (module=cma, iteration=67):  
+[36m(_cma_loop_task_resumable pid=1206921)[0m condition in coordinate system exceeded 1.6e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1206921)[0m condition changed from 5.4e+07 to 1.1e+00
+[36m(_cma_loop_task_resumable pid=1206920)[0m NOTE (module=cma, iteration=76):  
+[36m(_cma_loop_task_resumable pid=1206920)[0m condition in coordinate system exceeded 1.7e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1206920)[0m condition changed from 1.5e+08 to 2.2e+02
+[36m(_cma_loop_task_resumable pid=1206920)[0m NOTE (module=cma, iteration=104):  
+[36m(_cma_loop_task_resumable pid=1206920)[0m condition in coordinate system exceeded 1.0e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1206920)[0m condition changed from 1.1e+08 to 5.4e+01
+6D injected CMA [mul(a, mul(x1, sub(x4, add(x2, x3))))...]: 8537.8 -> 8537.8 in 2502 evals (total 3006/5000), certified_at None, restarts 4
+6D cma (resumable): 25 structures (4 deep, 21 slices), 7 loops in flight, 24084 evals, 0 certified, 4 resumed, restarts [0, 0, 1, 1, 0, 0], states held 57
+6D stages: candidates=2500 s1_s=153.9 tune_mean_s=4.56 det4_candidates=231 det4_unique=226 det4_checked=202 det4_cached=28 s2_s=9.0 dead=1961 certified=0 fitness_min=8537.81 cma_runs=26 cma_certified=0 cma_best=8537.8 cma_s=967.8 cache_entries=453
+6  	2500 	8537.8     	2.20529e+06	4.0417e+06 	963317     	3  	8.874 	39 	5.0354
+Best individuals of this generation:
+mul(a, mul(x1, sub(x4, add(x2, x3))))
+GEN 6 best fitness=8537.8 len=9 :: grid=8538 [roa=8.54e+03] lattice c_v=-2.371e-11 kappa=7079 | extra=0.045 | det4 price=1.26e-08 c_v*=-2.371e-11 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | cma 9246->8538 (504 evals, certified_at None, 123 s) | boundary_min=-2.053e-11 volume=0
+[36m(_cma_loop_task_resumable pid=1215843)[0m NOTE (module=cma, iteration=50):  
+[36m(_cma_loop_task_resumable pid=1215843)[0m condition in coordinate system exceeded 1.4e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1215843)[0m condition changed from 1.2e+08 to 2.3e+00
+6D injected CMA [mul(a, mul(x1, sub(x4, add(x2, x3))))...]: 8537.8 -> 8537.8 in 1998 evals (total 5000/5000), certified_at None, restarts 8
+6D cma (resumable): 23 structures (1 deep, 22 slices), 7 loops in flight, 21564 evals, 0 certified, 9 resumed, restarts [1, 1, 4, 4, 4, 8], states held 72
+6D stages: candidates=2500 s1_s=172.8 tune_mean_s=6.52 det4_candidates=428 det4_unique=410 det4_checked=358 det4_cached=64 s2_s=13.5 dead=1760 certified=0 fitness_min=8537.81 cma_runs=24 cma_certified=0 cma_best=8537.8 cma_s=904.7 cache_entries=811
+7  	2500 	8537.8     	1.63888e+06	3.07366e+06	956114     	3  	11.2236	43 	5.8577
+Best individuals of this generation:
+mul(a, mul(x1, sub(x4, add(x2, x3))))
+GEN 7 best fitness=8537.8 len=9 :: grid=8538 [roa=8.54e+03] lattice c_v=-2.371e-11 kappa=7079 | extra=0.045 | det4 price=1.26e-08 c_v*=-2.371e-11 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | cma 9246->8538 (504 evals, certified_at None, 123 s) | boundary_min=-2.053e-11 volume=0
+6D cma (resumable): 21 structures (1 deep, 20 slices), 7 loops in flight, 14562 evals, 0 certified, 9 resumed, restarts [100, 1, 0, 1, 2, 0], states held 84
+6D stages: candidates=2500 s1_s=232.9 tune_mean_s=9.46 det4_candidates=665 det4_unique=651 det4_checked=577 det4_cached=81 s2_s=20.7 dead=1519 certified=0 fitness_min=8537.81 cma_runs=21 cma_certified=0 cma_best=8537.81 cma_s=652.7 cache_entries=1388
+8  	2500 	8537.8     	1.17757e+06	3.00854e+06	931899     	3  	13.5196	47 	6.6614
+Best individuals of this generation:
+mul(a, mul(x1, sub(x4, add(x2, x3))))
+GEN 8 best fitness=8537.8 len=9 :: grid=8538 [roa=8.54e+03] lattice c_v=-2.371e-11 kappa=7079 | extra=0.045 | det4 price=1.26e-08 c_v*=-2.371e-11 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | cma 9246->8538 (504 evals, certified_at None, 123 s) | boundary_min=-2.053e-11 volume=0
+[36m(_cma_loop_task_resumable pid=1232293)[0m NOTE (module=cma, iteration=28):  
+[36m(_cma_loop_task_resumable pid=1232293)[0m condition in coordinate system exceeded 1.6e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1232293)[0m condition changed from 8.2e+07 to 4.4e+00
+[36m(_cma_loop_task_resumable pid=1232295)[0m NOTE (module=cma, iteration=47):  
+[36m(_cma_loop_task_resumable pid=1232295)[0m condition in coordinate system exceeded 1.1e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1232295)[0m condition changed from 7.3e+07 to 4.0e+00
+[36m(_cma_loop_task_resumable pid=1232294)[0m NOTE (module=cma, iteration=51):  
+[36m(_cma_loop_task_resumable pid=1232294)[0m condition in coordinate system exceeded 1.1e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1232294)[0m condition changed from 7.1e+07 to 1.5e+00
+[36m(_cma_loop_task_resumable pid=1232291)[0m NOTE (module=cma, iteration=54):  
+[36m(_cma_loop_task_resumable pid=1232291)[0m condition in coordinate system exceeded 1.0e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1232291)[0m condition changed from 8.2e+07 to 1.7e+00
+[36m(_cma_loop_task_resumable pid=1232292)[0m NOTE (module=cma, iteration=70):  
+[36m(_cma_loop_task_resumable pid=1232292)[0m condition in coordinate system exceeded 1.2e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1232292)[0m condition changed from 7.5e+07 to 1.3e+00
+6D injected CMA [mul(mul(a, sin(x4)), mul(x1, add(x2, x3)...]: 8537.81 -> 8537.81 in 2502 evals (total 3510/5000), certified_at None, restarts 5
+6D cma (resumable): 19 structures (2 deep, 17 slices), 7 loops in flight, 17064 evals, 0 certified, 11 resumed, restarts [1, 0, 0, 1, 1, 2], states held 93
+6D stages: candidates=2500 s1_s=310.2 tune_mean_s=13.59 det4_candidates=965 det4_unique=945 det4_checked=835 det4_cached=126 s2_s=28.8 dead=1202 certified=0 fitness_min=8537.81 cma_runs=20 cma_certified=0 cma_best=8537.81 cma_s=726.2 cache_entries=2223
+9  	2500 	8537.8     	773291     	2.5087e+06 	820864     	5  	15.4232	43 	6.5632
+Best individuals of this generation:
+mul(a, mul(x1, sub(x4, add(x2, x3))))
+GEN 9 best fitness=8537.8 len=9 :: grid=8538 [roa=8.54e+03] lattice c_v=-2.371e-11 kappa=7079 | extra=0.045 | det4 price=1.26e-08 c_v*=-2.371e-11 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | cma 9246->8538 (504 evals, certified_at None, 123 s) | boundary_min=-2.053e-11 volume=0
+[36m(_cma_loop_task_resumable pid=1242332)[0m NOTE (module=cma, iteration=53):  
+[36m(_cma_loop_task_resumable pid=1242332)[0m condition in coordinate system exceeded 2.0e+08, rescaled to 1.0e+00, 
+[36m(_cma_loop_task_resumable pid=1242332)[0m condition changed from 1.1e+08 to 3.1e+00
+6D injected CMA [mul(mul(sub(x2, x3), sin(mul(x4, x1))), ...]: 8537.81 -> 8537.81 in 2502 evals (total 3510/5000), certified_at None, restarts 5

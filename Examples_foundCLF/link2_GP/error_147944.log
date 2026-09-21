@@ -1,0 +1,64 @@
+2026-09-20 18:42:34,666	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.8.12:47944...
+2026-09-20 18:42:34,716	INFO worker.py:2012 -- Connected to Ray cluster.
+/tmp/flex_147944/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-09-20T21:02:06.982] error: *** STEP 147944.3 ON s08n22 CANCELLED AT 2026-09-20T21:02:06 DUE to SIGNAL Terminated ***
+[2026-09-20T21:02:06.984] error: *** JOB 147944 ON s08n12 CANCELLED AT 2026-09-20T21:02:06 DUE to SIGNAL Terminated ***
+[2026-09-20T21:02:06.984] error: *** STEP 147944.2 ON s08n12 CANCELLED AT 2026-09-20T21:02:06 DUE to SIGNAL Terminated ***
+Traceback (most recent call last):
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/run.py", line 220, in <module>
+    main()
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/run.py", line 202, in main
+    gpsr.fit(train_data)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 473, in fit
+    self.__run(toolbox)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 744, in __run
+    
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 666, in _step
+    num_evals = self.__evolve_islands(cgen, toolbox)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 571, in __evolve_islands
+    fitnesses = toolbox.map(
+                ^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/gp6d_engine.py", line 649, in persistent_actor_mapper
+    return entry
+                 
+  File "/tmp/flex_147944/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147944/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147944/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147944/lib/python3.12/site-packages/ray/_private/worker.py", line 1023, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ActorDiedError): [36mray::_cma_loop_task_resumable()[39m (pid=1242333, ip=10.10.8.12)
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/gp6d_engine.py", line 404, in _cma_loop_task_resumable
+    rotated = actors[(slot * popsize) % len(actors):] + actors[:(slot * popsize) % len(actors)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/gp6d_engine.py", line 373, in cma_refine_elite_resumable
+    exhausted = True
+      ^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/gp6d_engine.py", line 402, in evaluate
+    @ray.remote(num_cpus=0, max_retries=0)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/gp6d_engine.py", line 286, in _actor_map
+    submit(actor, start, batch)
+          ^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^
+                                  ^^^^^^^^^^^^^^^^^^^
+ray.exceptions.ActorDiedError: The actor died unexpectedly before finishing this task.
+	class_name: CPUFitnessActor
+	actor_id: e4a7de1d1d318c26b52357af01000000
+	pid: 1177910
+	namespace: 2668b0bb-818a-4382-aad1-da01bb37d4ee
+	ip: 10.10.8.12
+The actor is dead because its owner has died. Owner Id: 01000000ffffffffffffffffffffffffffffffffffffffffffffffff Owner Ip address: 10.10.8.12 Owner worker exit type: SYSTEM_ERROR Worker exit detail: Owner's node has crashed.
+[2026-09-20 21:02:07,049 E 1174258 1174291] core_worker.cc:475: :info_message: Attempting to recover 3 lost objects by resubmitting their tasks or setting a new primary location from existing copies. To disable object reconstruction, set @ray.remote(max_retries=0).
+srun: forcing job termination
+srun: forcing job termination

@@ -1,0 +1,52 @@
+2026-09-20 04:26:58,662	INFO worker.py:1814 -- Connecting to existing Ray cluster at address: 10.10.8.12:47888...
+2026-09-20 04:26:58,712	INFO worker.py:2012 -- Connected to Ray cluster.
+/tmp/flex_147888/lib/python3.12/site-packages/ray/_private/worker.py:2051: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2026-09-20T05:15:29.528] error: *** STEP 147888.3 ON s08n22 CANCELLED AT 2026-09-20T05:15:29 DUE to SIGNAL Terminated ***
+[2026-09-20T05:15:29.531] error: *** JOB 147888 ON s08n12 CANCELLED AT 2026-09-20T05:15:29 DUE to SIGNAL Terminated ***
+[2026-09-20T05:15:29.531] error: *** STEP 147888.2 ON s08n12 CANCELLED AT 2026-09-20T05:15:29 DUE to SIGNAL Terminated ***
+Traceback (most recent call last):
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/run.py", line 217, in <module>
+    main()
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/run.py", line 199, in main
+    gpsr.fit(train_data)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 473, in fit
+    self.__run(toolbox)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 728, in __run
+    self._step(toolbox, self.__cgen)
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 650, in _step
+    num_evals = self.__evolve_islands(cgen, toolbox)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/Flex/src/flex/gp/regressor.py", line 571, in __evolve_islands
+    fitnesses = toolbox.map(
+                ^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/gp6d_engine.py", line 527, in persistent_actor_mapper
+    entries = _actor_map(items, actors=actors, batch_size=int(batch_size), method_name="s1")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qaragoez/symclf_clean/symclf/examples/link2_GP/gp6d_engine.py", line 274, in _actor_map
+    out = ray.get(ready[0])
+          ^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147888/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147888/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 107, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147888/lib/python3.12/site-packages/ray/_private/worker.py", line 2980, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/tmp/flex_147888/lib/python3.12/site-packages/ray/_private/worker.py", line 1025, in get_objects
+    raise value
+ray.exceptions.ActorDiedError: The actor died unexpectedly before finishing this task.
+	class_name: CPUFitnessActor
+	actor_id: 703680e891c2e7f1ad2757b701000000
+	pid: 3981739
+	namespace: decc2764-89d9-48a1-abd3-9b146179c9e6
+	ip: 10.10.8.22
+The actor died because its node has died. Node Id: 937d3f481d831e61411269df8659e11bdf81dc05959d8aa12c3709ce
+	the actor's node was terminated expectedly: received SIGTERM
+[2026-09-20 05:15:29,626 E 773222 773255] core_worker.cc:475: :info_message: Attempting to recover 3 lost objects by resubmitting their tasks or setting a new primary location from existing copies. To disable object reconstruction, set @ray.remote(max_retries=0).
+srun: forcing job termination
+srun: forcing job termination

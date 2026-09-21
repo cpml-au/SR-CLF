@@ -1,0 +1,492 @@
+Extracting /home/qaragoez/flex.tar.gz (3.9G) to /tmp/flex_147930 on s02n01.prime.net...
+local env ready in 88 s: python=/tmp/flex_147930/bin/python CONDA_PREFIX=/tmp/flex_147930
+V9 gpu_lattice=0 topk_seeds=1 precomputed_fields=1 numba_threads=6 max_len=90
+V8 max_tree_length=90 skip_dead=1 det4_batch=32
+V9 cma_elite evals=4000 popsize=0 seed=1 max_fitness=3000 count=6
+V10 inherit_consts=1 cma_select=kappa cma_pool_jit=1 skip_dead_adam=1 cma_pool=0
+V10 cma resumable=1 cap=2500 first_cap=5000 deep=6 x 2500 slices=20 x 500
+RUN cma pool=1 fraction=0.10 evals=2500 popsize=18 count=3 seed=2 pool_per_node=28
+cma 4.5.0
+V7 lattice_only_certified=1 portfolio_lrs=0.02,0.1 det4_dir=/home/qaragoez/symclf_clean/symclf/examples/4DCartPolerV10/../DET4Fast4D_V10 project_ascent=1 origin_seeds=1
+V6 DET4_FAST=1 numba_threads=6 gate_kappa_cap=1e6 det4_all=1 refine=portfolio/price top18 x100 lr0.02 pen cv=10@0.05 kappa=100@1.0 vol=20@0.02 tuner_skip=1/1
+V3 positivity=300 const_range=30 refine=40x top4
+V3 box=0.25,0.25,0.0494,0.1155 shape=300 rho_mult=1.0 cert=500 vdot=0
+PREFLIGHT skipped (SYMCLF_PREFLIGHT=0)
+Project root: /home/qaragoez/symclf_clean/symclf
+PYTHONPATH: /home/qaragoez/symclf_clean/symclf/examples/4DCartPolerV10:/home/qaragoez/symclf_clean/symclf:
+Conda environment: /tmp/flex_147930
+Python: /tmp/flex_147930/bin/python
+Python 3.12.0
+Ray Python package: 2.55.1 /tmp/flex_147930/lib/python3.12/site-packages/ray/__init__.py
+JAX: 0.5.0 devices: [CudaDevice(id=0), CudaDevice(id=1), CudaDevice(id=2)]
+GPU 0: NVIDIA A100-PCIE-40GB (UUID: GPU-8806a028-3fad-4d77-cd1f-e35537f6ba08)
+GPU 1: NVIDIA A100-PCIE-40GB (UUID: GPU-5fed31ff-efb8-eddd-10a0-3e59d233cab1)
+GPU 2: NVIDIA A100-PCIE-40GB (UUID: GPU-27a4ce9b-4204-cd33-f46c-b27e50f5a18a)
+Ray CLI: /tmp/flex_147930/bin/ray
+ray, version 2.55.1
+local env ready on s02n02 in 90 s
+Allocated nodes: s02n01 s02n02
+Head node: s02n01
+Head IP: 10.10.2.1
+Head address: 10.10.2.1:47930
+Warming Ray's dashboard imports on s02n01...
+warmed ray + 75 dashboard modules in 1.2 s
+Starting Ray head on s02n01 (attempt 1)...
+2026-09-20 13:24:56,501	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-09-20 13:24:56,502	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.2.1[22m
+2026-09-20 13:25:01,721	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-09-20 13:25:01,721	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-09-20 13:25:01,721	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-09-20 13:25:01,721	INFO scripts.py:983 -- [36mNext steps[39m
+2026-09-20 13:25:01,721	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-09-20 13:25:01,721	INFO scripts.py:989 -- [1m  ray start --address='10.10.2.1:47930'[22m
+2026-09-20 13:25:01,721	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-09-20 13:25:01,721	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-09-20 13:25:01,722	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.2.1'[39m[26m)
+2026-09-20 13:25:01,722	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-09-20 13:25:01,722	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-09-20 13:25:01,722	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-09-20 13:25:01,722	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-09-20 13:25:01,722	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 13:25:01,722	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 13:25:01,722	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 13:25:01,722	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_13-24-56_503381_3494185/logs/ray_process_exit.log[22m[26m
+Ray cluster status:
+======== Autoscaler status: 2026-09-20 13:25:12.894827 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_558e2708efc35a340880dfcd407d74560e7f7d17f77ef649bae31354
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/60.0 CPU
+ 0.0/3.0 GPU
+ 0.0/28.0 det4pool
+ 0B/176.03GiB memory
+ 0B/75.44GiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting Ray worker on s02n02...
+  1/2 Ray nodes registered (try 1)
+2026-09-20 13:25:18,923	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.2.2[22m
+2026-09-20 13:25:22,247	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 13:25:22,247	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 13:25:22,247	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 13:25:22,248	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 13:25:22,248	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 13:25:22,248	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 13:25:22,248	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 13:25:22,248	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 13:25:22,248	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_13-24-56_503381_3494185/logs/ray_process_exit.log[22m[26m
+all 2 Ray nodes registered
+======== Autoscaler status: 2026-09-20 13:25:27.911768 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_f1003d9db2eb8970a4b999de30b118e95fbed8af08b9c30c1587de6d
+ 1 node_558e2708efc35a340880dfcd407d74560e7f7d17f77ef649bae31354
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/120.0 CPU
+ 0.0/6.0 GPU
+ 0.0/56.0 det4pool
+ 0B/352.07GiB memory
+ 0B/150.89GiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting run.py (4DCartPolerV10 x 2 nodes: V8 + GPU lattice det4, top-k seeds, precomputed fields, length 90, 6 threads)...
+4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+4DCartPole V_GRAD targets: 3.5049 / 15.5741
+4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+V2 box half-widths = (0.25, 0.25, 0.0494, 0.1155)  grid = 21^4
+V8 Ray resources: {'GPU': 6.0, 'accelerator_type:A100': 2.0, 'object_store_memory': 162012176793.0, 'memory': 378028412519.0, 'CPU': 120.0, 'node:10.10.2.2': 1.0, 'det4pool': 56.0, 'node:10.10.2.1': 1.0, 'node:__internal_head__': 1.0}
+GPU5 GP hyperparameters: population=2500 (num_individuals=500 x num_islands=5), generations=20000, crossover=0.7, mutation=0.3, reg_param=0.005, mig_freq=10, mig_frac=0.05
+[36m(GPUFitnessActor pid=3494872)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3494872)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3494872)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3494873)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3494873)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3494873)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3494875)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3494875)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3494875)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3494874)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3494879)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3494879)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3494879)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3494876)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3494878)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3494880)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3494880)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3494880)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3494874)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3494874)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3494876)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3494876)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3494878)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3494878)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3494877)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3494877)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3494877)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3680023, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3680023, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3680023, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3680024, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3680024, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3680024, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3680025, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3680025, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3680025, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3680026, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3680026, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3680026, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3680027, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3680027, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3680027, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3680028, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3680028, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3680028, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3680029, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3680029, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3680029, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3680030, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3680030, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3680030, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3680031, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(GPUFitnessActor pid=3680031, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(GPUFitnessActor pid=3680031, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(GPUFitnessActor pid=3494873)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3494872)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3494875)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3494874)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3494879)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3494876)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3494878)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3494877)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3494880)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3680023, ip=10.10.2.2)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3680024, ip=10.10.2.2)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3680025, ip=10.10.2.2)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3680026, ip=10.10.2.2)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3680027, ip=10.10.2.2)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3680028, ip=10.10.2.2)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3680029, ip=10.10.2.2)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3680030, ip=10.10.2.2)[0m CP3D JAX devices: cuda:0
+[36m(GPUFitnessActor pid=3680031, ip=10.10.2.2)[0m CP3D JAX devices: cuda:0
+[36m(CPUDet4Actor pid=3681492, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681492, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681492, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681491, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681491, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681491, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498126)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498126)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498126)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498124)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498125)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498125)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498125)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498127)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498129)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498129)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498129)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498128)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498128)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498128)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498130)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498124)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498124)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498127)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498127)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498130)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498130)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498131)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498131)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498131)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681493, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681493, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681493, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681494, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681495, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681495, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681495, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498132)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681497, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681497, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681497, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681494, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681494, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498134)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498134)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498134)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498132)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498132)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498133)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681496, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681496, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681496, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681498, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681498, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681498, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498133)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498133)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498135)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498135)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498135)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681499, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681499, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681499, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681500, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681502, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681502, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681502, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498136)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681501, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681501, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681501, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498137)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498137)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498137)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681503, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498140)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498139)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498142)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498142)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498142)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498153)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498140)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498140)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498153)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498153)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681500, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681500, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681503, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681503, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681504, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681516, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681516, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681516, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681504, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681504, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498136)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498136)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498139)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498139)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498138)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498138)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498138)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498141)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498141)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498141)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498144)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498144)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498144)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498145)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498145)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498145)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498148)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498148)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498148)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498149)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681505, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681505, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681505, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681526, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681526, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681526, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498146)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498146)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498146)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498159)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498159)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498159)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498149)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498149)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498154)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498154)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498154)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3498162)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681506, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681506, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681506, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681507, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681507, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681507, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681519, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681519, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681519, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681514, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681514, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681514, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681524, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681524, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681524, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681520, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681534, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681534, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681534, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681530, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681530, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681530, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681525, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681539, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3498162)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3498162)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681520, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681520, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681525, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681525, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681539, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681539, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+[36m(CPUDet4Actor pid=3681538, ip=10.10.2.2)[0m 4DCartPole reference = ARE solution (GPU5_7's); eig(PA+A'P) on {B'Px=0} = [-1. -1. -1.]
+[36m(CPUDet4Actor pid=3681538, ip=10.10.2.2)[0m 4DCartPole V_GRAD targets: 3.5049 / 15.5741
+[36m(CPUDet4Actor pid=3681538, ip=10.10.2.2)[0m 4DCartPolerV8 DET4 mode: rho=1000 pd_eps=0.0001 kappa_min=0 ROA weight=500 target=0.004; one check (det4_fast) on every live tree; elites 18 x 100 steps; origin exclusion 0
+V10 cma pool: 56 det4 actors on {'s02n01.prime.net': 28, 's02n02.prime.net': 28}
+V8 scheduling: 18 persistent actors (6 GPUs x 3 actors/GPU, gpu_fraction=0.333, cpus/actor=1), pre_batch_size=16, det4_batch_size=32, refine_top=18, skip_dead=1, cma_elite_evals=2500, tuner_fusion=2, population=2500
+V8 actor devices: ['cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0', 'cuda:0']
+Generating initial population(s)...
+ Seeding population with individuals...
+DONE.
+Evaluating initial population(s)...
+V10 cma pool (resumable): 1 structures (1 deep, 0 slices), 1 loops in flight, 56 det4 actors, 2502 evals in 408 s, 0 certified, 0 resumed, restarts [0], states held 0
+V8 stages: candidates=500 pre_s=23.094 det4_candidates=20 det4_unique=20 det4_checked=20 det4_cached=0 det4_dead=480 det4_certified=0 det4_s=42.934 price_min=-635.293 price_p50=23971.2 fitness_min=771.063 cma_runs=1 cma_evals=2502 cma_before=1642.79 cma_after=790.853 cma_certified_at=None cma_s=407.917 refine_flagged=8 refine_improved=5 refine_s=160.595 cache_entries=20 cma_structures=0
+V10 cma pool (resumable): 1 structures (0 deep, 1 slices), 1 loops in flight, 56 det4 actors, 2502 evals in 374 s, 1 certified, 1 resumed, restarts [0], states held 1
+V10 champion CMA: 771.063 -> 54.3178 in 2502 evals (total 5000/5000), certified_at 504, restarts 0
+V8 stages: candidates=500 pre_s=2.040 det4_candidates=13 det4_unique=13 det4_checked=13 det4_cached=0 det4_dead=487 det4_certified=0 det4_s=13.444 price_min=776.919 price_p50=6.17183e+23 fitness_min=490289 cma_runs=1 cma_evals=2502 cma_before=771.063 cma_after=54.3178 cma_certified_at=504 cma_s=374.104 refine_flagged=5 refine_improved=2 refine_s=133.809 cache_entries=33 cma_structures=0
+V8 stages: candidates=500 pre_s=1.897 det4_candidates=15 det4_unique=15 det4_checked=15 det4_cached=0 det4_dead=485 det4_certified=0 det4_s=16.345 price_min=0.000464827 price_p50=1.12126e+16 fitness_min=8538.16 cma_runs=0 cma_evals=0 cma_before=nan cma_after=nan cma_certified_at=None cma_s=0.001 refine_flagged=10 refine_improved=6 refine_s=137.298 cache_entries=48 cma_structures=0
+V8 stages: candidates=500 pre_s=1.792 det4_candidates=17 det4_unique=17 det4_checked=17 det4_cached=0 det4_dead=483 det4_certified=0 det4_s=19.273 price_min=-8537.76 price_p50=2.9316e+13 fitness_min=8537.84 cma_runs=0 cma_evals=0 cma_before=nan cma_after=nan cma_certified_at=None cma_s=0.001 refine_flagged=8 refine_improved=4 refine_s=148.470 cache_entries=65 cma_structures=0
+V8 stages: candidates=500 pre_s=2.706 det4_candidates=20 det4_unique=20 det4_checked=20 det4_cached=0 det4_dead=480 det4_certified=0 det4_s=22.698 price_min=-49.6734 price_p50=2783.29 fitness_min=8537.83 cma_runs=0 cma_evals=0 cma_before=nan cma_after=nan cma_certified_at=None cma_s=0.001 refine_flagged=12 refine_improved=7 refine_s=152.975 cache_entries=85 cma_structures=0
+DONE.
+ -= START OF EVOLUTION =- 
+V8 stages: candidates=2500 pre_s=9.351 det4_candidates=110 det4_unique=108 det4_checked=104 det4_cached=6 det4_dead=2390 det4_certified=0 det4_s=36.932 price_min=-8537.76 price_p50=13076 fitness_min=8537.82 cma_runs=0 cma_evals=0 cma_before=nan cma_after=nan cma_certified_at=None cma_s=0.003 refine_flagged=18 refine_improved=16 refine_s=152.629 cache_entries=189 cma_structures=0
+   	     	                      fitness                      	             size             
+   	     	---------------------------------------------------	------------------------------
+gen	evals	min    	avg        	max        	std        	min	avg   	max	std   
+1  	2500 	771.063	4.52424e+07	4.02009e+08	1.01236e+08	2  	6.0988	59 	3.7551
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 1 best fitness=771.063 len=59 :: grid=18.13 [roa=18.1] lattice c_v=0.008073 kappa=1.151 | extra=0.295 | det4[refine] price=752.6 c_v*=0.007982 kappa*=-0.357 certified=False worst_r=0.254 pen=8.4/100/9.74 | cma 1643->790.9 (2502 evals, certified_at None, 406 s) | refine 790.6->763.3 (72 steps, 159 s) | boundary_min=0.0005249 w_scale=0.00698
+V10 cma pool (resumable): 2 structures (2 deep, 0 slices), 2 loops in flight, 56 det4 actors, 5004 evals in 364 s, 0 certified, 0 resumed, restarts [0, 0], states held 1
+V8 stages: candidates=2500 pre_s=13.302 det4_candidates=210 det4_unique=207 det4_checked=191 det4_cached=19 det4_dead=2290 det4_certified=0 det4_s=37.683 price_min=-8537.76 price_p50=102.085 fitness_min=706.431 cma_runs=2 cma_evals=2502 cma_before=1469.71 cma_after=718.025 cma_certified_at=None cma_s=364.367 refine_flagged=18 refine_improved=15 refine_s=171.073 cache_entries=380 cma_structures=0
+2  	2500 	706.431	3.02396e+06	7.00479e+06	1.55821e+06	2  	7.3852	61 	4.6576
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 2 best fitness=706.431 len=59 :: grid=114.9 [roa=115] lattice c_v=0.005465 kappa=0.1269 | extra=0.295 | det4[refine] price=591.3 c_v*=0.005317 kappa*=-0.1702 certified=False worst_r=0.314 pen=8.94/100/18.6 | cma 1470->718 (2502 evals, certified_at None, 329 s) | refine 717.7->706.2 (72 steps, 151 s) | boundary_min=0.0003425 w_scale=0.0213
+V10 cma pool (resumable): 2 structures (1 deep, 1 slices), 2 loops in flight, 56 det4 actors, 5004 evals in 371 s, 0 certified, 1 resumed, restarts [0, 0], states held 3
+V8 stages: candidates=2500 pre_s=21.483 det4_candidates=410 det4_unique=401 det4_checked=379 det4_cached=30 det4_dead=2090 det4_certified=0 det4_s=42.561 price_min=-8537.76 price_p50=2.09759 fitness_min=653.926 cma_runs=2 cma_evals=2502 cma_before=1541.4 cma_after=653.926 cma_certified_at=None cma_s=370.670 refine_flagged=18 refine_improved=16 refine_s=160.805 cache_entries=759 cma_structures=0
+3  	2500 	653.926	1.53667e+06	3.00854e+06	865843     	3  	10.578	61 	5.1494
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 3 best fitness=653.926 len=59 :: grid=119.1 [roa=119] lattice c_v=0.002736 kappa=0.0967 | extra=0.295 | det4[cma] price=534.5 c_v*=0.002392 kappa*=-0.05077 certified=False worst_r=0.252 pen=9.52/100/19.3 | cma 1541->653.9 (2502 evals, certified_at None, 371 s) | refine 653.6->653.6 (72 steps, 154 s) | boundary_min=0.000171 w_scale=0.0212
+V10 cma pool (resumable): 1 structures (1 deep, 0 slices), 1 loops in flight, 56 det4 actors, 2502 evals in 348 s, 0 certified, 0 resumed, restarts [1], states held 4
+V8 stages: candidates=2500 pre_s=37.537 det4_candidates=791 det4_unique=781 det4_checked=737 det4_cached=49 det4_dead=1709 det4_certified=0 det4_s=74.538 price_min=-1e+06 price_p50=1.988 fitness_min=736.421 cma_runs=1 cma_evals=2502 cma_before=1613.26 cma_after=746.18 cma_certified_at=None cma_s=347.651 refine_flagged=18 refine_improved=14 refine_s=153.144 cache_entries=1496 cma_structures=0
+4  	2500 	653.926	714361     	1.94128e+06	542598     	5  	13.7264	61 	5.6588
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 4 best fitness=653.926 len=59 :: grid=119.1 [roa=119] lattice c_v=0.002736 kappa=0.0967 | extra=0.295 | det4[cma] price=534.5 c_v*=0.002392 kappa*=-0.05077 certified=False worst_r=0.252 pen=9.52/100/19.3 | cma 1541->653.9 (2502 evals, certified_at None, 371 s) | refine 653.6->653.6 (72 steps, 154 s) | boundary_min=0.000171 w_scale=0.0212
+V10 cma pool (resumable): 6 structures (5 deep, 1 slices), 3 loops in flight, 56 det4 actors, 15012 evals in 778 s, 0 certified, 1 resumed, restarts [1, 0, 0, 0, 0, 0], states held 5
+V10 champion CMA: 736.421 -> 652.296 in 2502 evals (total 5000/5000), certified_at None, restarts 1
+V8 stages: candidates=2500 pre_s=66.860 det4_candidates=1356 det4_unique=1345 det4_checked=1260 det4_cached=90 det4_dead=1144 det4_certified=0 det4_s=115.085 price_min=-8537.76 price_p50=0.451609 fitness_min=632.086 cma_runs=6 cma_evals=2502 cma_before=736.421 cma_after=652.296 cma_certified_at=None cma_s=777.653 refine_flagged=18 refine_improved=12 refine_s=167.859 cache_entries=2756 cma_structures=0
+5  	2500 	632.086	230532     	1.03804e+06	349772     	7  	16.876 	73 	6.4896
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 5 best fitness=632.086 len=59 :: grid=618.9 [roa=619] lattice c_v=0.1594 kappa=-0 | extra=0.295 | det4[refine] price=12.89 c_v*=0.1466 kappa*=-0.02611 certified=False worst_r=0.25 pen=0/100/18.9 | cma 1463->644.1 (2502 evals, certified_at None, 356 s) | refine 643.8->631.8 (72 steps, 154 s) | boundary_min=0.009968 w_scale=0.665
+V10 cma pool (resumable): 12 structures (5 deep, 7 slices), 3 loops in flight, 56 det4 actors, 20034 evals in 1093 s, 0 certified, 2 resumed, restarts [1, 0, 0, 0, 0, 0], states held 10
+V10 champion CMA: 632.086 -> 619.614 in 2502 evals (total 5000/5000), certified_at None, restarts 1
+V8 stages: candidates=2500 pre_s=99.376 det4_candidates=1743 det4_unique=1722 det4_checked=1619 det4_cached=116 det4_dead=757 det4_certified=0 det4_s=116.945 price_min=-8537.76 price_p50=0.0425702 fitness_min=639.473 cma_runs=12 cma_evals=2502 cma_before=632.086 cma_after=619.614 cma_certified_at=None cma_s=1092.741 refine_flagged=18 refine_improved=14 refine_s=167.918 cache_entries=4375 cma_structures=0
+6  	2500 	632.086	27773.6    	315026     	51711.1    	7  	19.3776	73 	7.2486
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x2))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 6 best fitness=632.086 len=59 :: grid=618.9 [roa=619] lattice c_v=0.1594 kappa=-0 | extra=0.295 | det4[refine] price=12.89 c_v*=0.1466 kappa*=-0.02611 certified=False worst_r=0.25 pen=0/100/18.9 | cma 1463->644.1 (2502 evals, certified_at None, 356 s) | refine 643.8->631.8 (72 steps, 154 s) | boundary_min=0.009968 w_scale=0.665
+V10 cma pool (resumable): 23 structures (5 deep, 18 slices), 3 loops in flight, 56 det4 actors, 23256 evals in 1179 s, 0 certified, 1 resumed, restarts [0, 0, 0, 0, 0, 0], states held 20
+V8 stages: candidates=2500 pre_s=133.910 det4_candidates=1879 det4_unique=1858 det4_checked=1770 det4_cached=95 det4_dead=621 det4_certified=0 det4_s=148.252 price_min=-1e+06 price_p50=0.000967477 fitness_min=620.059 cma_runs=23 cma_evals=2502 cma_before=1717.54 cma_after=653.161 cma_certified_at=None cma_s=1179.163 refine_flagged=18 refine_improved=18 refine_s=165.657 cache_entries=6145 cma_structures=0
+7  	2500 	620.059	9408.96    	39697.6    	3716.65    	9  	20.966 	74 	8.6263
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 7 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+V10 cma pool (resumable): 30 structures (0 deep, 30 slices), 3 loops in flight, 56 det4 actors, 21780 evals in 1183 s, 0 certified, 4 resumed, restarts [0, 0, 0, 0, 0, 0], states held 42
+V10 champion CMA: 620.059 -> 619.499 in 2502 evals (total 5000/5000), certified_at None, restarts 0
+V8 stages: candidates=2500 pre_s=148.533 det4_candidates=1864 det4_unique=1845 det4_checked=1757 det4_cached=102 det4_dead=636 det4_certified=0 det4_s=145.286 price_min=-8537.76 price_p50=0.00025121 fitness_min=658.422 cma_runs=30 cma_evals=2502 cma_before=620.059 cma_after=619.499 cma_certified_at=None cma_s=1183.256 refine_flagged=18 refine_improved=17 refine_s=170.584 cache_entries=7902 cma_structures=0
+8  	2500 	620.059	8293.55    	9807.16    	1450.23    	9  	22.412 	73 	10.1145
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 8 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+V10 cma pool (resumable): 28 structures (4 deep, 24 slices), 3 loops in flight, 56 det4 actors, 23598 evals in 1267 s, 0 certified, 2 resumed, restarts [0, 0, 0, 0, 0, 0], states held 68
+V8 stages: candidates=2500 pre_s=157.427 det4_candidates=1922 det4_unique=1910 det4_checked=1813 det4_cached=106 det4_dead=578 det4_certified=0 det4_s=148.860 price_min=-8537.76 price_p50=3.11573e-05 fitness_min=634.118 cma_runs=28 cma_evals=2502 cma_before=1521.83 cma_after=634.118 cma_certified_at=None cma_s=1267.405 refine_flagged=18 refine_improved=17 refine_s=169.163 cache_entries=9715 cma_structures=0
+9  	2500 	620.059	8055.68    	8587.93    	1824.55    	9  	22.9972	88 	11.796 
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 9 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+V10 cma pool (resumable): 33 structures (1 deep, 32 slices), 3 loops in flight, 56 det4 actors, 24102 evals in 1250 s, 0 certified, 7 resumed, restarts [1, 0, 0, 0, 0, 9], states held 94
+V10 champion CMA: 634.118 -> 600.93 in 1998 evals (total 5000/5000), certified_at None, restarts 1
+V8 stages: candidates=2500 pre_s=158.794 det4_candidates=1917 det4_unique=1898 det4_checked=1780 det4_cached=131 det4_dead=579 det4_certified=0 det4_s=145.949 price_min=-8537.76 price_p50=1.12144e-05 fitness_min=637.429 cma_runs=33 cma_evals=1998 cma_before=634.118 cma_after=600.93 cma_certified_at=None cma_s=1250.231 refine_flagged=18 refine_improved=18 refine_s=168.521 cache_entries=11495 cma_structures=0
+10 	2500 	620.059	7796.1     	8539.81    	2204.83    	9  	23.39  	88 	13.8557
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 10 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+V10 cma pool (resumable): 39 structures (1 deep, 38 slices), 3 loops in flight, 56 det4 actors, 27630 evals in 1459 s, 0 certified, 13 resumed, restarts [0, 0, 0, 1, 0, 0], states held 120
+V8 stages: candidates=2500 pre_s=168.401 det4_candidates=1876 det4_unique=1858 det4_checked=1763 det4_cached=107 det4_dead=619 det4_certified=0 det4_s=146.145 price_min=-8537.76 price_p50=4.98477e-06 fitness_min=630.544 cma_runs=39 cma_evals=2502 cma_before=823.7 cma_after=650.22 cma_certified_at=None cma_s=1459.025 refine_flagged=18 refine_improved=17 refine_s=174.309 cache_entries=13258 cma_structures=0
+11 	2500 	620.059	7296.19    	8537.93    	2729.01    	9  	25.3344	88 	17.2103
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 11 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+V10 cma pool (resumable): 39 structures (1 deep, 38 slices), 3 loops in flight, 56 det4 actors, 31122 evals in 1629 s, 0 certified, 13 resumed, restarts [1, 0, 0, 1, 0, 0], states held 146
+V10 champion CMA: 630.544 -> 621.81 in 2502 evals (total 5000/5000), certified_at None, restarts 1
+V8 stages: candidates=2500 pre_s=181.803 det4_candidates=1832 det4_unique=1810 det4_checked=1707 det4_cached=119 det4_dead=651 det4_certified=0 det4_s=125.698 price_min=-8537.76 price_p50=1.05951e-05 fitness_min=630.987 cma_runs=39 cma_evals=2502 cma_before=630.544 cma_after=621.81 cma_certified_at=None cma_s=1629.099 refine_flagged=18 refine_improved=18 refine_s=169.821 cache_entries=14965 cma_structures=0
+12 	2500 	620.059	7078.52    	8537.89    	2922.78    	9  	25.688 	88 	18.7462
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 12 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+V10 cma pool (resumable): 46 structures (1 deep, 45 slices), 3 loops in flight, 56 det4 actors, 31158 evals in 1642 s, 0 certified, 20 resumed, restarts [0, 0, 0, 0, 0, 0], states held 172
+V8 stages: candidates=2500 pre_s=174.377 det4_candidates=1736 det4_unique=1717 det4_checked=1602 det4_cached=124 det4_dead=744 det4_certified=0 det4_s=121.945 price_min=-55616.9 price_p50=7.49796e-06 fitness_min=630.748 cma_runs=46 cma_evals=2502 cma_before=821.214 cma_after=632.189 cma_certified_at=None cma_s=1641.974 refine_flagged=18 refine_improved=17 refine_s=170.968 cache_entries=16567 cma_structures=0
+13 	2500 	620.059	7060.37    	8537.87    	2958.87    	9  	25.1796	87 	19.4427
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 13 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+V10 cma pool (resumable): 39 structures (0 deep, 39 slices), 3 loops in flight, 56 det4 actors, 25632 evals in 1370 s, 0 certified, 13 resumed, restarts [1, 0, 0, 0, 0, 0], states held 198
+V10 champion CMA: 630.748 -> 628.695 in 2502 evals (total 5000/5000), certified_at None, restarts 1
+V8 stages: candidates=2500 pre_s=171.128 det4_candidates=1711 det4_unique=1697 det4_checked=1588 det4_cached=117 det4_dead=765 det4_certified=0 det4_s=120.530 price_min=-8537.76 price_p50=5.29245e-05 fitness_min=629.452 cma_runs=39 cma_evals=2502 cma_before=630.748 cma_after=628.695 cma_certified_at=None cma_s=1369.539 refine_flagged=18 refine_improved=18 refine_s=180.264 cache_entries=18155 cma_structures=0
+14 	2500 	620.059	7045.5     	8537.86    	2988.2     	9  	24.5576	88 	19.6789
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 14 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+V10 cma pool (resumable): 46 structures (0 deep, 46 slices), 3 loops in flight, 56 det4 actors, 30636 evals in 1560 s, 0 certified, 20 resumed, restarts [0, 0, 0, 0, 3, 0], states held 224
+V8 stages: candidates=2500 pre_s=169.264 det4_candidates=1682 det4_unique=1655 det4_checked=1529 det4_cached=151 det4_dead=798 det4_certified=0 det4_s=119.933 price_min=-8537.76 price_p50=0.000153423 fitness_min=624.137 cma_runs=46 cma_evals=1998 cma_before=844.048 cma_after=630.332 cma_certified_at=None cma_s=1560.293 refine_flagged=18 refine_improved=18 refine_s=172.698 cache_entries=19684 cma_structures=0
+15 	2500 	620.059	7026.36    	8537.85    	3025.58    	9  	23.9756	85 	19.7928
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 15 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+V10 cma pool (resumable): 49 structures (1 deep, 48 slices), 3 loops in flight, 56 det4 actors, 32166 evals in 1690 s, 0 certified, 23 resumed, restarts [0, 1, 0, 0, 0, 0], states held 250
+V10 champion CMA: 624.137 -> 620.305 in 2502 evals (total 3006/5000), certified_at None, restarts 0
+V8 stages: candidates=2500 pre_s=163.699 det4_candidates=1568 det4_unique=1552 det4_checked=1438 det4_cached=122 det4_dead=915 det4_certified=0 det4_s=118.096 price_min=-8537.76 price_p50=0.00199397 fitness_min=627.482 cma_runs=49 cma_evals=2502 cma_before=624.137 cma_after=620.305 cma_certified_at=None cma_s=1690.489 refine_flagged=18 refine_improved=16 refine_s=171.609 cache_entries=21122 cma_structures=0
+16 	2500 	620.059	7008.34    	8537.84    	3060.58    	9  	23.646 	85 	20.0274
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 16 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+V10 cma pool (resumable): 45 structures (0 deep, 45 slices), 3 loops in flight, 56 det4 actors, 28656 evals in 1522 s, 0 certified, 19 resumed, restarts [0, 1, 0, 0, 0, 0], states held 276
+V10 champion CMA: 620.305 -> 620.29 in 1998 evals (total 5000/5000), certified_at None, restarts 0
+V8 stages: candidates=2500 pre_s=166.453 det4_candidates=1598 det4_unique=1568 det4_checked=1435 det4_cached=157 det4_dead=880 det4_certified=0 det4_s=120.117 price_min=-8537.76 price_p50=0.000333359 fitness_min=621.875 cma_runs=45 cma_evals=1998 cma_before=620.305 cma_after=620.29 cma_certified_at=None cma_s=1522.112 refine_flagged=18 refine_improved=17 refine_s=174.066 cache_entries=22557 cma_structures=0
+17 	2500 	620.059	6995.25    	8537.84    	3086.11    	9  	23.342 	85 	20.257 
+Best individuals of this generation:
+add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x3, x4))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x3, x3))), mul(x1, mul(x3, x4))), mul(a, mul(x4, x4)))
+GEN 17 best fitness=620.059 len=59 :: grid=19.51 [roa=19.5] lattice c_v=0.109 kappa=9.168 | extra=0.295 | det4[refine] price=600.3 c_v*=0.09427 kappa*=-0.0005057 certified=False worst_r=0.25 pen=0/100/19.5 | cma 902.8->620.1 (2502 evals, certified_at None, 377 s) | refine 619.9->619.8 (72 steps, 166 s) | boundary_min=0.006812 w_scale=0.981
+Stopping Ray Slurm steps...
+removed /tmp/flex_147930

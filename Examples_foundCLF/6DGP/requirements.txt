@@ -1,0 +1,7 @@
+# Runtime dependencies of this folder (versions used on the source cluster in brackets).
+numpy>=1.24        # [2.4.6]
+scipy>=1.15        # [1.17.1]  -- scipy.optimize._slsqplib.slsqp is used directly
+numba>=0.59        # [0.62.1]
+sympy>=1.12        # [1.14.0]
+cma>=3.3           # [4.4.0]   -- pycma, the CMA-ES driver
+mpmath>=1.3        # [1.3.0]   -- optional, only for audit.py's 60-digit re-check

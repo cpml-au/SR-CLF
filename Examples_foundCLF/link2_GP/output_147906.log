@@ -1,0 +1,718 @@
+local env ready on all nodes in 74 s: python=/tmp/flex_147906/bin/python
+V10 port: cma resumable=1 select=kappa cap=2500 first_cap=5000 deep=6 x 2500 slices=20 x 500
+FLEX_MIGRATION_FIX=1 SYMCLF6D_B_NORM=l1 SYMCLF6D_GRID_POINTS=21 SYMCLF6D_LATTICE_LINES=9 SYMCLF6D_LATTICE_MESH=21 SYMCLF6D_LATTICE_SAMPLES=801 SYMCLF6D_SKIP_DEAD_ADAM=1 SYMCLF6D_SYSTEM=link2 SYMCLF6D_TEMPLATE=full SYMCLF6D_TEMPLATE_X0=1.0 SYMCLF_CMA_DEEP_COUNT=6 SYMCLF_CMA_DEEP_EVALS=2500 SYMCLF_CMA_ELITE_COUNT=3 SYMCLF_CMA_ELITE_EVALS=2000 SYMCLF_CMA_ELITE_MAX_FITNESS=10000 SYMCLF_CMA_ELITE_POPSIZE=18 SYMCLF_CMA_ELITE_SEED=2 SYMCLF_CMA_FIRST_MAX_EVALS=5000 SYMCLF_CMA_MAX_EVALS_PER_STRUCTURE=2500 SYMCLF_CMA_MAX_RESTARTS=9 SYMCLF_CMA_RESUMABLE=1 SYMCLF_CMA_SELECT=kappa SYMCLF_CMA_SLICE_COUNT=20 SYMCLF_CMA_SLICE_EVALS=500 SYMCLF_CP3D_NESTED_PENALTY=50 SYMCLF_CP3D_ROA_C_TARGET=0.004 SYMCLF_CP3D_ROA_WEIGHT=500 SYMCLF_DET4_B_REL_TOL=1e-6 SYMCLF_DET4_GATE_KAPPA_CAP=1e6 SYMCLF_DET4_KAPPA_MIN=0 SYMCLF_DET4_ORIGIN_SEEDS=1 SYMCLF_DET4_PD_EPS=1e-4 SYMCLF_DET4_PEN_CV=10 SYMCLF_DET4_PEN_CV_TARGET=0.05 SYMCLF_DET4_PEN_KAPPA=100 SYMCLF_DET4_PEN_KAPPA_TARGET=1.0 SYMCLF_DET4_PEN_VOL=20 SYMCLF_DET4_PEN_VOL_TARGET=0.02 SYMCLF_DET4_PROJECT_ASCENT=1 SYMCLF_DET4_RHO=1000 SYMCLF_GPU2_TUNER_GENERATIONS=5 SYMCLF_GPU2_TUNER_RANDOM_POPULATION=35 SYMCLF_LENGTH_REG=0.005 SYMCLF_MAX_TREE_LENGTH=90 SYMCLF_TUNER_ADAM_EXIT_ZERO_GRAD=1 SYMCLF_TUNER_ADAM_PATIENCE=0 SYMCLF_TUNER_CONST_PERTURB_FRAC=0.5 SYMCLF_TUNER_CONST_RANGE=30 SYMCLF_TUNER_REFINE_LR=0.30 SYMCLF_TUNER_REFINE_STEPS=40 SYMCLF_TUNER_SKIP_ADAM_AT_ZERO=1 SYMCLF_V2_BOX=0.5,0.5,0.5,0.5 
+
+numba warm-up done
+Starting Ray head on s08n12 (attempt 1)...
+2026-09-20 05:55:35,267	INFO usage_lib.py:474 -- Usage stats collection is enabled by default without user confirmation because this terminal is detected to be non-interactive. To disable this, add `--disable-usage-stats` to the command that starts the cluster, or run the following command: `ray disable-usage-stats` before starting the cluster. See https://docs.ray.io/en/master/cluster/usage-stats.html for more details.
+2026-09-20 05:55:35,267	INFO scripts.py:940 -- [37mLocal node IP[39m: [1m10.10.8.12[22m
+2026-09-20 05:55:37,850	SUCC scripts.py:979 -- [32m--------------------[39m
+2026-09-20 05:55:37,850	SUCC scripts.py:980 -- [32mRay runtime started.[39m
+2026-09-20 05:55:37,851	SUCC scripts.py:981 -- [32m--------------------[39m
+2026-09-20 05:55:37,851	INFO scripts.py:983 -- [36mNext steps[39m
+2026-09-20 05:55:37,851	INFO scripts.py:986 -- To add another node to this Ray cluster, run
+2026-09-20 05:55:37,851	INFO scripts.py:989 -- [1m  ray start --address='10.10.8.12:47906'[22m
+2026-09-20 05:55:37,851	INFO scripts.py:1000 -- To connect to this Ray cluster:
+2026-09-20 05:55:37,851	INFO scripts.py:1002 -- [35mimport[39m[26m ray
+2026-09-20 05:55:37,851	INFO scripts.py:1003 -- ray[35m.[39m[26minit(_node_ip_address[35m=[39m[26m[33m'10.10.8.12'[39m[26m)
+2026-09-20 05:55:37,851	INFO scripts.py:1036 -- To terminate the Ray runtime, run
+2026-09-20 05:55:37,851	INFO scripts.py:1037 -- [1m  ray stop[22m
+2026-09-20 05:55:37,851	INFO scripts.py:1040 -- To view the status of the cluster, use
+2026-09-20 05:55:37,851	INFO scripts.py:1041 --   [1mray status[22m[26m
+2026-09-20 05:55:37,851	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 05:55:37,851	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 05:55:37,851	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 05:55:37,851	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_05-55-35_268362_834505/logs/ray_process_exit.log[22m[26m
+2026-09-20 05:55:55,983	INFO scripts.py:1128 -- [37mLocal node IP[39m: [1m10.10.8.22[22m
+2026-09-20 05:55:57,173	SUCC scripts.py:1144 -- [32m--------------------[39m
+2026-09-20 05:55:57,173	SUCC scripts.py:1145 -- [32mRay runtime started.[39m
+2026-09-20 05:55:57,173	SUCC scripts.py:1146 -- [32m--------------------[39m
+2026-09-20 05:55:57,173	INFO scripts.py:1148 -- To terminate the Ray runtime, run
+2026-09-20 05:55:57,173	INFO scripts.py:1149 -- [1m  ray stop[22m
+2026-09-20 05:55:57,173	INFO scripts.py:1159 -- [36m[1m--block[22m[39m
+2026-09-20 05:55:57,173	INFO scripts.py:1160 -- This command will now block forever until terminated by a signal.
+2026-09-20 05:55:57,173	INFO scripts.py:1163 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+2026-09-20 05:55:57,173	INFO scripts.py:1168 -- Process exit logs will be saved to: [1m/tmp/ray/session_2026-09-20_05-55-35_268362_834505/logs/ray_process_exit.log[22m[26m
+all 2 Ray nodes registered
+======== Autoscaler status: 2026-09-20 05:56:06.359003 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_0ab9ef4feb4e57af357d47bcfc5fb152277186bf6ea04963aefe41fd
+ 1 node_d8edd8445dc5ab8ec0214bbd8d3484f2ddc64cc8abf536379b6d980e
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Total Usage:
+ 0.0/128.0 CPU
+ 0B/704.49GiB memory
+ 0B/301.92GiB object_store_memory
+
+From request_resources:
+ (none)
+Pending Demands:
+ (no resource demands)
+Starting run.py (6-D GP) 05:56:07
+6D Ray resources: {'memory': 756438449358.0, 'node:10.10.8.12': 1.0, 'CPU': 128.0, 'node:__internal_head__': 1.0, 'object_store_memory': 324187906866.0, 'node:10.10.8.22': 1.0}
+6D system link2: box (0.5, 0.5, 0.5, 0.5) rho 1000.0 b-norm l1 grid 21^6 | hinges cv 10.0@0.05 kappa 100.0@1.0 vol 20.0@0.02
+6D GP hyperparameters: population=2500 (num_individuals=500 x num_islands=5), generations=20000, crossover=0.7, mutation=0.3, reg_param=0.005, mig_freq=10, mig_frac=0.05
+6D scheduling: 126 single-thread CPU actors on {'s08n12.prime.net': 63, 's08n22.prime.net': 63} | tuner SEA 36 x 5 + Adam 40 | max_len 90 | CMA 3 x 2000 evals, popsize 18, seed 2, gate 10000
+Generating initial population(s)...
+ Seeding population with individuals...
+DONE.
+Evaluating initial population(s)...
+6D stages: candidates=500 s1_s=24.4 tune_mean_s=2.81 det4_candidates=6 det4_unique=6 det4_checked=6 det4_cached=0 s2_s=11.0 dead=220 certified=0 fitness_min=2.30404e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=6
+6D champion CMA: 5.00859e+06 -> 5.00859e+06 in 180 evals (total 180/5000), certified_at None, restarts 9
+6D stages: candidates=500 s1_s=9.4 tune_mean_s=1.83 det4_candidates=1 det4_unique=1 det4_checked=1 det4_cached=0 s2_s=2.7 dead=208 certified=0 fitness_min=2.29812e+06 cma_runs=1 cma_certified=0 cma_best=5.00859e+06 cma_s=40.8 cache_entries=7
+6D champion CMA: 5.00859e+06 -> 5.00859e+06 in 0 evals (total 180/5000), certified_at None, restarts 9
+6D stages: candidates=500 s1_s=32.9 tune_mean_s=2.12 det4_candidates=5 det4_unique=5 det4_checked=5 det4_cached=0 s2_s=3.1 dead=215 certified=0 fitness_min=8816.98 cma_runs=1 cma_certified=0 cma_best=5.00859e+06 cma_s=0.0 cache_entries=12
+6D champion CMA: 8816.98 -> 8537.83 in 2502 evals (total 2502/5000), certified_at None, restarts 1
+6D stages: candidates=500 s1_s=11.5 tune_mean_s=1.64 det4_candidates=3 det4_unique=3 det4_checked=3 det4_cached=0 s2_s=3.2 dead=226 certified=0 fitness_min=1.13764e+06 cma_runs=1 cma_certified=0 cma_best=8537.83 cma_s=395.9 cache_entries=15
+6D champion CMA: 8537.83 -> 8537.83 in 2502 evals (total 5000/5000), certified_at None, restarts 3
+6D stages: candidates=500 s1_s=10.4 tune_mean_s=1.91 det4_candidates=2 det4_unique=2 det4_checked=2 det4_cached=0 s2_s=3.1 dead=230 certified=0 fitness_min=2.0087e+06 cma_runs=1 cma_certified=0 cma_best=8537.83 cma_s=397.9 cache_entries=17
+DONE.
+ -= START OF EVOLUTION =- 
+6D stages: candidates=2500 s1_s=41.8 tune_mean_s=2.51 det4_candidates=10 det4_unique=10 det4_checked=10 det4_cached=0 s2_s=3.4 dead=876 certified=0 fitness_min=1.00885e+06 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=27
+   	     	                  fitness                  	             size             
+   	     	-------------------------------------------	------------------------------
+gen	evals	min    	avg        	max  	std        	min	avg  	max	std   
+1  	2500 	8816.98	6.85627e+07	1e+08	4.38573e+07	2  	5.674	125	4.2816
+Best individuals of this generation:
+mul(sub(mul(x3, x4), mul(a, x2)), mul(sub(x4, x1), mul(a, x4)))
+GEN 1 best fitness=8816.98 len=15 :: grid=8816 [roa=8.82e+03] lattice c_v=-2.78e-05 kappa=1456 | extra=0.075 | det4 price=1.11 c_v*=-2.791e-05 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=-1.083e-05 volume=0
+6D stages: candidates=2500 s1_s=54.3 tune_mean_s=2.85 det4_candidates=20 det4_unique=19 det4_checked=18 det4_cached=2 s2_s=3.7 dead=1207 certified=0 fitness_min=8551.98 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=45
+2  	2500 	8551.98	3.7251e+07 	1e+08	4.32645e+07	2  	5.1536	125	3.874 
+Best individuals of this generation:
+mul(sin(x3), mul(sub(mul(x1, x4), x4), sin(mul(x2, a))))
+GEN 2 best fitness=8551.98 len=13 :: grid=8552 [roa=8.55e+03] lattice c_v=-1.416e-06 kappa=4318 | extra=0.065 | det4 price=-0.003343 c_v*=-1.415e-06 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=-8.623e-07 volume=0
+6D stages: candidates=2500 s1_s=67.0 tune_mean_s=2.88 det4_candidates=32 det4_unique=31 det4_checked=28 det4_cached=4 s2_s=11.4 dead=1941 certified=0 fitness_min=8537.82 cma_runs=0 cma_certified=0 cma_best=nan cma_s=0.0 cache_entries=73
+3  	2500 	8537.82	4.88365e+06	1.08916e+07	1.81467e+06	2  	4.8088	26 	2.6691
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), sin(mul(x2, x2)))
+GEN 3 best fitness=8537.82 len=12 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=195.6 | extra=0.06 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.82 -> 8537.82 in 198 evals (total 198/5000), certified_at None, restarts 9
+6D stages: candidates=2500 s1_s=88.3 tune_mean_s=2.95 det4_candidates=44 det4_unique=44 det4_checked=39 det4_cached=5 s2_s=10.7 dead=2134 certified=0 fitness_min=8539.24 cma_runs=1 cma_certified=0 cma_best=8537.82 cma_s=26.6 cache_entries=112
+4  	2500 	8537.82	3.55025e+06	5.75854e+06	1.13678e+06	2  	5.3308	26 	3.0046
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), sin(mul(x2, x2)))
+GEN 4 best fitness=8537.82 len=12 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=195.6 | extra=0.06 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.82 -> 8537.82 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D stages: candidates=2500 s1_s=124.5 tune_mean_s=3.47 det4_candidates=94 det4_unique=90 det4_checked=83 det4_cached=11 s2_s=12.9 dead=2080 certified=0 fitness_min=8545.04 cma_runs=1 cma_certified=0 cma_best=8537.82 cma_s=0.0 cache_entries=195
+5  	2500 	8537.82	2.7092e+06 	4.07743e+06	869572     	3  	6.7368	27 	3.355 
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), sin(mul(x2, x2)))
+GEN 5 best fitness=8537.82 len=12 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=195.6 | extra=0.06 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 3
+6D stages: candidates=2500 s1_s=114.7 tune_mean_s=4.35 det4_candidates=171 det4_unique=169 det4_checked=154 det4_cached=16 s2_s=13.3 dead=1987 certified=0 fitness_min=8537.82 cma_runs=1 cma_certified=0 cma_best=8537.82 cma_s=0.0 cache_entries=349
+6  	2500 	8537.82	2.11774e+06	3.00854e+06	829878     	3  	8.1908	33 	4.1032
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), sin(mul(x2, x2)))
+GEN 6 best fitness=8537.82 len=12 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=195.6 | extra=0.06 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 3
+6D stages: candidates=2500 s1_s=158.5 tune_mean_s=6.18 det4_candidates=308 det4_unique=306 det4_checked=283 det4_cached=25 s2_s=11.3 dead=1879 certified=0 fitness_min=8537.82 cma_runs=1 cma_certified=0 cma_best=8537.82 cma_s=0.0 cache_entries=632
+7  	2500 	8537.82	1.53175e+06	2.83226e+06	742139     	5  	10.8096	33 	4.0796
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), sin(mul(x2, x2)))
+GEN 7 best fitness=8537.82 len=12 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=195.6 | extra=0.06 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.82 -> 8537.82 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D stages: candidates=2500 s1_s=220.1 tune_mean_s=9.76 det4_candidates=580 det4_unique=573 det4_checked=527 det4_cached=50 s2_s=19.0 dead=1582 certified=0 fitness_min=8537.82 cma_runs=1 cma_certified=0 cma_best=8537.82 cma_s=0.0 cache_entries=1159
+8  	2500 	8537.82	982478     	2.0502e+06 	676391     	5  	13.1484	45 	4.8156
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), sin(mul(x2, x2)))
+GEN 8 best fitness=8537.82 len=12 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=195.6 | extra=0.06 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.82 -> 8537.82 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D stages: candidates=2500 s1_s=314.1 tune_mean_s=15.13 det4_candidates=924 det4_unique=914 det4_checked=829 det4_cached=89 s2_s=29.1 dead=1264 certified=0 fitness_min=8537.82 cma_runs=1 cma_certified=0 cma_best=8537.82 cma_s=0.0 cache_entries=1988
+9  	2500 	8537.82	491035     	1.65398e+06	531119     	7  	15.5996	52 	5.868 
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), sin(mul(x2, x2)))
+GEN 9 best fitness=8537.82 len=12 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=195.6 | extra=0.06 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.82 -> 8537.82 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D stages: candidates=2500 s1_s=423.7 tune_mean_s=20.90 det4_candidates=1243 det4_unique=1232 det4_checked=1077 det4_cached=163 s2_s=36.4 dead=935 certified=0 fitness_min=8537.82 cma_runs=1 cma_certified=0 cma_best=8537.82 cma_s=0.1 cache_entries=3065
+FLEX migration at generation 10: migRing, 25 individuals per island
+10 	2500 	8537.82	192035     	1.14608e+06	372508     	7  	18.2404	62 	6.91  
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), sin(mul(x2, x2)))
+GEN 10 best fitness=8537.82 len=12 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=195.6 | extra=0.06 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.82 -> 8537.82 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D stages: candidates=2500 s1_s=534.4 tune_mean_s=26.91 det4_candidates=1459 det4_unique=1433 det4_checked=1280 det4_cached=169 s2_s=43.2 dead=733 certified=0 fitness_min=8537.85 cma_runs=1 cma_certified=0 cma_best=8537.82 cma_s=0.0 cache_entries=4345
+11 	2500 	8537.82	36096.3    	1e+06      	145415     	9  	20.3464	66 	7.7657
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), sin(mul(x2, x2)))
+GEN 11 best fitness=8537.82 len=12 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=195.6 | extra=0.06 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.82 -> 8537.82 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D stages: candidates=2500 s1_s=609.1 tune_mean_s=31.15 det4_candidates=1558 det4_unique=1543 det4_checked=1399 det4_cached=154 s2_s=47.6 dead=632 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.82 cma_s=0.0 cache_entries=5744
+12 	2500 	8537.81	8599.82    	9092.63    	86.8858    	9  	21.7668	85 	8.3892
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), mul(x2, x2))
+GEN 12 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=437.2 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.81 -> 8537.81 in 198 evals (total 198/5000), certified_at None, restarts 9
+6D cma (resumable): 1 structures (2 deep, -1 slices), 7 loops in flight, 198 evals, 0 certified, 1 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=675.4 tune_mean_s=33.10 det4_candidates=1632 det4_unique=1614 det4_checked=1460 det4_cached=167 s2_s=49.0 dead=577 certified=0 fitness_min=8537.82 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=25.4 cache_entries=7204
+13 	2500 	8537.81	8562.71    	8697.42    	30.6958    	9  	22.6824	85 	8.4949
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), mul(x2, x2))
+GEN 13 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=437.2 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.81 -> 8537.81 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D stages: candidates=2500 s1_s=658.1 tune_mean_s=32.73 det4_candidates=1679 det4_unique=1662 det4_checked=1504 det4_cached=169 s2_s=50.9 dead=521 certified=0 fitness_min=8537.83 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=8708
+14 	2500 	8537.81	8548.05    	8598.03    	15.7055    	9  	22.982 	75 	7.7347
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), mul(x2, x2))
+GEN 14 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=437.2 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.81 -> 8537.81 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D cma (resumable): 1 structures (2 deep, -1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=642.5 tune_mean_s=32.66 det4_candidates=1723 det4_unique=1697 det4_checked=1528 det4_cached=186 s2_s=51.0 dead=472 certified=0 fitness_min=8537.82 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=10236
+15 	2500 	8537.81	8540.73    	8565.19    	5.3396     	9  	24.4   	81 	8.7071
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), mul(x2, x2))
+GEN 15 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=437.2 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.81 -> 8537.81 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D stages: candidates=2500 s1_s=682.2 tune_mean_s=32.83 det4_candidates=1723 det4_unique=1707 det4_checked=1553 det4_cached=166 s2_s=50.4 dead=453 certified=0 fitness_min=8537.82 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=11789
+16 	2500 	8537.81	8538.55    	8544.75    	1.3056     	11 	25.9512	81 	9.2421
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), mul(x2, x2))
+GEN 16 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=437.2 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.81 -> 8537.81 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D cma (resumable): 1 structures (2 deep, -1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=649.1 tune_mean_s=31.57 det4_candidates=1733 det4_unique=1709 det4_checked=1541 det4_cached=186 s2_s=49.1 dead=445 certified=0 fitness_min=8537.82 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=13330
+17 	2500 	8537.81	8538.04    	8539.61    	0.3237     	11 	26.3168	71 	8.947 
+Best individuals of this generation:
+mul(add(mul(x1, x3), add(x4, a)), mul(x2, x2))
+GEN 17 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=437.2 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.81 -> 8537.81 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D cma (resumable): 1 structures (2 deep, -1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=542.6 tune_mean_s=26.79 det4_candidates=1753 det4_unique=1727 det4_checked=1545 det4_cached=204 s2_s=48.5 dead=434 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=14875
+18 	2500 	8537.81	8537.92    	8538.49    	0.1114     	11 	24.9248	67 	7.6211
+Best individuals of this generation:
+mul(add(x3, mul(mul(x4, x1), mul(x3, x2))), x3)
+GEN 18 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5238 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=467.6 tune_mean_s=21.48 det4_candidates=1682 det4_unique=1650 det4_checked=1452 det4_cached=221 s2_s=45.1 dead=518 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=16327
+19 	2500 	8537.81	8537.88    	8538.09    	0.048      	11 	23.1444	64 	6.3379
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 19 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.81 -> 8537.81 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D cma (resumable): 1 structures (2 deep, -1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=363.0 tune_mean_s=18.02 det4_candidates=1599 det4_unique=1573 det4_checked=1393 det4_cached=200 s2_s=42.7 dead=577 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=17720
+FLEX migration at generation 20: migRing, 25 individuals per island
+20 	2500 	8537.81	8537.87    	8537.98    	0.032      	11 	21.504 	44 	5.459 
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 20 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=313.3 tune_mean_s=14.16 det4_candidates=1573 det4_unique=1529 det4_checked=1339 det4_cached=229 s2_s=39.2 dead=602 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=19059
+21 	2500 	8537.81	8537.86    	8537.93    	0.0235     	11 	19.7076	35 	4.311 
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 21 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=272.0 tune_mean_s=12.28 det4_candidates=1511 det4_unique=1461 det4_checked=1258 det4_cached=242 s2_s=37.0 dead=660 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=20317
+22 	2500 	8537.81	8537.85    	8537.91    	0.0188     	11 	18.3336	30 	3.5743
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 22 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=239.8 tune_mean_s=10.76 det4_candidates=1414 det4_unique=1376 det4_checked=1189 det4_cached=212 s2_s=35.1 dead=768 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=21506
+23 	2500 	8537.81	8537.84    	8537.89    	0.0159     	11 	17.3408	26 	3.0763
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 23 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.81 -> 8537.81 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D stages: candidates=2500 s1_s=205.0 tune_mean_s=9.43 det4_candidates=1414 det4_unique=1347 det4_checked=1132 det4_cached=271 s2_s=34.2 dead=760 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=22638
+24 	2500 	8537.81	8537.84    	8537.87    	0.0132     	11 	16.4592	23 	2.587 
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 24 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=249.9 tune_mean_s=9.06 det4_candidates=1412 det4_unique=1355 det4_checked=1123 det4_cached=277 s2_s=33.1 dead=805 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=23761
+25 	2500 	8537.81	8537.83    	8537.87    	0.0118     	11 	15.792 	22 	2.3476
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 25 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=186.1 tune_mean_s=8.20 det4_candidates=1357 det4_unique=1282 det4_checked=1049 det4_cached=301 s2_s=31.5 dead=847 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=24810
+26 	2500 	8537.81	8537.83    	8537.86    	0.0105     	11 	15.1536	20 	2.0859
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 26 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=182.0 tune_mean_s=7.71 det4_candidates=1291 det4_unique=1202 det4_checked=947 det4_cached=336 s2_s=28.6 dead=890 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=25757
+27 	2500 	8537.81	8537.83    	8537.85    	0.0094     	11 	14.6368	19 	1.8741
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 27 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=172.6 tune_mean_s=7.14 det4_candidates=1254 det4_unique=1162 det4_checked=892 det4_cached=352 s2_s=27.2 dead=924 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=26649
+28 	2500 	8537.81	8537.83    	8537.85    	0.0083     	11 	14.2004	18 	1.6691
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 28 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D champion CMA: 8537.81 -> 8537.81 in 0 evals (total 198/5000), certified_at None, restarts 9
+6D cma (resumable): 1 structures (2 deep, -1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=150.3 tune_mean_s=6.83 det4_candidates=1193 det4_unique=1095 det4_checked=872 det4_cached=310 s2_s=26.4 dead=973 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=27521
+29 	2500 	8537.81	8537.83    	8537.85    	0.0077     	11 	13.866 	18 	1.531 
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 29 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=146.2 tune_mean_s=6.42 det4_candidates=1225 det4_unique=1110 det4_checked=847 det4_cached=368 s2_s=26.3 dead=974 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=28368
+FLEX migration at generation 30: migRing, 25 individuals per island
+30 	2500 	8537.81	8537.82    	8537.84    	0.0072     	11 	13.5572	17 	1.4493
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 30 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=146.7 tune_mean_s=6.22 det4_candidates=1226 det4_unique=1091 det4_checked=788 det4_cached=426 s2_s=24.1 dead=960 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=29156
+31 	2500 	8537.81	8537.82    	8537.84    	0.0066     	11 	13.26  	16 	1.325 
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 31 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=140.3 tune_mean_s=5.86 det4_candidates=1173 det4_unique=1026 det4_checked=733 det4_cached=429 s2_s=22.8 dead=974 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=29889
+32 	2500 	8537.81	8537.82    	8537.84    	0.006      	11 	12.962 	16 	1.2092
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 32 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=131.8 tune_mean_s=5.59 det4_candidates=1220 det4_unique=1038 det4_checked=732 det4_cached=478 s2_s=23.0 dead=976 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=30621
+33 	2500 	8537.81	8537.82    	8537.84    	0.0056     	11 	12.73  	16 	1.1183
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 33 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=132.5 tune_mean_s=5.84 det4_candidates=1149 det4_unique=985 det4_checked=663 det4_cached=472 s2_s=20.9 dead=1013 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=31284
+34 	2500 	8537.81	8537.82    	8537.83    	0.0052     	11 	12.5496	15 	1.0421
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 34 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=146.5 tune_mean_s=5.59 det4_candidates=1220 det4_unique=990 det4_checked=645 det4_cached=562 s2_s=20.1 dead=1000 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=31929
+35 	2500 	8537.81	8537.82    	8537.83    	0.005      	11 	12.362 	15 	0.9951
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 35 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=127.9 tune_mean_s=5.48 det4_candidates=1126 det4_unique=914 det4_checked=589 det4_cached=527 s2_s=19.3 dead=1051 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=32518
+36 	2500 	8537.81	8537.82    	8537.83    	0.005      	11 	12.2072	14 	0.9953
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 36 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=131.4 tune_mean_s=5.17 det4_candidates=1108 det4_unique=890 det4_checked=572 det4_cached=527 s2_s=18.1 dead=1033 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=33090
+37 	2500 	8537.81	8537.82    	8537.83    	0.0049     	11 	12.0488	14 	0.9835
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 37 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=131.5 tune_mean_s=5.43 det4_candidates=1176 det4_unique=924 det4_checked=551 det4_cached=605 s2_s=17.5 dead=1002 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=33641
+38 	2500 	8537.81	8537.82    	8537.83    	0.0048     	11 	11.8888	14 	0.951 
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 38 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=109.7 tune_mean_s=4.87 det4_candidates=1072 det4_unique=806 det4_checked=446 det4_cached=618 s2_s=14.7 dead=1120 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=34087
+39 	2500 	8537.81	8537.81    	8537.83    	0.0044     	11 	11.7236	14 	0.8863
+Best individuals of this generation:
+mul(add(x1, mul(x3, mul(x1, mul(x2, x4)))), x1)
+GEN 39 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=-20.12 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=127.4 tune_mean_s=5.25 det4_candidates=1129 det4_unique=818 det4_checked=440 det4_cached=684 s2_s=15.0 dead=1063 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=34527
+FLEX migration at generation 40: migRing, 25 individuals per island
+40 	2500 	8537.81	8537.81    	8537.83    	0.0038     	11 	11.5384	14 	0.7666
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 40 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=127.8 tune_mean_s=5.02 det4_candidates=1112 det4_unique=802 det4_checked=419 det4_cached=685 s2_s=14.0 dead=1028 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=34946
+41 	2500 	8537.81	8537.81    	8537.82    	0.0033     	11 	11.3976	13 	0.666 
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 41 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=116.3 tune_mean_s=5.04 det4_candidates=1113 det4_unique=771 det4_checked=387 det4_cached=716 s2_s=12.8 dead=1062 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=35333
+42 	2500 	8537.81	8537.81    	8537.82    	0.0029     	11 	11.3096	13 	0.586 
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 42 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=118.4 tune_mean_s=4.84 det4_candidates=1131 det4_unique=763 det4_checked=377 det4_cached=748 s2_s=12.5 dead=1052 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=35710
+43 	2500 	8537.81	8537.81    	8537.82    	0.0024     	11 	11.2292	13 	0.484 
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 43 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=133.4 tune_mean_s=4.83 det4_candidates=1096 det4_unique=750 det4_checked=345 det4_cached=744 s2_s=12.1 dead=1102 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=36055
+44 	2500 	8537.81	8537.81    	8537.82    	0.0019     	11 	11.176 	13 	0.3871
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 44 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=127.6 tune_mean_s=4.73 det4_candidates=1121 det4_unique=771 det4_checked=325 det4_cached=789 s2_s=11.5 dead=1085 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=36380
+45 	2500 	8537.81	8537.81    	8537.82    	0.0017     	11 	11.1416	12 	0.3486
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 45 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=119.8 tune_mean_s=5.13 det4_candidates=1146 det4_unique=745 det4_checked=327 det4_cached=809 s2_s=11.4 dead=1033 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=36707
+46 	2500 	8537.81	8537.81    	8537.82    	0.0015     	11 	11.1036	12 	0.3047
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 46 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 2 structures (1 deep, 1 slices), 7 loops in flight, 0 evals, 0 certified, 2 resumed, restarts [9, 9], states held 4
+6D stages: candidates=2500 s1_s=126.3 tune_mean_s=5.26 det4_candidates=1125 det4_unique=739 det4_checked=294 det4_cached=825 s2_s=10.5 dead=1040 certified=0 fitness_min=8537.81 cma_runs=2 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=37001
+47 	2500 	8537.81	8537.81    	8537.82    	0.0013     	11 	11.0776	12 	0.2675
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 47 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=130.6 tune_mean_s=5.03 det4_candidates=1088 det4_unique=713 det4_checked=284 det4_cached=793 s2_s=10.1 dead=1087 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=37285
+48 	2500 	8537.81	8537.81    	8537.82    	0.0012     	11 	11.0632	12 	0.2433
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 48 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=127.4 tune_mean_s=5.06 det4_candidates=1086 det4_unique=726 det4_checked=300 det4_cached=779 s2_s=11.1 dead=1106 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=37585
+49 	2500 	8537.81	8537.81    	8537.82    	0.001      	11 	11.0392	12 	0.1941
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 49 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=116.2 tune_mean_s=4.85 det4_candidates=1103 det4_unique=723 det4_checked=296 det4_cached=803 s2_s=10.7 dead=1078 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=37881
+FLEX migration at generation 50: migRing, 25 individuals per island
+50 	2500 	8537.81	8537.81    	8537.82    	0.0007     	11 	11.02  	12 	0.14  
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 50 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=112.1 tune_mean_s=4.92 det4_candidates=1081 det4_unique=738 det4_checked=298 det4_cached=778 s2_s=10.8 dead=1098 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=38179
+51 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 51 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=127.0 tune_mean_s=4.88 det4_candidates=1111 det4_unique=757 det4_checked=294 det4_cached=812 s2_s=10.7 dead=1054 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=38473
+52 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 52 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=118.2 tune_mean_s=4.90 det4_candidates=1121 det4_unique=725 det4_checked=260 det4_cached=857 s2_s=10.1 dead=1089 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=38733
+53 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 53 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=110.3 tune_mean_s=4.77 det4_candidates=1056 det4_unique=714 det4_checked=257 det4_cached=798 s2_s=9.2 dead=1133 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=38990
+54 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 54 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=117.9 tune_mean_s=5.02 det4_candidates=1135 det4_unique=754 det4_checked=282 det4_cached=851 s2_s=10.4 dead=1053 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=39272
+55 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 55 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=117.5 tune_mean_s=4.85 det4_candidates=1119 det4_unique=771 det4_checked=293 det4_cached=825 s2_s=10.7 dead=1081 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=39565
+56 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 56 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=124.4 tune_mean_s=4.57 det4_candidates=1102 det4_unique=717 det4_checked=234 det4_cached=867 s2_s=8.6 dead=1093 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=39799
+57 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 57 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=119.8 tune_mean_s=4.89 det4_candidates=1087 det4_unique=739 det4_checked=247 det4_cached=839 s2_s=8.5 dead=1112 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=40046
+58 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 58 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=124.2 tune_mean_s=4.97 det4_candidates=1120 det4_unique=738 det4_checked=250 det4_cached=868 s2_s=8.8 dead=1056 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=40296
+59 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 59 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=126.5 tune_mean_s=5.07 det4_candidates=1110 det4_unique=734 det4_checked=238 det4_cached=869 s2_s=8.5 dead=1099 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=40534
+FLEX migration at generation 60: migRing, 25 individuals per island
+60 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 60 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=116.8 tune_mean_s=5.13 det4_candidates=1148 det4_unique=769 det4_checked=283 det4_cached=861 s2_s=10.0 dead=1035 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=40817
+61 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 61 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=130.0 tune_mean_s=5.20 det4_candidates=1104 det4_unique=760 det4_checked=258 det4_cached=842 s2_s=9.2 dead=1079 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=41075
+62 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 62 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=129.2 tune_mean_s=5.23 det4_candidates=1093 det4_unique=776 det4_checked=251 det4_cached=837 s2_s=8.7 dead=1084 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=41326
+63 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 63 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=120.9 tune_mean_s=5.14 det4_candidates=1158 det4_unique=771 det4_checked=246 det4_cached=912 s2_s=8.6 dead=1018 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=41572
+64 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 64 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=118.8 tune_mean_s=4.61 det4_candidates=1139 det4_unique=744 det4_checked=236 det4_cached=899 s2_s=8.2 dead=1047 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=41808
+65 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 65 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=126.1 tune_mean_s=5.10 det4_candidates=1094 det4_unique=751 det4_checked=243 det4_cached=849 s2_s=8.5 dead=1048 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=42051
+66 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 66 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=126.6 tune_mean_s=5.07 det4_candidates=1090 det4_unique=757 det4_checked=217 det4_cached=872 s2_s=8.0 dead=1077 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=42268
+67 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 67 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=122.4 tune_mean_s=4.82 det4_candidates=1099 det4_unique=738 det4_checked=231 det4_cached=866 s2_s=8.1 dead=1113 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=42499
+68 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 68 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=118.1 tune_mean_s=5.09 det4_candidates=1131 det4_unique=721 det4_checked=192 det4_cached=938 s2_s=7.6 dead=1053 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=42691
+69 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 69 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=114.5 tune_mean_s=4.85 det4_candidates=1099 det4_unique=750 det4_checked=220 det4_cached=878 s2_s=8.1 dead=1066 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=42911
+FLEX migration at generation 70: migRing, 25 individuals per island
+70 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 70 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=111.6 tune_mean_s=4.60 det4_candidates=1083 det4_unique=724 det4_checked=242 det4_cached=841 s2_s=8.4 dead=1101 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=43153
+71 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 71 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=132.2 tune_mean_s=4.85 det4_candidates=1128 det4_unique=758 det4_checked=224 det4_cached=903 s2_s=8.9 dead=1075 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=43377
+72 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 72 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=114.5 tune_mean_s=4.87 det4_candidates=1105 det4_unique=759 det4_checked=221 det4_cached=880 s2_s=8.4 dead=1072 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=43598
+73 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 73 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=114.8 tune_mean_s=4.99 det4_candidates=1082 det4_unique=715 det4_checked=198 det4_cached=883 s2_s=7.7 dead=1108 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=43796
+74 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 74 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=116.6 tune_mean_s=4.83 det4_candidates=1123 det4_unique=769 det4_checked=199 det4_cached=923 s2_s=7.5 dead=1062 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=43995
+75 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 75 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=107.7 tune_mean_s=4.73 det4_candidates=1077 det4_unique=724 det4_checked=198 det4_cached=878 s2_s=7.8 dead=1095 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=44193
+76 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 76 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=122.6 tune_mean_s=4.85 det4_candidates=1108 det4_unique=739 det4_checked=221 det4_cached=884 s2_s=7.7 dead=1100 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=44414
+77 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 77 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=123.8 tune_mean_s=4.92 det4_candidates=1109 det4_unique=755 det4_checked=201 det4_cached=908 s2_s=7.8 dead=1070 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=44615
+78 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 78 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=121.1 tune_mean_s=4.65 det4_candidates=1075 det4_unique=741 det4_checked=219 det4_cached=856 s2_s=7.4 dead=1104 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=44834
+79 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(x1, sub(a, add(x4, x2))), mul(x3, x3))
+GEN 79 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6023 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=118.9 tune_mean_s=4.97 det4_candidates=1124 det4_unique=753 det4_checked=214 det4_cached=910 s2_s=7.8 dead=1067 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=45048
+FLEX migration at generation 80: migRing, 25 individuals per island
+80 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 80 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=122.6 tune_mean_s=5.28 det4_candidates=1138 det4_unique=771 det4_checked=217 det4_cached=918 s2_s=7.9 dead=1021 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=45265
+81 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 81 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=123.5 tune_mean_s=5.17 det4_candidates=1144 det4_unique=776 det4_checked=216 det4_cached=928 s2_s=7.8 dead=1055 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=45481
+82 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 82 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=117.7 tune_mean_s=4.82 det4_candidates=1124 det4_unique=781 det4_checked=198 det4_cached=925 s2_s=7.7 dead=1054 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=45679
+83 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 83 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=124.2 tune_mean_s=4.90 det4_candidates=1141 det4_unique=766 det4_checked=212 det4_cached=929 s2_s=8.0 dead=1043 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=45891
+84 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 84 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=127.4 tune_mean_s=4.88 det4_candidates=1111 det4_unique=754 det4_checked=198 det4_cached=910 s2_s=7.1 dead=1091 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=46089
+85 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 85 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=127.2 tune_mean_s=4.91 det4_candidates=1108 det4_unique=770 det4_checked=203 det4_cached=903 s2_s=7.8 dead=1084 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=46292
+86 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 86 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=116.4 tune_mean_s=4.88 det4_candidates=1091 det4_unique=743 det4_checked=203 det4_cached=886 s2_s=7.5 dead=1084 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=46495
+87 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 87 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=112.4 tune_mean_s=4.59 det4_candidates=1110 det4_unique=765 det4_checked=187 det4_cached=922 s2_s=7.3 dead=1097 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=46682
+88 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 88 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=125.2 tune_mean_s=5.11 det4_candidates=1102 det4_unique=733 det4_checked=185 det4_cached=916 s2_s=7.3 dead=1050 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=46867
+89 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 89 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=115.5 tune_mean_s=5.01 det4_candidates=1137 det4_unique=780 det4_checked=204 det4_cached=932 s2_s=7.8 dead=1034 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=47071
+FLEX migration at generation 90: migRing, 25 individuals per island
+90 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 90 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=123.0 tune_mean_s=4.71 det4_candidates=1116 det4_unique=761 det4_checked=180 det4_cached=935 s2_s=7.4 dead=1082 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=47251
+91 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 91 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=117.4 tune_mean_s=4.75 det4_candidates=1053 det4_unique=732 det4_checked=185 det4_cached=867 s2_s=6.8 dead=1105 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=47436
+92 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 92 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=123.1 tune_mean_s=4.79 det4_candidates=1110 det4_unique=759 det4_checked=196 det4_cached=914 s2_s=8.0 dead=1112 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=47632
+93 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 93 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=123.8 tune_mean_s=5.24 det4_candidates=1152 det4_unique=803 det4_checked=233 det4_cached=919 s2_s=8.4 dead=1061 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=47865
+94 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 94 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=121.9 tune_mean_s=4.85 det4_candidates=1078 det4_unique=744 det4_checked=183 det4_cached=894 s2_s=7.0 dead=1105 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=48048
+95 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 95 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=119.8 tune_mean_s=4.95 det4_candidates=1111 det4_unique=764 det4_checked=211 det4_cached=899 s2_s=7.9 dead=1067 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=48259
+96 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 96 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=118.0 tune_mean_s=4.95 det4_candidates=1084 det4_unique=760 det4_checked=184 det4_cached=900 s2_s=7.3 dead=1090 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=48443
+97 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 97 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=122.9 tune_mean_s=5.14 det4_candidates=1081 det4_unique=732 det4_checked=191 det4_cached=890 s2_s=7.7 dead=1076 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=48634
+98 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 98 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=116.9 tune_mean_s=4.92 det4_candidates=1107 det4_unique=774 det4_checked=214 det4_cached=893 s2_s=8.4 dead=1064 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=48848
+99 	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x2, x4), sub(a, x1)), mul(x3, x3))
+GEN 99 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=5867 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=130.8 tune_mean_s=5.16 det4_candidates=1084 det4_unique=768 det4_checked=190 det4_cached=894 s2_s=7.9 dead=1071 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=49038
+FLEX migration at generation 100: migRing, 25 individuals per island
+100	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x4, x2), sub(a, x1)), mul(x3, x3))
+GEN 100 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6066 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=110.3 tune_mean_s=4.80 det4_candidates=1124 det4_unique=780 det4_checked=183 det4_cached=939 s2_s=7.7 dead=1059 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=49221
+101	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x4, x2), sub(a, x1)), mul(x3, x3))
+GEN 101 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6066 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=127.6 tune_mean_s=5.15 det4_candidates=1124 det4_unique=781 det4_checked=181 det4_cached=943 s2_s=7.2 dead=1068 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=49402
+102	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x4, x2), sub(a, x1)), mul(x3, x3))
+GEN 102 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6066 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=134.0 tune_mean_s=5.00 det4_candidates=1115 det4_unique=760 det4_checked=181 det4_cached=933 s2_s=7.0 dead=1069 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=49583
+103	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x4, x2), sub(a, x1)), mul(x3, x3))
+GEN 103 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6066 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0
+6D cma (resumable): 1 structures (1 deep, 0 slices), 7 loops in flight, 0 evals, 0 certified, 1 resumed, restarts [9], states held 4
+6D stages: candidates=2500 s1_s=131.7 tune_mean_s=5.49 det4_candidates=1109 det4_unique=782 det4_checked=174 det4_cached=935 s2_s=7.1 dead=1068 certified=0 fitness_min=8537.81 cma_runs=1 cma_certified=0 cma_best=8537.81 cma_s=0.0 cache_entries=49757
+104	2500 	8537.81	8537.81    	8537.81    	0          	11 	11     	11 	0     
+Best individuals of this generation:
+mul(sub(sub(x4, x2), sub(a, x1)), mul(x3, x3))
+GEN 104 best fitness=8537.81 len=11 :: grid=8538 [roa=8.54e+03] lattice c_v=0 kappa=6066 | extra=0.055 | det4 price=-1.819e-12 c_v*=0 kappa*=-1e+06 certified=False worst_r=na pen=10/100/20 | boundary_min=0 volume=0

@@ -1,0 +1,91 @@
+deps ok 2.4.6 1.17.1 0.66.0 4.5.0
+node s02n01.prime.net cores 24: 2 seeds x 10 workers x 1 numba threads | budget 20000 | kappa hinge 100@1.0 vol 20@0.02 | box 3,3,3,3,3,3 | template full | 17:45:56
+{"header": true, "system": "quad6d", "template": "full", "n_coefficients": 21, "expression": "add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))", "x0": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], "budget": 20000, "popsize": 10, "seed": 1, "sigma0": 1.0, "workers": 10, "numba_threads": 1, "host": "s02n01.prime.net", "box": [3.0, 3.0, 3.0, 3.0, 3.0, 3.0], "grid_points": 7, "lattice": {"mesh_points_per_axis": 7, "grid_points_per_axis": 3, "scan_points": 801, "random_lines": 200, "random_line_points": 401, "rng_seed": 0}, "rho": 1000.0, "b_norm": "l1", "pd_eps": 0.0001, "kappa_min": 0.0, "hinges": {"cv": [10.0, 0.05], "kappa": [100.0, 1.0], "vol": [20.0, 0.02]}, "started": "2026-09-18 17:45:59"}
+{"header": true, "system": "quad6d", "template": "full", "n_coefficients": 21, "expression": "add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(add(mul(a, mul(x1, x1)), mul(a, mul(x1, x2))), mul(a, mul(x1, x3))), mul(a, mul(x1, x4))), mul(a, mul(x1, x5))), mul(a, mul(x1, x6))), mul(a, mul(x2, x2))), mul(a, mul(x2, x3))), mul(a, mul(x2, x4))), mul(a, mul(x2, x5))), mul(a, mul(x2, x6))), mul(a, mul(x3, x3))), mul(a, mul(x3, x4))), mul(a, mul(x3, x5))), mul(a, mul(x3, x6))), mul(a, mul(x4, x4))), mul(a, mul(x4, x5))), mul(a, mul(x4, x6))), mul(a, mul(x5, x5))), mul(a, mul(x5, x6))), mul(a, mul(x6, x6)))", "x0": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], "budget": 20000, "popsize": 10, "seed": 2, "sigma0": 1.0, "workers": 10, "numba_threads": 1, "host": "s02n01.prime.net", "box": [3.0, 3.0, 3.0, 3.0, 3.0, 3.0], "grid_points": 7, "lattice": {"mesh_points_per_axis": 7, "grid_points_per_axis": 3, "scan_points": 801, "random_lines": 200, "random_line_points": 401, "rng_seed": 0}, "rho": 1000.0, "b_norm": "l1", "pd_eps": 0.0001, "kappa_min": 0.0, "hinges": {"cv": [10.0, 0.05], "kappa": [100.0, 1.0], "vol": [20.0, 0.02]}, "started": "2026-09-18 17:45:59"}
+x0 fitness 600.625000  (22.8 s incl. worker warm-up)
+x0 fitness 600.625000  (23.1 s incl. worker warm-up)
+{"final": true, "evals": 20003, "best": 0.625, "best_c": [3.6889019311916598, 3.1160387651417714, 0.8556360812078889, -0.465687320912283, -0.2559644493997394, -0.3320496915866333, 2.961517491444136, 0.05365272054909416, -0.568005292119003, -0.5714317473794529, -0.6568424346041905, 3.17395210927271, 3.303443172421042, -0.686048611381717, 0.6259331290816738, 3.1298350033790223, 0.6351075961041222, 1.2849106850896528, 3.111385149970184, 3.1728940187382433, 3.048846784470263], "certified_at": 28, "n_certified": 18242, "seconds": 10265.761649370193, "per_eval_s": 0.5132111008033892}
+done: 20003 evals, best 0.625000, certified_at 28, 0.51 s/eval, log /home/qaragoez/symclf_clean/symclf/examples/6D/runs/cma_quad6d_full_s2_147679.jsonl
+{"final": true, "evals": 20013, "best": 0.625, "best_c": [1.8202993325439387, 1.87425306436452, -0.07988850476818496, -0.1879918067292899, 0.5775008082974306, -0.26371587196827273, 1.882124926893851, 0.7236976829319944, 0.35819760512313903, 0.683073183348928, 0.16665910981926377, 2.014763641888163, 2.042792591109122, 0.9402176818013807, -0.199936305932627, 1.8538747730063738, 0.0071055481461294034, -0.29181738185155864, 2.245295680967201, 1.8085364363091274, 1.758639323299828], "certified_at": 42, "n_certified": 18395, "seconds": 10555.602635383606, "per_eval_s": 0.5274372975257885}
+done: 20013 evals, best 0.625000, certified_at 42, 0.53 s/eval, log /home/qaragoez/symclf_clean/symclf/examples/6D/runs/cma_quad6d_full_s1_147679.jsonl
+      -0.17633540592153005
+    ],
+    "worst_r": 3.7646224143376203,
+    "origin_ratio": -1.0014231675957466
+  },
+  "audit": {
+    "cv": 0.6752615919942926,
+    "cv_w": 0.6752615919942926,
+    "cv_rad": 0.6752615920046157,
+    "pd_valid": true,
+    "cv_point": [
+      -2.6245056376440727,
+      2.1918053151601975,
+      -2.9985631807311206,
+      1.743863359034767,
+      2.320490640770784,
+      -2.466689918295171
+    ],
+    "kappa": 1.0014231675957581,
+    "worst_point": [
+      -2.9996961229026895,
+      1.7785090319609445,
+      -1.309787594294655,
+      0.3844960531152407,
+      -0.34112074284551913,
+      -0.17633359254979905
+    ],
+    "worst_r": 3.764586147322765,
+    "origin_ratio": -1.0014231675957466,
+    "mp60_ratio_at_worst": -1.0014231675957543,
+    "certified": true,
+    "n_lattice": 1365707,
+    "b_norm": "l1",
+    "rho": 1000.0
+  },
+  "diff": {
+    "cv": -1.8702484005928e-11,
+    "kappa": -7.993605777301127e-15
+  }
+}
+      -1.109619711719521
+    ],
+    "worst_r": 4.295362313196456,
+    "origin_ratio": -1.001645306185723
+  },
+  "audit": {
+    "cv": 1.211998389044252,
+    "cv_w": 1.211998389044252,
+    "cv_rad": 1.211998389044252,
+    "pd_valid": true,
+    "cv_point": [
+      -1.1170289361967565,
+      0.6310425337227017,
+      2.921821765948212,
+      -2.3840520691293747,
+      2.352111283640416,
+      -1.6835871720490228
+    ],
+    "kappa": 1.001645306185739,
+    "worst_point": [
+      3.0,
+      -1.4205993290125418,
+      -1.1502986973886262,
+      0.7171660721735316,
+      2.088844199303229,
+      -1.1096206004348617
+    ],
+    "worst_r": 4.295363161335004,
+    "origin_ratio": -1.001645306185723,
+    "mp60_ratio_at_worst": -1.001645306185773,
+    "certified": true,
+    "n_lattice": 1365707,
+    "b_norm": "l1",
+    "rho": 1000.0
+  },
+  "diff": {
+    "cv": -2.7923441336952237e-11,
+    "kappa": -1.2878587085651816e-14
+  }
+}
+done: Fri Sep 18 20:43:32 CEST 2026
