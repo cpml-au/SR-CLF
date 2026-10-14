@@ -1,6 +1,0 @@
-Best Expression:
-add(mul(x2, x2), mul(x1, x1))
-Best Fitness:
-0.035
-Best Parameters:
-[]

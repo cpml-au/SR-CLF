@@ -1,25 +1,11 @@
-# Define needed Functions
-import numpy as np
+"""The Dataset container that flex expects as training data.
+
+Dataset: a named list of input arrays; the runner (src/CPU/run.py) puts the axes of the training grid in it.
+Importing this module needs jax (the Array type hint) and flex.
+"""
 from jax import Array
 import numpy.typing as npt
 from flex.gp.util import compile_individuals
-
-# Safe divide function
-def safe_divide(a, b, default=1):
-    """
-    Perform a safe division. If `b` is zero or close to zero, return the `default` value.
-    """
-    with np.errstate(divide="ignore", invalid="ignore"):
-        result = np.where(np.abs(b) > 1e-9, a / b, default)
-    return result
-
-
-def safe_divideSR(a, b, default=1):
-    """
-    Perform a safe division. If `b` is zero or close to zero, return the `default` value.
-    """
-    return a / b if abs(b) > 1e-9 else default
-
 
 # Dataset Function
 class Dataset:

@@ -1,0 +1,61 @@
+diff --git a/src/flex/gp/regressor.py b/src/flex/gp/regressor.py
+index 9cc60eb..68f87ec 100644
+--- a/src/flex/gp/regressor.py
++++ b/src/flex/gp/regressor.py
+@@ -591,12 +591,35 @@ class GPSymbolicRegressor(RegressorMixin, BaseEstimator):
+                 )
+ 
+         # migrations among islands
+-        if cgen % self.mig_frac == 0 and self.num_islands > 1:
+-            migRing(
+-                self.__pop,
+-                int(self.mig_frac * self.num_individuals),
+-                selection=random.sample,
+-            )
++        # The test used cgen % mig_frac (0.05), which is never exactly 0
++        # for an integer generation, so the islands never migrated. FLEX_MIGRATION_FIX=1 tests mig_freq (the
++        # documented "migration frequency (in generations)"); the default keeps the old behaviour.
++        _mig_every = self.mig_freq if os.environ.get("FLEX_MIGRATION_FIX", "0") == "1" else self.mig_frac
++        if cgen % _mig_every == 0 and self.num_islands > 1:
++            k = int(self.mig_frac * self.num_individuals)
++            if os.environ.get("FLEX_MIGRATION_FIX", "0") == "1":
++                # POSITION-BASED ring exchange. DEAP's migRing decides which
++                # individual an immigrant replaces with `list.index(individual)`, i.e. by TREE EQUALITY, so in a
++                # population holding many copies of one tree it overwrites an individual that never migrated -- it
++                # deleted a numerically verified best tree at generation 10 in two runs (6-D quadrotor, 3-link).
++                # In a simulation, 63.8 % of the upstream migrations lost such a tree; this exchange lost 0 of 2000.
++                # Here the slots are remembered by POSITION: each
++                # island sends k individuals to the next island, and they land in exactly the slots those k left,
++                # so every individual either stays or moves one island along the ring and none is lost.
++                print(f"FLEX migration at generation {cgen}: position-based ring, "
++                      f"{k} individuals per island", flush=True)
++                picks = [random.sample(range(len(pop)), k) for pop in self.__pop]
++                emigrants = [[self.__pop[d][j] for j in picks[d]] for d in range(self.num_islands)]
++                for d in range(self.num_islands):
++                    to_deme = (d + 1) % self.num_islands
++                    for slot, individual in zip(picks[to_deme], emigrants[d]):
++                        self.__pop[to_deme][slot] = individual
++            else:
++                migRing(
++                    self.__pop,
++                    k,
++                    selection=random.sample,
++                )
+ 
+         return num_evals
+ 
+@@ -679,8 +702,12 @@ class GPSymbolicRegressor(RegressorMixin, BaseEstimator):
+ 
+         # Seeds the first island with individuals
+         if self.seed_str is not None:
+-            print(" Seeding population with individuals...", flush=True)
+-            self.__pop[0][: len(self.seed_ind)] = self.seed_ind
++            # FLEX_SEED_ISLANDS islands get the seeds (default 1 = the old
++            # behaviour: island 0 only); every island gets its own clones so the copies evolve independently.
++            n_seeded = max(1, min(self.num_islands, int(os.environ.get("FLEX_SEED_ISLANDS", "1"))))
++            print(f" Seeding population with individuals... ({n_seeded} of {self.num_islands} islands)", flush=True)
++            for d in range(n_seeded):
++                self.__pop[d][: len(self.seed_ind)] = [toolbox.clone(ind) for ind in self.seed_ind]
+ 
+         if self.remove_init_duplicates:
+             print(" Removing duplicates from initial population(s)...", flush=True)

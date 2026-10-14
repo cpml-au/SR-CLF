@@ -1,49 +1,18 @@
-# Define Functions related to individuals
+"""String helpers for the trees of the genetic programming.
+
+  get_features_batch            length, nested-trig count (flex) and trig count of each tree
+  detect_nested_function_calls  1 when fn(...) contains another fn(...) -- the nested-call test of
+                                the complexity penalty and of the structure penalty
+  read_expressionCoef           reads <job>_best_expression.txt: expression, fitness, constants
+  substitute_paramsCoef         writes the constants into the `a` placeholders of an expression
+  DeapSimplifier                tree string -> sympy expression (optionally rescaled)
+The last three are not used by the pipeline; they are for reading a result afterwards.
+"""
 from flex.gp import util
 import re
 from sympy import sympify, preorder_traversal, symbols, exp, Function
 
 import numpy as np
-from deap import gp
-
-
-def compile_individuals_with_consts(
-    toolbox, individuals_str_batch, special_term_name="a"
-):
-    """
-    Compiles a batch of individuals (symbolic expressions) while handling special constants.
-
-    Parameters:
-        toolbox (object): A DEAP (Distributed Evolutionary Algorithms in Python) toolbox
-        containing the compile method.
-        individuals_str_batch (list): A list of DEAP GP trees representing symbolic expressions.
-        special_term_name (str): The prefix used for identifying special constant terms.
-
-    Returns:
-        tuple: A tuple containing:
-            - list: A list of compiled symbolic expressions.
-            - list: A list of integer counts representing the number of special
-            constants in each individual.
-    """
-    compiled_batch = []
-    const_counts = []
-
-    for tree in individuals_str_batch:
-        const_idx = 0
-        tree_clone = toolbox.clone(tree)
-
-        for i, node in enumerate(tree_clone):
-            if isinstance(node, gp.Terminal) and node.name[:3] != "ARG":
-                if node.name == special_term_name:
-                    new_node_name = f"{special_term_name}[{const_idx}]"
-                    tree_clone[i] = gp.Terminal(new_node_name, True, float)
-                    const_idx += 1
-
-        individual = toolbox.compile(expr=tree_clone, extra_args=[special_term_name])
-        compiled_batch.append(individual)
-        const_counts.append(const_idx)
-
-    return compiled_batch, const_counts
 
 
 def check_trig_fn(ind):
@@ -220,8 +189,3 @@ def detect_nested_function_calls(expr: str, fn_name: str):
         i += 1
 
     return nested
-
-
-def contains_symbol(expr: str, sym: str) -> bool:
-    # matches whole identifier: x1 but not x10 or ax1
-    return re.search(rf"(?<![A-Za-z0-9_]){re.escape(sym)}(?![A-Za-z0-9_])", expr) is not None

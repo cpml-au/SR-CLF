@@ -1,0 +1,118 @@
+# Settings of the search for examples/vanderpol2:
+# the reversed Van der Pol system of the paper (section 4.4, Eq. 21), 2 states, 1 input.
+#
+# They are the settings of the reference job 148603 (reference/148603/).
+# The second reference job 148619 had a few more settings on its sbatch line (README.md).
+# src/settings.py turns each key into the environment variable the code reads; docs/SETTINGS_CPU.md
+# lists key, variable and meaning.  A key that is absent or null leaves the code's own default.
+# To change one setting for one job, name its variable on the sbatch line, for example
+#     --export=ALL,SYMCLF_TUNE_MODE=cma_all
+
+system:                         # which system, and the box of states the search works in
+  name: vanderpol2              # the system file systems/vanderpol2.py: f, G, the box
+  box: [2.0, 2.0]               # half-width of the state box on each axis
+  template: full                # the quadratic seed template: full = all n(n+1)/2 monomials | are
+  template_x0: 1.0              # start value of every coefficient of the template
+
+backend:                        # how the work is spread over the cores
+  threads:
+    cpu: 1                      # numba threads per worker (one core per worker)
+  check_batch:
+    cpu: 2                      # trees handed to a worker in one call
+  driver_cpus: 2                # cores kept for the driver; every other core runs one worker
+
+grid:                           # the training grid of the grid stage
+  points_per_axis: 41           # points per axis (odd, so that the origin is a grid point)
+
+verification:                   # the check of every candidate, c_v* and kappa* (src/CPU/deterministic_search.py)
+  final: [audit]                # at the end, on the best tree: [audit] = src/CPU/audit.py | [] = nothing
+  u_max: 1000                   # the input bound rho in kappa* = -max (a - rho |b|) / W
+  b_norm: l1                    # |b|: l1 = each input bounded by rho | l2 = the input vector bounded by rho
+  pd_eps: "1e-4"                # positive definite iff c_v* > this
+  kappa_min: 0                  # numerically verified iff kappa* > this (and c_v* > pd_eps)
+  b_rel_tol: "1e-6"             # a search end point counts as on b = 0 when rho |b| <= this * |a|
+  project_ascent: true          # project those end points onto b = 0 before that test
+  origin_seeds: true            # also search along the worst direction at the origin
+  lattice:                      # scan points: mesh^n + n * lines^(n-1) * samples + random_lines * random_points
+    mesh: 41                    # mesh points per axis
+    lines: 21                   # scan lines per remaining axis
+    samples: 801                # samples along each scan line
+    random_lines: 200           # random lines
+    random_points: 401          # points per random line
+    seed: 0                     # seed of the random lines
+
+fitness:                        # fitness = grid score + check cost + complexity penalty (src/CPU/rule.py)
+  region_weight: 500            # region term: weight
+  region_target: 0.004          # region term: target of (smallest W on the faces of the grid) / (median |W|)
+  hinge:                        # three hinges, each weight * clip((target - value) / target, 0, 1)
+    cv_weight: 10               # on c_v*
+    cv_target: 0.05
+    kappa_weight: 100           # on kappa*
+    kappa_target: 1.0
+    volume_weight: 20           # on the share of the grid with W below its smallest value on the faces
+    volume_target: 0.02
+  non_pd_kappa_cap: "1e6"       # a candidate that is not positive definite is charged kappa* = -this
+  length_reg: 0.005             # charge per node of the tree
+  nested_penalty: 50            # charge for sin/cos inside sin/cos, exp inside exp, aq inside aq
+
+stages:                         # what happens to a tree (src/CPU/gp_engine.py)
+  gate:
+    max_length: 90              # a tree with this many nodes or more is not evaluated (fitness 1e8)
+  tune:
+    mode: cma_all               # constant tuning: cma_all = option (b) | cma_vip = option (c)
+  cma:                          # CMA-ES on the constants, both options
+    popsize: 18                 # evaluations per iteration
+    seed: 2                     # seed of every search
+    max_restarts: 100           # a search that stops restarts from its best point, at most this often
+  cma_all:                      # option (b): every live structure, more evaluations for the better ranks
+    total_evals: 100000         # the most evaluations of one generation, all structures together
+    max_evals: 108              # the first rank, per generation
+    min_evals: 18               # the last rank, per generation (linear in between)
+    cap_verified: 5000          # lifetime of a numerically verified structure (also in option (c))
+    cap_other: 3000             # lifetime of any other structure (also in option (c))
+
+gp_runtime:                     # the seed trees and the migration between islands
+  seeds: false                  # true = seed trees in the first population | false = random trees only
+  seed_islands: 3               # how many islands get the seed trees
+  migration_fix:
+    cpu: true                   # migrate every gp.multi_island.migration.freq generations (docs/flex_patch)
+
+# The genetic programming: population, generations, islands, operators, primitives.
+# flex reads this block (flex.gp.util.load_config_data); src/settings.py does not.
+# A primitive is switched off by the # in front of its line.
+gp:
+  num_individuals: 500
+  generations: 20000
+  multi_island:
+    num_islands: 5
+    migration: { "freq": 10, "frac": 0.05 }
+  crossover_prob: 0.7
+  mut_prob: 0.3
+  frac_elitist: 0
+  min_: 2
+  max_: 6
+  overlapping_generation: True
+  validate: False
+  penalty: { "method": "length", "reg_param": 0.005 }
+  select:
+    fun: tools.selection.tournament_with_elitism
+    kargs: "{'num_elitist': self.n_elitist, 'tournsize': 2, 'stochastic_tourn': { 'enabled': False, 'prob': [0.8, 0.2] }}"
+  mutate:
+    fun: gp.mixedMutate
+    kargs: "{'expr': toolbox.expr_mut, 'pset': pset, 'prob': [0.7, 0.2, 0.1]}"
+    expr_mut: gp.genHalfAndHalf
+    expr_mut_kargs: "{'min_': 1, 'max_': 3}"
+  crossover:
+    fun: gp.cxOnePoint
+    kargs: "{}"
+  primitives:
+    imports: { "flex.gp.numpy_primitives": ["numpy_primitives"] }
+    used:
+      [
+        { "name": "add", "dimension": None, "rank": None },
+        { "name": "sub", "dimension": None, "rank": None },
+        { "name": "mul", "dimension": None, "rank": None },
+        { "name": "neg", "dimension": None, "rank": None },
+        { "name": "sin", "dimension": None, "rank": None },
+        { "name": "exp", "dimension": None, "rank": None },
+      ]
